@@ -1,0 +1,163 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>The Full Screen Map Editor</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap><a
+        href="MapEdit1.htm"><font color="#FFFFFF" size="2"
+        face="Arial"><strong>Up to Edit Maps Dialog</strong></font></a></td>
+    </tr>
+</table>
+
+<h2>The Full Screen Map Editor</h2>
+
+<p>This is part of a series of pages describing the <a
+href="MapEdit1.htm">Edit Maps Dialog</a>. This page describes the
+Full Screen Map Editor.</p>
+
+<p align="center"><img src="Images/EmptyMap.GIF" width="640"
+height="480"></p>
+
+<p>The full screen map editor has a very simplified user
+interface (because user interface implementation is not so easy
+when every detail must be handled manually). The map is presented
+according to the map display parameters set for the map. Moving
+the mouse pointer to the edges of the screen will scroll the map.
+As the mouse moves, the currently selected tile or TileMatch
+draws itself on the current layer as it would if you clicked the
+mouse to change that layer. The coordinates of this tile are
+indicated at the top left corner of the screen. You can only edit
+one layer at a time. To switch to editing another layer you must
+exit the full screen editor, select a new layer and click Edit.</p>
+
+<p>Some keys you can use while editing the map:</p>
+
+<ul>
+    <li>Arrow keys scroll the screen quickly (depressing an arrow
+        key jumps a number of tiles in that direction)</li>
+    <li>Control-S saves a screenshot of the current display</li>
+    <li>Scroll lock engages the player. If a player sprite is
+        defined, the map scrolling follows the player as it would
+        while playing the game. You can continue to edit the map
+        in this mode using the mouse. The inventory display will
+        also be turned on.</li>
+    <li>Escape exits the full screen map editor.</li>
+    <li>Alt-Tab can be used to switch between the editor and the
+        desktop.</li>
+</ul>
+
+<p align="left"><img src="Images/SelMatch.GIF" align="left"
+hspace="6" width="397" height="46">Holding the right mouse button
+will present the menu. This is where you can either select a new
+tile or another command to perform within the full screen map
+editor. If the tileset is taller than the screen, moving the
+mouse to the bottom of the screen while holding the right mouse
+button will scroll down to display more tiles. The following
+describes each of the commands:</p>
+
+<ul>
+    <li><p align="left">Close: Close the full screen map editor.
+        The current state of the map is retained in memory,
+        except for the sprites which are always created from the
+        sprite definitions when the map starts.</p>
+    </li>
+    <li><p align="left">Copy: When this tool is selected, you may
+        drag a rectangle around any area of tiles. This rectangle
+        of tiles then becomes the current &quot;brush&quot; until
+        another tool is selected. This does not put anything in
+        the clipboard; it simply starts the process of selecting
+        a range of tiles as a &quot;brush&quot;. Whenever you
+        click after having selected the rectangle of tiles, that
+        same rectangle of tiles will be &quot;pasted&quot; onto
+        the map under the mouse pointer.</p>
+    </li>
+</ul>
+
+<ul>
+    <li><p align="left">Tilematch: This menu lists all the
+        Tilematch objects defined for the tileset referenced by
+        the current layer. Each Tilematch object has an
+        associated eraser which can be used to (as cleanly as
+        possible) erase tiles within areas composed of the tiles
+        in the Tilematch. The eraser cannot always erase tiles
+        cleanly, though. Tiles can only match if they are within
+        a 2x2 block of similar tiles. Selecting a Tilematch
+        automatically draws coherent objects composed of the
+        tiles in the Tilematch when dragging the mouse or
+        generating a maze.</p>
+    </li>
+    <li><p align="left">Maze: This menu has two selections,
+        Normal and Large Scale. Selecting one of these makes the
+        maze generator &quot;tool&quot; current. After selecting
+        one, drag a large rectangle over the map and that
+        rectangle will be filled with a maze. A large scale maze
+        has larger, longer passageways than a normal maze. This
+        tool is best when used with a Tilematch.</p>
+    </li>
+</ul>
+
+<p><img src="Images/PathMenu.GIF" width="397" height="67"></p>
+
+<ul>
+    <li>Paths: <strong>New path</strong> will prompt for a new
+        path name; this name must be unique in the space of paths
+        in the whole map (press Enter when entry is complete).
+        Then you will see the path point cursor under the mouse
+        pointer. Click out new points on the path and terminate
+        the path with the right mouse button. The right mouse
+        button does not add the point under the mouse. It
+        terminates the path at the last point clicked. Many types
+        of sprites will only require a one-point path. To do
+        this, just click once on the point and then right-click.
+        Each point in the path corresponds to the destination for
+        the top left corner of a tile. If your path is designed
+        for the center of the tile you can offset it with the
+        &quot;Offset Path&quot; button in the <a
+        href="Sprites1.htm">Sprites and Paths Dialog</a>. The
+        &quot;<strong>Show All</strong>&quot; item toggles
+        between &quot;Show All&quot; and &quot;Hide All&quot;.
+        This makes all paths on all layers in the current map
+        visible or invisible. (Drawing paths can get slow if
+        there are too many.) <strong>Reset Sprites</strong> will
+        terminate all sprite instances and recreate sprite
+        instances based on the sprite definitions. <strong>Toggle
+        Grid</strong> will snap the path cursor to the top left
+        corner of map tiles. If your sprites are the same size as
+        map tiles this can be useful in creating a path point
+        that will start a sprite right up against a wall, floor
+        or ceiling.</li>
+</ul>
+
+<ul>
+    <li>Add Special: Prompts for a special function name; this
+        name must be unique in the space of special functions in
+        the whole map (press Enter when entry is complete). Then
+        the special function block will follow the mouse pointer
+        around until you drag out a rectangle for the special
+        function. All other existing special functions on the
+        current layer are displayed in this mode. Special
+        functions are always aligned on tile boundaries for the
+        current layer (they are stored in tile coordinates rather
+        than pixel coordinates). You have one chance to drag out
+        the rectangle for any special function. If you ever need
+        to do further maintenance on an existing special
+        function, you must use the <a href="MapEdit5.htm">Special
+        Functions</a> tab on the <a href="MapEdit1.htm">Edit Maps
+        Dialog</a>.</li>
+</ul>
+
+<p>That wraps up about everything there is to know about the full
+screen map editor.</p>
+</body>
+</html>

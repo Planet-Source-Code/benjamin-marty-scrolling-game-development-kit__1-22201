@@ -1,0 +1,216 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>GameDev Tutorial Step 6 - Player Settings and Inventory</title>
+</head>
+
+<body bgcolor="#D3DFFA">
+
+<h2><font face="Verdana">GameDev Tutorial - Creating a Simple
+Game</font></h2>
+
+<table border="0" cellpadding="0" cellspacing="6">
+    <tr>
+        <td><img src="Images/Treasure.GIF" width="179"
+        height="175"></td>
+        <td valign="top"><h3><font face="Verdana">Step 6 - Player
+        Settings and Inventory</font></h3>
+        <p><font face="Verdana">There are two components to this
+        step. Firstly we must define the global settings. These
+        include which map is the first map to be loaded when
+        playing the game (where the game starts), how the display
+        scrolls around the player, what the inventory looks like,
+        and what items are in the inventory. Secondly we must
+        define how the player interacts with an individual map.
+        This includes specifying one sprite on the map as the
+        player sprite, and defining how the player interacts with
+        various tiles, and how these interactions affect the
+        inventory.</font></p>
+        </td>
+    </tr>
+</table>
+
+<h4><font face="Verdana">Global Player Settings</font></h4>
+
+<p><font face="Verdana">To access the global player settings,
+select &quot;Player Settings&quot; from the view menu in the main
+project window. The first field you'll see is &quot;Start on
+Map&quot;. As the name suggests, this selects where the game
+starts if there are multiple maps in the project. We only have
+one map so our choice is easy. Select &quot;TutorialMap&quot;
+from the list.</font></p>
+
+<p><font face="Verdana">The next two fields indicate how the map
+scrolls around the player. The defaults of 32 will allow the
+player to get within 32 pixels of the edge of the display before
+the map scrolls. Let's change this so the player doesn't have to
+get so close to the edge of the display. As a matter of fact, we
+can calculate what the value needs to be so that the map <strong>always</strong>
+scrolls when possible. The scrolling occurs such that the nearest
+edge of the sprite is at least N pixels away from the edge of the
+map. That means the display width (640) minus the sprite width
+(32) all divided by 2 gives us the horizontal margin. So,
+(640-32)/2 = 304, enter 304 into the &quot;Horizontal&quot;
+field. The vertical margin is calculated as (448-32)/2 = 208,
+enter 208 as the vertical margin. (448 because this is the height
+of the map display -- this is the number we're concerned with in
+these calculations.)</font></p>
+
+<p><font face="Verdana">The &quot;Quantity Margin&quot; is fine
+at 5. This simply determines, for instance, how far the
+&quot;money bar&quot; is from the icon representing the
+&quot;money item&quot; in the inventory, assuming you have an
+inventory item called &quot;money&quot;.</font></p>
+
+<p><img src="Images/InvStaff.GIF" align="left" hspace="6"
+width="439" height="409"><font face="Verdana">Now we'll create a
+couple inventory items. Our first item will be called
+&quot;SesameStaff&quot; so enter this into the &quot;Item
+Name&quot; field. &quot;Icon Tileset&quot; should be set to the
+only available tileset (&quot;Tutorial&quot;). Click the up and
+down arrows next to the &quot;Icon Index&quot; field to scroll
+through the different icons in this tileset. Continue scrolling
+until you find the image of the staff that we drew in </font><a
+href="Tut1.htm"><font face="Verdana">Step 1</font></a><font
+face="Verdana">. This icon will represent ownership of the staff.
+Set &quot;Max Quantity&quot; to 1 and &quot;Initial
+Quantity&quot; to 0. This will be an item that the player either
+owns or does not own -- no owning multiple staffs. Setting
+&quot;Quantity Display&quot; to &quot;Repeat icon to right&quot;
+will display a single staff icon when the player owns the staff,
+and nothing when the player does not own the staff. (This setting
+would display more staffs to the right if Max Quantity were set
+above 1.) Now set the coordinates for the display of this
+inventory item. X and Y should both be 0 (these values are
+probably already filled in by default). That completes this
+inventory item, so click the New button to create it.</font></p>
+
+<p><font face="Verdana">Now we'll create a second item. Name this
+one &quot;Scraper&quot;. Search through the icons until you find
+the icon representing the scraper item drawn in Step 1. Max
+Quantity for this item should be a bit larger, let's use 10.
+Initial Quantity we'll leave at 0. The quantity display for this
+one will be more interesting, we'll use a vertical bar to
+represent how many the player owns; pick &quot;Vertical bar at
+right&quot;. Pick some interesting colors for the bar and bar
+background (I used purple and dark grey respectively). Just for
+fun, press the &quot;None&quot; button for the bar outline. As
+long as the bar background constrasts with the screen background
+(usually black) the outline isn't really necessary. Set the
+&quot;Bar length&quot; to 32 pixels (for a vertical bar, this
+determines how many pixels high the bar is from the base of the
+tile image). For the bar thickness, a value of about 4 should be
+good (that's the width of the vertical bar in pixels). The
+position of this item should be X=35 and Y=0. This will draw the
+&quot;Scraper&quot; to the right of the &quot;SesameStaff&quot;.
+Finally click the New button to save the new inventory item.</font></p>
+
+<p><font face="Verdana">You should be able to use the left
+(&quot;&lt;&quot;) and right (&quot;&gt;&quot;) buttons at the
+bottom left corner of the dialog to switch between your two
+inventory items now and see all the details for the two items.
+This is all that needs to be done for the global player settings,
+so when you're done, click OK.</font></p>
+
+<h4><font face="Verdana">Map Settings</font></h4>
+
+<p><font face="Verdana">Open up the map editing dialog again
+(Maps from the View menu) and select TutorialMap. Then click on
+the Player Interacton tab. This is where all the map-related
+player settings are defined.</font></p>
+
+<p><font face="Verdana">You may have noticed that, while we have
+defined a player sprite template, a player sprite definition and
+a player collision category, we never actually indicated to the
+program which sprite is <strong>the</strong> player sprite --
+we've just been using the name &quot;Player&quot; to define a
+number of things. The program needs to know which sprite really
+is the player because that sprite will scroll the map and
+interact with the inventory. The first field on this page is used
+to do exactly that. So from the &quot;Player sprite&quot; field,
+select &quot;Player1&quot;.</font></p>
+
+<p><font face="Verdana">Another thing you may have noticed is
+that, when we defined the inventory we didn't actually define
+what causes the inventory to change. Just because an inventory
+item is represented by (for instance) the image of a staff, that
+doesn't <strong>necessarily </strong>mean that this same tile in
+the map will be used to represent the staff item that you can
+pick up. (It may be the case that the inventory has to display
+the items in a different size than the map tiles, and so has to
+use a different tileset.)</font></p>
+
+<p><font face="Verdana"><img src="Images/MapInt.GIF" align="left"
+hspace="6" width="434" height="477"></font><font face="Verdana">So
+that's what the rest of the tab is dedicated to addressing. Our
+first interaction will define how the player gets the staff into
+the inventory. Select &quot;Staff&quot; as the tile category for
+the interaction. Then select the &quot;Initially&quot; option.
+This setting doesn't make much difference in this case because
+the tile will disappear as soon as it is touched anyway. If it
+were to stay on the map, selecting &quot;Initially&quot; would
+ensure that the player only gets 1 staff each time the staff tile
+is touched, instead of infinitely stocking up on staffs as long
+as the player is touching the tile (assuming Max Quantity is
+big). The next field indicates what action to perform on the
+inventory when the &quot;Staff&quot; tile is touched. Select
+&quot;Add item to inventory&quot; for this field. In the
+&quot;Relevant inventory item&quot; field, select the SesameStaff
+item we defined above. The next option determines how this
+interaction affects the map. Select &quot;Always Remove&quot; to
+indicate that the staff should be removed from the map even if
+the player already had a staff and couldn't pick up another one
+(I pick this option somewhat arbitrarily in this case, pick
+whatever you like). In the &quot;Replace removed tile with&quot;
+field, use the arrows or enter 0 in the field. Tile index 0 is
+the background tile for the map and represents an empty space.
+This effectively makes the staff disappear when you get it. The
+last field is used for scripting only which we aren't concerned
+with at the moment, so leave it unchecked. That's the end of this
+interaction, so click the &quot;New&quot; button to create it.
+(Since this tutorial was written before the implementation of the
+&quot;Play media clip&quot; feature shown in the new screenshot,
+there's no sound associated with this interaction, but feel free
+to add one.)</font></p>
+
+<p><font face="Verdana">Now we'll create a second interaction to
+define how to pick up the &quot;Scraper&quot; item. Select
+&quot;Scraper&quot; as the tile category. Relevant inventory item
+is scraper. For this item select &quot;Remove tile if inventory
+OK&quot; to ensure that the tile is only removed from the map if
+the player has room in the inventory to pick it up. Everything
+else can remain the same as it was for the SesameStaff item.
+Click New to add the interaction for the &quot;Scraper&quot;.</font></p>
+
+<p><font face="Verdana">Our third and final interaction will
+define how the scraper works. Select &quot;Exterior&quot; as the
+tile category. Select &quot;Subtract item from inventory&quot; as
+the inventory effect. Relavent inventory item is still the
+Scraper. &quot;Remove tile if inventory OK&quot; in this case
+ensures that the &quot;Exterior&quot; tile is only removed if the
+player has a Scraper. The &quot;Replace&quot; tile at 0 will
+replace the Exterior tile with empty space. Finally click new to
+create the third interaction.</font></p>
+
+<p><font face="Verdana">All the player parameters have been
+defined. It's now possible to actually play the game to some
+extent. We have not yet defined a way for the blocked passage to
+open, but everything else should be working sufficiently well
+that selecting &quot;Play&quot; from the &quot;File&quot; menu on
+the main project window will give a good idea of what the game
+will work like. (Press &quot;Q&quot; to quit the game and return
+to the editor.)</font></p>
+
+<p><font face="Verdana">This concludes step 6 of the GameDev
+tutorial - Player Settings and Inventory.</font></p>
+
+<p><a href="Tutorial.htm"><font face="Verdana">Return to the main
+tutorial page.</font></a></p>
+
+<p><a href="Tut7.htm"><font face="Verdana">Jump to the next step
+in the tutorial.</font></a></p>
+</body>
+</html>

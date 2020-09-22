@@ -1,0 +1,77 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Make Shortcut</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>Make Shortcut</h2>
+
+<p>In the file menu (or as a <img src="Images/ShortBtn.gif"
+alt="shortcut" width="23" height="22"> button on the toolbar) you
+will find a &quot;Make Shortcut&quot; command new with GameDev
+version 1.2. It was not feasible or reasonable to make a compiler
+(at least for this release) so instead I've exposed the ability
+to automatically start up and play a game more obvious.</p>
+
+<p>There are a few parameters involved in creating a shortcut:</p>
+
+<ul>
+    <li><strong>Shortcut name.</strong> Specify a display name
+        for the shortcut. (Windows derives the filename of the
+        shortcut by appending &quot;.lnk&quot; to this name. The
+        &quot;.lnk&quot; extension will not be visible from
+        Windows, even if you have &quot;show extensions&quot;
+        turned on.)</li>
+    <li><strong>Path to GameDev.exe.</strong> This is defaulted
+        with the name and path of the currently running EXE. This
+        is the program that will be used to run the game
+        (GameDev.exe). If you know that you will be running
+        GameDev.exe from a different directory when you play the
+        project you could specify an alternate path here.</li>
+    <li><strong>Path to game project.</strong> This is defaulted
+        to the name of the currently loaded GDP file, assuming it
+        has been saved to a file. This indicates which project
+        will be loaded to play when the shortcut is opened.</li>
+    <li><strong>Path to script.</strong> If you have created a
+        vbs file (similar to the DngnPlay.vbs file used for the
+        Sample project) to execute custom script during playback,
+        you can specify the path and name of that file here.</li>
+    <li><strong>Display mode.</strong> You can use the default
+        display mode set up (by the GameDev <a href="Options.htm">options
+        dialog</a>) on the target system, or the shortcut can
+        override the default and specify a particular color depth
+        for the display when running. Be aware that overriding
+        the display mode to force 24-bit color (for instance) may
+        make the shortcut unusable on systems where 24-bit color
+        is not supported (my video card, for instance, only
+        supports 16-bit and 32-bit).</li>
+</ul>
+
+<p>After entering all the parameters, clicking OK will create the
+shortcut on the desktop and close the dialog. When you open the
+shortcut, it will start up GameDev in playback mode, load the
+specified project, play the game (or run the script) and then
+exit. There is no opportunity to edit the game project during
+this sequence.</p>
+
+<p>The shortcut depends on the absolute path of GameDev.exe and
+the GDP file so it may not be reasonable to copy this shortcut to
+play the game on other systems, unless you had the other
+system(s) in mind when specifying the paths to GameDev.exe and
+the GDP file.</p>
+</body>
+</html>

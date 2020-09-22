@@ -1,0 +1,111 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Options</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>GameDev Options</h2>
+
+<p>This simple dialog (new with version 1.2) allows you to
+specify some global paremeters relating to the editing
+environment:</p>
+
+<ul>
+    <li><strong>Disable player edits in map editor</strong>. This
+        option, when checked, has the following effects <strong>only</strong>
+        while in the full screen map editor (the Play command
+        from the file menu still functions normally). <ul>
+            <li>When a collision test that involves inventory
+                occurs, the player's inventory is not changed.</li>
+            <li>When any &quot;Alter Map&quot; type function is
+                triggered, it will have no effect on map tiles.</li>
+            <li>For functions that have &quot;Remove after
+                use&quot; checked, the function is not removed.</li>
+            <li>For functions that require inventory to activate,
+                the inventory is not altered by the activation of
+                the special function.</li>
+            <li>All <a href="MapEdit4.htm">player map
+                interactions</a> are completely disabled.</li>
+        </ul>
+        <p>Any changes that *do* take place while the map editor
+        is active are permanent and will be persisted to file
+        when the project/map is saved.</p>
+    </li>
+    <li><strong>Display warning message before playing map</strong>.
+        Using the &quot;Play&quot; command from within the editor
+        environment can be risky. This is one reason for having
+        the new &quot;Make Shortcut&quot; command in version 1.2.
+        Running the game from a shortcut plays the game in a
+        separate process. When playing the game in a separate
+        process, the game is loaded from a file and never saved
+        so there is no risk of corrupting the project or making
+        unintended permanent changes. For this reason I decided
+        to display a warning message whenever the play command is
+        selected from withing the GameDev development
+        environment. Realizing, however, that this message could
+        quickly become very annoying to more experienced
+        developers who know what they're doing, this option is
+        provided to turn that message off. GameDev does its best
+        to store and restore the project each time the Play
+        command is executed from within the development
+        environment, but who can predict everything that might
+        happen.</li>
+    <li><strong>Store project backup in memory while playing</strong>.
+        By default, GameDev attempts to export the current
+        project (all data stored in the GDP and MAP files) into
+        an XML string in memory before executing the Play command
+        from within the development environment. When control
+        returns to the development environment, GameDev will
+        re-import all data from the XML string back into the
+        active project, undoing any changes that may have
+        occurred while playing the game. There are a few reasons
+        you might want to disable this:<ul>
+            <li>If you are working on a large project, exporting
+                the data to an XML string might be time consuming
+                and a real memory hog.</li>
+            <li>You might want the changes that take place during
+                play to be permanent.</li>
+            <li>You might not have an XML parser installed (I
+                believe that comes with IE5.0 and later).</li>
+            <li>There might be (*gasp*) an undiscovered bug in
+                the process that results in imperfect restoration
+                of the project.</li>
+        </ul>
+    </li>
+    <li><strong>Default full screen display mode.</strong> Some
+        video cards do not support 24-bit color, others do not
+        support 32-bit color, but most seem to support 16-bit
+        color so I originally settled on this as a hard coded
+        default for playing games and editing maps and graphics.
+        But if one neglected to select 24- or 32-bit color before
+        editing a tileset, the tileset would lose valuable color
+        information. Furthermore, there was no method, short of
+        writing a vbs script, to play the game in 24- or 32-bit
+        color. For these reasons I have added this option in
+        order to supply an easy way to indicate to GameDev which
+        video mode you want to use most often. This mode will be
+        selected by default when editing tilesets and maps. The
+        option to select a mode other than the default still
+        exists on the editor dialogs. A command line switch has
+        also been added so that playing a game can also select a
+        particular video mode, or use the user's default
+        specified in this dialog. That command line switch is
+        utilized by the <a href="Shortcut.htm">Make Shortcut</a>
+        command.</li>
+</ul>
+</body>
+</html>

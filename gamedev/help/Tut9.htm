@@ -1,0 +1,184 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>GameDev Tutorial Step 9 - Adding Script Code</title>
+</head>
+
+<body bgcolor="#D3DFFA">
+
+<h2><font face="Verdana">GameDev Tutorial - Creating a Simple
+Game</font></h2>
+
+<table border="0" cellpadding="0" cellspacing="6">
+    <tr>
+        <td><img src="Images/Script.GIF" width="100" height="106"></td>
+        <td valign="top"><h3><font face="Verdana">Step 9 - Adding
+        Script Code</font></h3>
+        <p><font face="Verdana">With all the features in GameDev,
+        sometimes what you really want to do just isn't supported
+        automatically in the set of basic functionality. Trying
+        to predict everything that one might want to implement in
+        a scrolling game, and trying to implement a system that
+        supports these inherently would be far too big a task for
+        this programmer. In hopes of remedying this problem to
+        some extent, VBScript support is included in GameDev to
+        open up all the internal workings of the game engine to
+        custimized code. This won't solve everything, but does go
+        a long way past GameDev's intrinsic functionality and
+        interface.</font></p>
+        </td>
+    </tr>
+</table>
+
+<p><font face="Verdana">This step of the tutorial will take you
+through a simple customization via script code. By no means is
+this a complete reference to scripting with GameDev or even a
+thorough representation of the scripting capability within
+GameDev. A complete scripting reference for VBScript can be found
+at </font><a href="http://msdn.microsoft.com/scripting/"><font
+face="Verdana">http://msdn.microsoft.com/scripting/</font></a><font
+face="Verdana">. Scripting runtime components can also be
+downloaded there, should you be lacking those. Of course that
+reference has no information about how scripting relates to
+GameDev. There will be no complete documentation for GameDev's
+scripting support in the initial release. Instead, much
+information can be obtained by loading GameDev.EXE into any COM
+object viewer. Referencing the &quot;Scrolling Game Development
+Kit&quot; (GameDev.exe) from a Microsoft Visual Basic project
+will allow you to browse through all the objects via the Object
+Viewer (F2 key). The object model exposed through COM is similar
+if not identical to that exposed to the scripting environment.
+From within the object viewer you can see the various object,
+methods and properties supported by GameDev. These will all have
+short &quot;Help Strings&quot; associated with them that may be
+helpful in understanding how to use them. (Furthermore, since
+this is an open source project, you can see *exactly* how
+everything works if you're a savvy VB developer.)</font></p>
+
+<p><font face="Verdana">Anyway, getting back on track, thinking
+of something that would require script to implement in GameDev.
+Say you want to drop a &quot;bomb&quot; (or object of some sort)
+out the bottom of your ship whenever you press button number 2
+(which is defined as the Space key by default). You may have
+noticed that there are 4 configurable buttons in the controller
+configuration dialog, but only 1 is supported intrinsically by
+GameDev (in the action parameters for a special function). Let's
+make button number 2 &quot;drop&quot; a new sprite out of the
+ship.</font></p>
+
+<p><font face="Verdana">The easiest way to do this with a minimum
+of scripting is to define a special function that creates the
+sprite near the ship and have the script activate this function
+when button 2 is pressed. But before this special function can
+exist, we need a graphic and a sprite. Use the tileset editor to
+create a tile that looks like the object you want to drop out of
+the ship. Then use the sprite/path editor to create a
+single-state sprite consisting of the one tile on
+&quot;TutorialPath1&quot; (the path selected will be irrelavent).
+The sprite should use &quot;TutorialSolid&quot; as the Solidity
+Definition and &quot;Controlled by&quot; should be set to
+&quot;Inert&quot;. The movement speed should be all the way up,
+gravity slightly in the down direction and Inertia all the way
+up. Name the template &quot;Bomb&quot; and the sprite
+&quot;Bomb1&quot;. Do not check the &quot;Initial instance&quot;
+checkbox.</font></p>
+
+<p><font face="Verdana">Now go to the map editing dialog and
+select &quot;TutorialMap&quot;. Go to the &quot;Special
+Functions&quot; tab and select the &quot;Closed&quot; function
+(we just need an unused function since it won't be activated by
+the player touching it). All action parameters should be blank.
+In the Effect, function should be &quot;Create sprite&quot;.
+Select the Bomb1 sprite and check the box to set the start
+position (this is why the path for the sprite is irrelavent, we
+override the start position). Enter 0 for the X and 16 for the Y.
+Select &quot;Relative to player&quot;. This causes the bomb
+sprite to start directly under the ship, 16 pixels below the top
+(halfway). Click Update and save all files in the project.</font></p>
+
+<p><font face="Verdana">Now the function is done and we need to
+write script to activate it at the appropriate time. I've also
+added script to remove the bomb when it hits solid ground. The
+following code can be entered in any text editor and saved as
+&quot;GameDev.vbs&quot; in the GameDev directory:</font></p>
+
+<pre>Sub Player_OnControllerMove(OldActions, NewActions)
+   If ((OldActions And eActionBits.ACTION_BUTTON2) = 0) And _
+      ((NewActions And eActionBits.ACTION_BUTTON2) &lt;&gt; 0) Then
+      ' Button 2 has just been pressed, activate the &quot;Closed&quot; function which we said creates the sprite
+      ProjectObj.GamePlayer.ActivateFunction ProjectObj.Maps(&quot;TutorialMap&quot;).Specials(&quot;Closed&quot;)
+   End If
+End Sub
+
+' After each time the sprites move, we want to check and see if the bomb(s)
+' have hit anything solid, and remove those that have.
+Sub Player_OnAfterMoveSprites()
+   Dim I
+   Dim Lyr, Spr, Def
+
+   ' Get the one layer object
+   Set Lyr = ProjectObj.Maps(&quot;TutorialMap&quot;).MapLayer(&quot;Main&quot;)
+
+   I=0
+   ' Cycle through each sprite (Don't use For because that doesn't work when bounds change)
+   Do While I&lt;Lyr.SpriteCount
+      Set Spr = Lyr.Sprite(I)
+      Set Def = Spr.rDef
+      ' If the sprite is a bomb...
+      If Def.Name = &quot;Bomb1&quot; Then
+         ' Is the pixel below the bottom left corner or the bottom right corner solid?
+         If Def.SolidTest(Spr.X,Spr.Y+32) Or Def.SolidTest(Spr.X+31, Spr.Y+32) Then
+            ' The bomb hit bottom, remove it
+            Lyr.RemoveSprite I
+         Else
+            ' Only increase the index when we haven't removed a sprite
+            I=I+1
+         End If
+      Else
+         I=I+1
+      End If
+   Loop
+End Sub
+
+' This links the OnControllerMove and OnAfterMoveSprites events to the code
+' above based on the name &quot;Player&quot;
+HostObj.SinkObjectEvents ProjectObj.GamePlayer, &quot;Player&quot;
+' This says &quot;We're done defining all the functions and linking objects
+' so connect all the events now&quot;
+HostObj.ConnectEventsNow()
+
+' This starts playing the game
+ProjectObj.GamePlayer.Play 16</pre>
+
+<p><font face="Verdana">Now when you run &quot;GameDev
+Tutorial.gdp /p&quot; it will automatically run this script after
+loading the project Tutorial.gdp. When the script is complete
+GameDev exists. Notice that the last line of the script plays the
+game, so &quot;GameDev Tutorial.gdp /p&quot; will play the game,
+using the script, and then exit. One nice thing about not
+requiring the name of the VBS file is that, once GameDev has
+registered the GDP file type (which it does when you first run it
+-- if you said &quot;no&quot; and need a second chance at that,
+delete HKEY_CURRENT_USER\Software\VB and VBA Program
+Settings\GameDev from the registry) you can right-click on a GDP
+file and select &quot;play&quot; and it will automatically pick
+up GameDev.vbs in the GameDev.exe directory if it exists. If you
+would like to name the script something other than GameDev.vbs,
+you can execute this script with a game project using
+&quot;GameDev Tutorial.gdp /p MyScript.vbs&quot;.</font></p>
+
+<p><font face="Verdana">Note: As of GameDev version 1.2 you can
+simply use the Make Shortcut command to </font><a
+href="Shortcut.htm"><font face="Verdana">create a shortcut</font></a><font
+face="Verdana"> to play the project using a specified script
+file.</font></p>
+
+<p><font face="Verdana">This concludes the GameDev tutorial.</font></p>
+
+<p><a href="Tutorial.htm"><font face="Verdana">Return to the main
+tutorial page.</font></a></p>
+</body>
+</html>

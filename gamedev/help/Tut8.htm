@@ -1,0 +1,145 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>GameDev Tutorial Step 8 - Adding Multimedia Content</title>
+</head>
+
+<body bgcolor="#D3DFFA">
+
+<h2><font face="Verdana">GameDev Tutorial - Creating a Simple
+Game</font></h2>
+
+<table border="0" cellpadding="0" cellspacing="6">
+    <tr>
+        <td><img src="Images/Music.GIF" width="181" height="142"></td>
+        <td valign="top"><h3><font face="Verdana">Step 8 - Adding
+        Multimedia Content</font></h3>
+        <p><font face="Verdana">Video and audio clips and
+        especially background music can strongly enhance the mood
+        and ambience of a game. GameDev has limited support for
+        multimedia effects. Each map may have background music
+        assigned, and any special function may change that music
+        or play its own media clip. You should note, however,
+        that not all systems have equivalent multimedia support.
+        For instance, some systems can play digital audio at the
+        same time as MIDI, but others cannot (in certain
+        circumstances). Also, some systems may not have (for
+        instance) the MPEG Layer 3 WAV Codec installed, meaning
+        that, if you record your WAV files in a certain format,
+        you should make sure that format will be available on the
+        target system.</font></p>
+        </td>
+    </tr>
+</table>
+
+<p><font color="#000000" face="Verdana">Select &quot;Media
+Clips&quot; from the view menu. Media clips are dealt with from
+two perspectives. On one side, a media clip is created in the
+project, assigned playback parameters, given a name and
+associated with a filename. On the other side, an existing clip
+in the project can be associated with a special function,
+assigned as the background music, or the background music clip
+can be re-associated with a different filename in response to a
+special function.</font></p>
+
+<p><font color="#000000" face="Verdana">As of version 1.2, media
+clips can also be assigned to sprite collisions and player map
+interactions (tile interactions with the player). These two
+features are not, however, included in this tutorial. They are
+very easy to use. Find them on the </font><a href="CollDef.htm"><font
+color="#000000" face="Verdana">Collision Definition Dialog</font></a><font
+color="#000000" face="Verdana"> and </font><a href="MapEdit4.htm"><font
+color="#000000" face="Verdana">Player Map Interactions</font></a><font
+color="#000000" face="Verdana"> tab in the </font><a
+href="MapEdit1.htm"><font color="#000000" face="Verdana">Edit
+Maps Dialog</font></a></p>
+
+<p><font color="#000000" face="Verdana">So, we will first create
+and define the media clips that will be available. Find an
+arbitrary MID file that you would like to use as the background
+music. MP3 and WAV files would also be supported, depending on
+installed media player support (GameDev uses quartz.dll --
+Microsoft® ActiveMovie -- for media playback). However in this
+case a small and simple file is preferred. Since many sound cards
+support playing MIDI and digital audio simultaneously and
+seamlessly, this is a good choice for background music. I've seen
+some difficulties in trying to play multiple MP3 files at the
+same time. If you don't have a suitable MID file, feel free to
+reference the MID file included with the completed tutorial
+project.</font></p>
+
+<p><font color="#000000" face="Verdana">When you have decided on
+background music, type the name &quot;BackgroundMusic&quot; into
+the &quot;Clip name&quot; field. Click the browse
+(&quot;...&quot;) button for the &quot;Media file&quot; field and
+locate the file you decided on for background music. The path
+will be stored relative to the project (GDP) file. For this
+reason it's a good idea to put all files relavent to a project in
+the same directory. Maps are referred to in the same way, so it's
+easy to transfer projects from system to system. Check the
+&quot;Keep loaded&quot; box and the &quot;Play looping&quot; box.
+The &quot;Keep loaded&quot; box ensures that, if another clip
+suspends the music in order to play, the music will continue
+where it left off when it restarts, instead of starting over.
+Depending on your sound card (I think) you may want to move the
+volume slider down one pixel or farther. My current Sound Blaster
+Live! drivers apparently do not support 10000 distinct volumes
+and therefore only the last few pixels of the volume slider have
+any affect, and anything below that is silence. Microsoft
+documentation suggests that values from -10000 to 0 are valid
+values for volume so the slider must span this range. When ready,
+click the &quot;Add Clip&quot; button to add the media clip to
+the project.</font></p>
+
+<p><font color="#000000" face="Verdana">Now, for our second media
+clip, if you have a microphone you can record yourself saying
+&quot;Open Sesame&quot; (or do whatever you think is appropriate
+for the opening of the passageway in response to the staff). If
+not, you can use the WAV file that is included with the tutorial.
+Type the name &quot;OpenSesame&quot; into clip name and browse
+for the &quot;Open Sesame&quot; WAV file. For this clip, turn off
+&quot;Keep loaded&quot; and &quot;Play looping&quot; and turn on
+&quot;Modal&quot; and &quot;Suspend other media to play&quot;.
+Modal will freeze the game while the clip plays and Suspend will
+stop the music while it plays. This is the safest option for a
+generic system where you aren't sure that MIDI and digital audio
+can be played simultaneously. I do suggest &quot;Modal&quot; for
+this particular clip, however, because the duration of seeing
+this particular function is quite short, and if the game proceeds
+while the clip plays, you will probably hear &quot;Open
+Sesame&quot; after you have already passed through the
+un-obstructed passageway. Checking the &quot;Suspend&quot; option
+is up to you. If you like, you can adjust the volume differently
+for this clip. When done, click &quot;Add Clip&quot; for a total
+of two media clips in the project.</font></p>
+
+<p><font color="#000000" face="Verdana">Now switch to the
+&quot;Assign Media&quot; tab. Select &quot;TutorialMap&quot; from
+the Maps list. All the functions on the map will be listed in the
+&quot;Special Functions&quot; box. Before jumping to there,
+though, select &quot;BackgroundMusic&quot; as the background
+music for this map. Now select &quot;OpenSesame1&quot; from the
+Special Functions list. Click the &quot;Play clip&quot; option
+and select &quot;OpenSesame&quot; in the &quot;Function media
+clip&quot; field. These changes take effect immediately.</font></p>
+
+<p><font color="#000000" face="Verdana">Those are all the media
+settings for this tutorial. Save the project (media settings are
+stored in the GDP file). Try playing the game with the new media
+clips added to the project. You should have background music, and
+&quot;Open Sesame&quot; should play when entering the obstructed
+passageway with the staff.</font></p>
+
+<p><font color="#000000" face="Verdana">This concludes step 8 of
+the GameDev tutorial - Adding Multimedia Content.</font></p>
+
+<p><a href="Tutorial.htm"><font color="#000000" face="Verdana">Return
+to the main tutorial page.</font></a></p>
+
+<p><a href="Tut9.htm"><font color="#000000" face="Verdana">Jump
+to the next step in the tutorial.</font></a></p>
+</body>
+</html>

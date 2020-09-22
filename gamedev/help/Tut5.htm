@@ -1,0 +1,353 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>GameDev Tutorial Step 5 - Defining Paths and Sprites</title>
+</head>
+
+<body bgcolor="#D3DFFA">
+
+<h2><font face="Verdana">GameDev Tutorial - Creating a Simple
+Game</font></h2>
+
+<table border="0" cellpadding="0" cellspacing="6">
+    <tr>
+        <td><img src="Images/Paths.GIF" width="165" height="188"></td>
+        <td valign="top"><h3><font face="Verdana">Step 5 -
+        Defining Paths and Sprites</font></h3>
+        <p><font face="Verdana">Paths created in the map editor
+        can be adjusted, renamed or deleted in the Sprites and
+        Paths dialog. Sprites can be attached to these paths and
+        defined in detail. This dialog is used to maintain all
+        the information about how a sprite moves, how it
+        animates, which graphics its composed of and more. Also
+        described in this step of the tutorial are the
+        distinctions between sprites, sprite definitions and
+        sprite templates.</font></p>
+        </td>
+    </tr>
+</table>
+
+<p><font color="#000000" face="Verdana">The Sprites and Paths
+dialog is yet another item in the View menu of the main Project
+window. When you bring it up you will see the two paths defined
+in the map in </font><a href="Tut3.htm"><font color="#000000"
+face="Verdana">step 3</font></a><font color="#000000"
+face="Verdana"> of the tutorial.</font></p>
+
+<p><font color="#000000" face="Verdana">Before beginning, it will
+be helpful to understand the differences between a sprite, a
+sprite definition and a sprite template.</font></p>
+
+<dl>
+    <dt><font color="#000000" face="Verdana">Sprite</font></dt>
+    <dd><font color="#000000" face="Verdana">This is a particular
+        instance of a graphic at a particular position in a
+        particular layer in the map, moving at a particular
+        velocity. It depends on its definition and template for
+        information on where to move next. These are not
+        persistent objects (at least not by default). They are
+        created at their respective starting positions each time
+        the map is loaded/initialized.</font></dd>
+    <dt><font color="#000000" face="Verdana">Sprite Definition</font></dt>
+    <dd><font color="#000000" face="Verdana">This links a sprite
+        to a template, and adds specific information about which
+        path to follow and whether an instance of the sprite
+        should be automatically created with the map. There can
+        be multiple sprites based on the same Sprite Definition.
+        The Sprite Definition is saved with the map and contains
+        all the information necessary to create a sprite
+        instance. Sprite definitions are not changed in the
+        process of playing a game -- they are static and
+        persistent (unless altered by script code).</font></dd>
+    <dt><font color="#000000" face="Verdana">Sprite Template</font></dt>
+    <dd><font color="#000000" face="Verdana">The majority of the
+        information about a sprite is defined here. Since there
+        can be many sprites with similar attributes, it's
+        efficient to separate this information off into a
+        singular point of reference. The Sprite Template contains
+        a reference to a </font><a href="Tut4.htm"><font
+        color="#000000" face="Verdana">Solidity Definition</font></a><font
+        color="#000000" face="Verdana"> (indicating which tiles
+        this type of sprite sees as solid), animation speed,
+        state definition information (how many states, how many
+        frames in each animated state, which tile in each
+        animation frame), what rules control the movement of this
+        type of sprite, movement speed, gravity, inertia, and a
+        collision category defining what collisions sprites of
+        this template are involved in. There can be multiple
+        Sprite Definitions associated with each Sprite Template.</font></dd>
+</dl>
+
+<p><font color="#000000" face="Verdana">In summary, a sprite
+template defines a type of sprite (Player, Platform, Slime
+Monster, Bouncy Ball); a sprite definition defines a place for a
+sprite based on a template (a platform that travels to the store,
+a Slime Monster that attacks the player at the entrance to this
+cave, a Bouncy Ball that follows these stairs); a sprite is a
+single runtime instance based on a definition (the first of two
+platforms that travel to the store, the Slime Monster that was
+created at the entrance to the cave after the first one was
+destroyed, the Bouncy Ball that happens to currently bouncing off
+the player).</font></p>
+
+<p><font color="#000000" face="Verdana">It's important to
+understand that the Sprite Definition <strong>and</strong> the
+Sprite Template are tied to the map because they are saved in the
+.MAP file, so it's impossible for sprites on different maps to
+share Sprite Definitions or Sprite Templates.</font></p>
+
+<p><font color="#000000" face="Verdana">So in order to proceed,
+we need to first create a Sprite Template. All the parameters in
+the lower half of the Sprites and Paths dialog correspond to the
+Sprite Template parameters. Starting on the &quot;Frames&quot;
+tab, let's create a sprite that represents the player.</font></p>
+
+<p><font color="#000000" face="Verdana">Select
+&quot;360°/10°&quot; from the dropdown list in the
+&quot;States&quot; field. This indicates that our sprite has 36
+states corresponding to 10-degree increments of rotation. Leave
+&quot;Separate states for accelerating and drifting&quot;
+unchecked -- this would be used if, for instance, our ship had
+images with fire behind it to indicate thrust when accelerating.
+This checkbox doubles the number of states and the number of
+images required to define the template (and </font><a
+href="tut1.htm"><font color="#000000" face="Verdana">step 1</font></a><font
+color="#000000" face="Verdana"> is quite long enough
+thank-you-very-much).</font></p>
+
+<p><font color="#000000" face="Verdana">By default
+&quot;Right&quot; is selected in the &quot;Editing sprite
+state&quot; field. This is the first state and that's what we
+want selected in order to automatically assign 36 states to the
+sprite. It would also be possible to assign graphics to each of
+these states manually, but that's a real pain for 36-state
+sprites.</font></p>
+
+<p><font color="#000000" face="Verdana">Select
+&quot;Tutorial&quot; from the tileset field. This indicates which
+tileset contains graphics for the currently selected state of the
+sprite. Each state can use its own tileset; again this would be a
+real pain for 36-state sprites, and of course we only have one
+tileset in the tutorial.</font></p>
+
+<p><font color="#000000" face="Verdana">Since our sprite does not
+animate, the animation speed is irrelavent. If we had multiple
+frames per state, the animation speed would indicate how fast
+these frames would cycle. Animation speed actually ends up being
+a combination of this setting and how fast the sprite is moving.
+If the animation represents a walking sprite, for instance, it
+should not be animating when its standing still.</font></p>
+
+<p><font color="#000000" face="Verdana">In the tiles at the
+right, locate the first image of the ship that starts the
+sequence of 36 images. It should be pointing to the right. Select
+this image (click on it) and click the &quot;36-State&quot;
+button to tranfer this tile and subsequent tiles into the 36
+states of this new Sprite Template. This function assumes that
+all states of the sprite use the same tileset. It appends one
+frame to the end of each state, starting with the current state
+and current tile. Then it increments the current state and
+current tile and repeats 35 times for a total of 36 states. In
+our case the one and only frame appropriate to each state is
+being transferred into that state.</font></p>
+
+<p><font color="#000000" face="Verdana">Now all the states are
+defined, it's time to move on to the Motion tab. Due to (what
+might be referred to as) a slight design flaw, there is some
+irregularity when it comes to defining which solidity definition
+to use (what goes in the &quot;Solid tiles&quot; field):</font></p>
+
+<ul>
+    <li><font color="#000000" face="Verdana">The <strong>reference</strong>
+        to a Solidity Definition (finding itself in the lower
+        half of this dialog) is included as part of the Sprite
+        Template</font></li>
+    <li><font color="#000000" face="Verdana">An actual Solidity
+        Definition itself applies to a specific Tileset</font></li>
+    <li><font color="#000000" face="Verdana">This means that once
+        a reference to a Solidity Defenition is chosen, the
+        Sprite Template is tied to a particular tileset
+        (referring to the tileset on which this sprite can travel
+        -- completely separate from the tileset defining this
+        sprite's graphics)</font></li>
+    <li><font color="#000000" face="Verdana">In order to list the
+        available solidity definitions for this Template, some
+        relationship to a tileset must be found</font></li>
+    <li><font color="#000000" face="Verdana">The tileset is
+        determined by which map and layer the sprite travels on,
+        which in turn is determined by the path referenced by the
+        Sprite Definition</font></li>
+</ul>
+
+<p><font color="#000000" face="Verdana">That means, even though
+there can be multiple Sprite Definitions referring to the same
+template, all definitions that refer to a particular template
+must travel on layers utilizing the same tileset. This is not
+enforced by the program and is therefore something you should be
+aware of; it's conceivable that different tilesets have different
+solidity definitions which map to the same tile indexes in which
+case there wouldn't be a problem even if the sprite definitions
+did exist on layers with different tilesets. Avoiding further
+digression, suffice it to say that picking a solidity definition
+can be tricky and it requires a related path.</font></p>
+
+<p><font color="#000000" face="Verdana">So anyway, to get a list
+of solidity definitions to assign to the template, select
+&quot;TutorialPath1&quot; from the &quot;Paths&quot; list. Then
+select &quot;TutorialSolid&quot; from the &quot;Solid Tiles&quot;
+dropdown list. From the &quot;Controlled by&quot; field select
+&quot;Input device&quot;. This correlates the movement of the
+sprite with some form of input, which is obviously what the
+player sprite should do. Turn the movement speed up to a position
+just a few clicks from the top. We want the player to move fast
+enough to maneuver comfortably, but not too fast to be difficult
+to control. Slide the gravity setting slightly toward the down
+direction -- this ship will travel in a low gravity environment.
+Finally turn the inertia all the way up. This is normal for a
+spaceship type sprite. The inertia should usually be quite near
+to the top. Setting it below the top would be useful, for
+instance, for a walking sprite that should not automatically
+continue to walk in it's current direction forever.</font></p>
+
+<p><font color="#000000" face="Verdana">That's the end of the
+sprite template for now. We don't care about collisions at the
+moment. Note that the &quot;Up requires solid&quot; checkbox
+should be unchecked here. This would be used for a sprite that
+needs to jump off of solid ground. Of course this doesn't apply
+to a spaceship which pushes against burning rocket fuel (or
+whatever other force you may want to make up).</font></p>
+
+<p><font color="#000000" face="Verdana">Type a name into the
+&quot;Template&quot; field; let's use &quot;Player&quot;. This
+&quot;Player&quot; template will be created and assigned to the
+sprite definition as it is created. Also give a name to the
+Sprite Definition we will be creating by typing
+&quot;Player1&quot; into the Name box. Check the &quot;Initial
+Instance&quot; checkbox -- this indicates that one sprite based
+on this definition should automatically be created when the map
+starts. Finally Click the &quot;Create Sprite&quot; button and
+everything is stored into the map.</font></p>
+
+<p align="center"><img src="Images/PlSprite.jpg" width="530"
+height="458"></p>
+
+<p align="center"><strong>Figure 1 - The Completed Player Sprite</strong></p>
+
+<p><font face="Verdana">That takes care of the player sprite. Now
+we need other sprites with which the player can interact. First
+we'll create another ship. We can reuse much of the same data in
+the current template. Click on &quot;TutorialPath2&quot; (our
+second sprite will start on the other path). Then on the motions
+tab lets just change a couple settings. First the solid tiles
+need to be selected again -- select &quot;TutorialSolid&quot;.
+Then switch &quot;Controlled by&quot; to &quot;Follow left
+wall&quot; and turn the gravity to &quot;None&quot;. Now we need
+names for the new template and the new Definition. Enter
+&quot;WallShip&quot; into the template field and
+&quot;WallShip1&quot; into the name field. Make sure
+&quot;Initial instance&quot; is checked and then create our
+second sprite with the create button. We now have two sprites
+using two separate templates.</font></p>
+
+<p><font face="Verdana">Let's create one last sprite -- a
+platform that the spaceship can ride on.
+&quot;TutorialPath2&quot; should still be selected. Back on the
+Frames tab, click the Clear All button. Select &quot;Single&quot;
+from the &quot;States&quot; dropdown list. Tileset should still
+be &quot;Tutorial&quot;. Drag the tile representing the top of a
+solid area into the &quot;State Preview&quot; box. (That's the
+square tile with a white line accross the top: <img
+src="Images/SteelTop.gif" width="32" height="32">) This isn't a
+great graphic for a platform, but it'll do. Then on the Motion
+tab, TutorialSolid should be the selected solidity definition,
+switch &quot;Controlled by&quot; to &quot;Follow path
+exactly&quot; and slide the movement speed down just below the
+center. Gravity should still be &quot;None&quot;. Enter
+&quot;Platform&quot; as the template name and
+&quot;Platform1&quot; as the sprite definition name. Make sure
+&quot;Initial instance&quot; is checked and create the sprite.</font></p>
+
+<p><font face="Verdana">Now we need to go back and be concerned
+with collision categories. Something needs to indicate that the
+&quot;Platform&quot; type of sprite is something that can carry a
+&quot;Player&quot; type of sprite. Click on the Collisions tab
+and click on the &quot;Define...&quot; button. You can also reach
+this screen be selecting &quot;Collision Definitions&quot; from
+the View menu on the main project window.</font></p>
+
+<p><font face="Verdana">&quot;TutorialMap&quot; should be
+selected as the current map for which collisions are being
+defined. (Collision definitions are saved with the Map file.) We
+will define 3 collision classes, and define 2 collisions among
+them. To create the collision classes (there are actually 16
+predefined classes, we simply name them), select &quot;Class
+1&quot; from the Collision Class Names box. Type
+&quot;Player&quot; in place of &quot;Class 1&quot;. Similarly
+change &quot;Class 2&quot; to &quot;Bouncer&quot; and &quot;Class
+3&quot; to &quot;Platform&quot;.</font></p>
+
+<p><font face="Verdana">Now click the &quot;Add New&quot; button
+to create a collision definition. The &quot;Sprite A Class&quot;
+should be &quot;Player&quot; and the &quot;Sprite B Class&quot;
+should be Bouncer. Check the box for &quot;A and B swap
+velocities (bounce)&quot;. Then click the &quot;Save&quot; button
+and we now have a collision test that makes &quot;Player&quot;
+bounce off any &quot;Bouncer&quot;. Add another collision test,
+this time A=Player and B=Platform. Check the box for &quot;A
+rides on B&quot; and save this. This is the one that causes the
+platform to act as a platform with respect to the player sprite.
+The collision tests are defined and now we need to classify the
+sprites.</font></p>
+
+<p><font face="Verdana">Back on the &quot;Sprites and Paths&quot;
+dialog, select the &quot;Player1&quot; sprite and click
+&quot;Load Sprite&quot;. On the Collisions tab, check the
+collision category box for &quot;Player&quot; and then click
+&quot;Update Sprite&quot; (This also updates the template).
+Similarly, update &quot;WallShip&quot; to be in the
+&quot;Bouncer&quot; category and &quot;Platform&quot; to be in
+the &quot;Platform&quot; category.</font></p>
+
+<h4><font face="Verdana">Summary</font></h4>
+
+<p><font face="Verdana">Those are all the sprites for the
+tutorial. We've used the two paths defined when creating the map.
+One path determined the starting point for the player, and the
+other path determined the starting point for a ship that follows
+the left wall, as well as the complete route for a moving
+platform that the player will be able to ride on. In addition we
+defined two collision tests to perform. The first causes the
+player and the &quot;WallShip&quot; to bounce off each other when
+they come into contact, and the second causes the player to ride
+on the platform when it comes into contact with that.</font></p>
+
+<p><font face="Verdana">We've ended up with three distinct sprite
+templates, each associated with a single definition. Each
+definition automatically creates one instance of the sprite when
+the map is started. (The only way for multiple instances to be
+created using a single definition is through a </font><a
+href="Tut7.htm"><font face="Verdana">special function</font></a><font
+face="Verdana">, a collision definition or script code creating
+another instance.) If you like, you <strong>could</strong> add
+another path to the map (adjacent to the wall) and make another
+sprite that follows the left wall based on the same
+&quot;WallShip&quot; template, calling the definition
+&quot;WallShip2&quot;.</font></p>
+
+<p><font face="Verdana">Now is a good time to save everything
+again. The sprite definitions went into the map, so the MAP file
+would be the most important thing to save at this point.</font></p>
+
+<p><font face="Verdana">This concludes Step 5 of the GameDev
+tutorial - Defining Paths and Sprites.</font></p>
+
+<p><a href="Tutorial.htm"><font face="Verdana">Return to the main
+tutorial page.</font></a></p>
+
+<p><a href="Tut6.htm"><font face="Verdana">Jump to the next step
+in the tutorial.</font></a></p>
+</body>
+</html>

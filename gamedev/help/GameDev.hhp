@@ -1,0 +1,100 @@
+[OPTIONS]
+Binary Index=No
+Compatibility=1.1 or later
+Compiled file=GameDev.chm
+Contents file=GameDev.hhc
+Default topic=Intro.htm
+Display compile progress=No
+Full-text search=Yes
+Index file=GameDev.hhk
+Language=0x409 English (United States)
+Title=Scrolling Game Development Kit Help
+
+
+[FILES]
+Intro.htm
+Tutorial.htm
+Tut2.htm
+Tut3.htm
+Tut4.htm
+Tut5.htm
+Tut6.htm
+Tut7.htm
+Tut8.htm
+Tut9.htm
+Tut1.htm
+CollDef.htm
+CtrlCnfg.htm
+FAQ.htm
+GrpTile.htm
+MachTile.htm
+MapEdit1.htm
+MapEdit2.htm
+MapEdit3.htm
+MapEdit4.htm
+MapEdit5.htm
+Media.htm
+Player.htm
+Project.htm
+Sprites1.htm
+Sprites2.htm
+Sprites3.htm
+Sprites4.htm
+TileAnim.htm
+TileImp.htm
+TSDisp.htm
+TSEdit1.htm
+TSEdit2.htm
+TSMatch.htm
+TechSupt.htm
+Options.htm
+Shortcut.htm
+WhatsNew.htm
+
+[ALIAS]
+IDH_CollDef=CollDef.htm
+IDH_CtrlCnfg=CtrlCnfg.htm
+IDH_FAQ=FAQ.htm
+IDH_GrpTile=GrpTile.htm
+IDH_Intro=Intro.htm
+IDH_MachTile=MachTile.htm
+IDH_MapEdit1=MapEdit1.htm
+IDH_MapEdit2=MapEdit2.htm
+IDH_MapEdit3=MapEdit3.htm
+IDH_MapEdit4=MapEdit4.htm
+IDH_MapEdit5=MapEdit5.htm
+IDH_Media=Media.htm
+IDH_Options=Options.htm
+IDH_Player=Player.htm
+IDH_Project=Project.htm
+IDH_Shortcut=Shortcut.htm
+IDH_Sprites1=Sprites1.htm
+IDH_Sprites2=Sprites2.htm
+IDH_Sprites3=Sprites3.htm
+IDH_Sprites4=Sprites4.htm
+IDH_TechSupt=TechSupt.htm
+IDH_TileAnim=TileAnim.htm
+IDH_TileImp=TileImp.htm
+IDH_TSDisp=TSDisp.htm
+IDH_TSEdit1=TSEdit1.htm
+IDH_TSEdit2=TSEdit2.htm
+IDH_TSMatch=TSMatch.htm
+IDH_Tut1=Tut1.htm
+IDH_Tut2=Tut2.htm
+IDH_Tut3=Tut3.htm
+IDH_Tut4=Tut4.htm
+IDH_Tut5=Tut5.htm
+IDH_Tut6=Tut6.htm
+IDH_Tut7=Tut7.htm
+IDH_Tut8=Tut8.htm
+IDH_Tut9=Tut9.htm
+IDH_Tutorial=Tutorial.htm
+
+[MAP]
+#include HelpMap.h
+
+[TEXT POPUPS]
+Binary Index=No
+
+[INFOTYPES]
+

@@ -1,0 +1,230 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Player Settings</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>Player Settings</h2>
+
+<p>This dialog is used to define the map where gameplay starts,
+what the inventory looks and acts like, and a few other global
+gameplay-related settings.</p>
+
+<p>First of all the player needs to know where to start the game.
+All this requires is an indication of which map the game starts
+on. The map itself knows the starting position for the player
+sprite. Then there are a couple miscellaneous global settings
+used by the player. The scroll margins determine how many pixels
+there are between the edge of the map display and the edge of the
+player sprite before the map starts to scroll. The smaller these
+values are, the closer the edge of the sprite can get to the edge
+of the display area before causing the map to scroll. The map
+will stop scrolling if the player reaches the edge of the map.
+The player can then travel right up to the edge of the display if
+the map solidity allows it (even off the edge, so make sure the
+edges are solid). The &quot;Quantity Margin&quot; determines how
+certain aspects of the inventory are displayed. This margin is
+used to separate the icon (or word) representing an inventory
+item from the bar or text indicating the quantity owned.</p>
+
+<p>The remainder of the dialog is dedicated to defining the
+inventory. To create an inventory item, first enter all the
+parameters for the item, then click New to create the item and
+add it to the project using the given parameters. The list below
+describes the parameters:</p>
+
+<ul>
+    <li>Name: The name by which this inventory item can be
+        referred to within the project. This name must be unique
+        within the space of all inventory item names in the
+        project.</li>
+    <li>Icon Tileset: If the inventory display for this item is
+        represented by a tile, this indicates the tileset in
+        which the tile is contained.</li>
+    <li>Icon Index: This selects an individual tile from the
+        tileset that will be used to represent the item in the
+        inventory display. Use the arrows to cycle through the
+        tiles in the tileset. The currently selected tile is
+        displayed below the field.</li>
+    <li>Max Quantity: Determines the maximum number of this item
+        that the player can own.</li>
+    <li>Initial Quantity: Determines how many of this item the
+        player owns when the game begins.</li>
+    <li>Quantity Display: Determines how this inventory item is
+        displayed. See below (after this list) for a detailed
+        description of each option.</li>
+    <li>Icon count per repetition (M): If Quantity Display is set
+        to &quot;Index to M; repeat...&quot; this value
+        determines how many sequential tiles there are in the
+        tileset representing various quantities of this item. For
+        instance if you have one tile representing a single key
+        and another tile right after that representing two keys,
+        you would set the icon index to the tile for the single
+        key. Then set this value to 2. Then when the player has 3
+        keys, two tiles will be drawn to represent the quantity
+        owned of this item: one depicting two keys and one
+        depicting one key.</li>
+    <li>Bar Color: If a bar is used to represent quantity owned
+        for this item, this is the color of the bar.</li>
+    <li>Bar Background: The bar has a fixed maximum size. The
+        background of the bar always occupies the entire maximum
+        size while the bar itself represents what portion of the
+        maximum is owned. This setting determines this background
+        color.</li>
+    <li>Bar Outline: If the background is insufficient to set off
+        the bar from the background of the display, you can add
+        an outline of any color around the edge of the bar
+        background.</li>
+    <li>Bar Length: Determines how long, in pixels, the maximum
+        langth of the bar is. For vertical bars, this is the
+        height and for horizontal bars this is the width. This
+        size determines how big the bar background is.</li>
+    <li>Bar Thickness: Determines how thick, in pixels, the bar
+        background and bar are. For a vertical bar this is the
+        width and for a horizontal bar this is the height.</li>
+    <li>Coordinates to display inventory item: Where on the
+        display the inventory item should be drawn. This may
+        overlap the map since the inventory is drawn after the
+        map is drawn. Just make sure that whatever X,Y
+        coordinates you choose, there is sufficient room for the
+        icon, the margin, and the display of the quantity.
+        Remember the screen resolution is 640x480.</li>
+</ul>
+
+<p>The &quot;Quantity Display&quot; field deserves a more
+detailed description. Many of the other parameters interact with
+and depend on the value in this field. Listed below are the
+different values for Quantity Display.</p>
+
+<ul>
+    <li>None: Do not display this item in the inventory, just
+        track ownership of the item invisibly.</li>
+    <li>Horizontal bar above: Display the item's icon at the
+        specified coordinates, and display the quantity owned of
+        this item with a horizontal bar above the icon according
+        to the specified &quot;Bar&quot; parameters. The bar is
+        aligned with the left side of the icon and fills from
+        left to right.</li>
+    <li>Horizontal bar below: Display the item's icon at the
+        specified coordinates, and display the quantity owned of
+        this item with a horizontal bar below the icon according
+        to the specified &quot;Bar&quot; parameters. The bar is
+        aligned with the left side of the icon and fills from
+        left to right</li>
+    <li>Horizontal bar at right: Display the item's icon at the
+        specified coordinates, and display the quantity owned of
+        this item with a horizontal bar to the right of the icon
+        according to the specified &quot;Bar&quot; parameters.
+        The bar is centered at the right side of the icon and
+        fills from left to right.</li>
+    <li>Vertical bar above: Display the item's icon at the
+        specified coordinates, and display the quantity owned of
+        this item with a vertical bar above the icon according to
+        the specified &quot;Bar&quot; parameters. The bar is
+        centered above the icon and fills from bottom to top.</li>
+    <li>Vertical bar at right: Display the item's icon at the
+        specified coordinates, and display the quantity owned of
+        this item with a vertical bar to the right of the icon
+        according to the specified &quot;Bar&quot; parameters.
+        The bar in aligned with the bottom of the icon and fills
+        from bottom to top.</li>
+    <li>Vertical bar at left: Display the item's icon at the
+        specified coordinates, and display the quantity owned of
+        this item with a vertical bar to the left of the icon
+        according to the specified &quot;Bar&quot; parameters.
+        The bar is aligned with the bottom of the icon and fills
+        from bottom to top.</li>
+    <li>Text above: Display the item's icon at the specified
+        coordinates, and display the quantity owned of this item
+        as numeric text above the icon. Text is aligned with the
+        left side of the icon.</li>
+    <li>Text below: Display the item's icon at the specified
+        coordinates, and display the quantity owned of this item
+        as numeric text below the icon. The text is aligned with
+        the left side of the icon.</li>
+    <li>Text at left: Display the item's icon at the specified
+        coordinates, and display the quantity owned of this item
+        as numeric text to the left of the icon. The text is
+        centered to the left of the icon.</li>
+    <li>Text at right: Display the item's icon at the specified
+        coordinates, and display the quantity owned of this item
+        as numeric text to the right of the icon. The text is
+        centered to the right of the icon.</li>
+    <li>Repeat icon to right: The icon is drawn at the specified
+        coordinates if the player owns at least one. Quantity
+        Owned determines how many more icons are drawn to the
+        right of it. The total number of icons drawn represent
+        the number owned by the player. Obviously this only works
+        for items with small maximum quantities. For each item
+        that the player *could* own, but does not own, tile
+        number 0 (from the same tileset) is drawn in that
+        position instead. (MaxQuantity tiles are always drawn
+        onto the screen, Quantity Owned determines how many are
+        the specified icon vs. tile #0)</li>
+    <li>Repeat icon above: Same as &quot;Repeat icon to
+        right&quot; except additional items/slots are drawn above
+        the first one.</li>
+    <li>Repeat icon below: Same as &quot;Repeat icon to
+        right&quot; except additional items/slots are drawn below
+        the first one.</li>
+    <li>Increase icon index: A tile is always drawn at the
+        specified coordinates. If the player does not own any of
+        the item, the specified tile is drawn. If the player owns
+        one of the item, the following tile is drawn etc. The
+        count of the item owned by the player is added to the
+        tile index drawn.</li>
+    <li>Index to M; repeat at right: This is somewhat similar to
+        &quot;Repeat icon to right&quot;, but each
+        &quot;slot&quot; can represent more than 1 item. If M
+        (specified in the field under &quot;Quantity
+        Display&quot;) is 2 for instance, the following will be
+        true: owning 1 of this item is represented by the
+        specified icon being drawn once; owning 2 is represented
+        by the subsequent icon being drawn once; owning 3 is
+        represented by the subsequent tile being drawn once and
+        then the specified icon being drawn to the right; owning
+        4 is represented by the subsequent tile being drawn once
+        at the specified coordinates and once to the right. The
+        remainder of the space that could be occupied (indicated
+        by MaxCount divided by M) is filled in with tile number 0
+        when not used.</li>
+    <li>Index to M; repeat above: Same as &quot;Index to M;
+        repeat at right&quot; except additional tiles/slots are
+        positioned above the first.</li>
+    <li>Index to M; repeat below: Same as &quot;Index to M;
+        repeat at right&quot; except additional tiles/slots are
+        positioned below the first.</li>
+</ul>
+
+<p>If an inventory item does not specify a tileset, the item name
+text will be used to represent it in the inventory display
+(Quantity Display in this case should be bar or text).</p>
+
+<p>The arrow buttons at the bottom of the dialog can be used to
+navigate through existing inventory items. New creates a new item
+based on the displayed parameters and adds it to the project.
+Delete deletes the currently displayed item (indicated by the
+index in the title of the frame: &quot;Inventory Item 1 of
+2&quot; for instance). The Update button updates the current item
+to the displayed parameters. The arrow buttons do an implicit
+update before moving to the new item, as does the OK button.</p>
+
+<p>Since all these parameters are project-wide they are saved in
+the GDP (project) file and have no connection to a map, except
+that the starting map name must exist in the proect.</p>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>GameDev Tutorial Step 2 - Defining Tile Matching</title>
+</head>
+
+<body bgcolor="#D3DFFA">
+
+<h2><font face="Verdana">GameDev Tutorial - Creating a Simple
+Game</font></h2>
+
+<table border="0" cellpadding="0" cellspacing="6">
+    <tr>
+        <td><img src="Images/TileMoon.GIF" width="166"
+        height="147"></td>
+        <td valign="top"><h3><font face="Verdana">Step 2 -
+        Defining Tile Matching</font></h3>
+        <p><font face="Verdana">Tile matching is defined in
+        separate tile matching windows. There's one window to
+        create, delete and rename tile matching definitions, as
+        well as load existing definitions for editing. This is
+        called the management window. The other window is used to
+        perform the actual definition of matching tiles. Both
+        windows will be described in this step of the tutorial.</font></p>
+        </td>
+    </tr>
+</table>
+
+<p><font color="#000000" face="Verdana">To get started, select
+&quot;Tile Matching&quot; from the view menu in the main project
+window. This brings up the tile matching management window. There
+are currently no &quot;TileMatch&quot; objects defined. There
+should be one tileset containing the graphics from step 1 of the
+tutorial. This tileset was named &quot;Tutorial&quot;. If you do
+not have this tileset in the project, you can load it from the
+existing image: Select &quot;TileSets&quot; from the View menu in
+the main project window; enter the name &quot;Tutorial&quot; in
+the tileset name box; ensure tile width and height are both 32;
+click &quot;Load Image&quot; and locate Tutorial.bmp.</font></p>
+
+<p><font face="Verdana">To create a tile matching definition or
+&quot;TileMatch&quot; for the Tutorial tileset, click on
+&quot;Tutorial&quot; in the &quot;Available Tilesets&quot; box
+and click the Create button. When prompted for the name, enter
+something like &quot;TutorialMatch&quot;. When this step is done
+the TileMatch definition screen appears.</font></p>
+
+<p><img src="Images/TileMach.GIF" align="left" hspace="6"
+width="359" height="466"><font face="Verdana">In this dialog
+there are 15 slots into which tiles can be categorized. For the
+sake of reference let's give them these names, respectively, from
+top left in reading order to the bottom right:</font></p>
+
+<p><font face="Verdana">Top-Left, Top, Top-Right, Southeast Inner
+Corner, Southwest Inner Corner, Left, Center, Right, Northeast
+Inner Corner, Northwest Inner Corner, Bottom-Left, Bottom,
+Bottom-Right, Northwest-Southeast Joiner, Northeast-Southwest
+Joiner.</font></p>
+
+<p><font face="Verdana">Images in the bottom box represent all
+the tiles in the tileset. Drag images from here in order to
+classify them as part of the TileMatch. They can be dragged into
+one of the slots at the top to categorize the tile in that slot.
+They can also be dragged into the &quot;Tiles in current
+slot&quot; box in which case they will be classified into the
+currently selected slot. This box displays all tiles in the
+currently selected slot and allows you to remove tiles from the
+slot by dragging them back to the tileset box.</font></p>
+
+<p><font face="Verdana">Tiles can also be dragged into the
+&quot;Unclassified tiles&quot; box. This is the category reserved
+for tiles that can be affected by this tilematch, but are never
+drawn onto the screen by using the tilematch.</font></p>
+
+<p><font face="Verdana">Using the image above as a guide, drag
+tiles from the tileset at the bottom into the slots at the top.
+There should be only one tile per slot unless you have defined
+two tiles for the &quot;Center&quot; slot as was done in the
+included Tutorial.bmp. The graphics created in step one only
+provided for one tile per slot excepting the center slot.
+Although the tutorial tileset contains some extra tiles without
+the smoothed diagonal lines which duplicate existing tiles that
+do have diagonal lines, these should not be included in the
+tilematch as they will not fit very nicely with the rest of the
+tiles.</font></p>
+
+<p><font face="Verdana">All the tiles that are half black and
+half grey with a diagonal edge belong in the corner positions
+&quot;Top-Left&quot;, &quot;Top-Right&quot;,
+&quot;Bottom-Left&quot; and &quot;Bottom Right&quot;. Edge tiles
+go between these. The tile with an &quot;exterior pixel&quot;
+(light grey) at the top-left, and a constant grey covering the
+bottom right half of the tile goes in the &quot;Southeast Inner
+Corner&quot; slot. Three similar tiles follow the same pattern.
+The last slot has &quot;exterior pixels&quot; at the top left and
+bottom right. The inner grey part slopes up and to the right.
+This is the &quot;Northeast-Southwest joiner&quot;. The prior
+slot is similar, but flipped.</font></p>
+
+<p><font face="Verdana">There is no need for the
+&quot;Unclassified tiles&quot; box in this tutorial. This would
+be used if, for instance, there were other metal blocks that you
+wanted to adjoin nicely to blocks in this TileMatch, but did not
+want this TileMatch to generate these blocks itself when editing
+the map.</font></p>
+
+<p><font face="Verdana">When all the slots are filled in
+properly, this TileMatch is done! Close the dialog and move on to
+the next step to see the real magic! Before you do, you may wish
+to save the project at this point. From the main project window,
+select Save from the File menu. TileMatch information is stored
+in the project file.</font></p>
+
+<p><font face="Verdana">This concludes Step 2 of the GameDev
+tutorial - Defining Tile Matching.</font></p>
+
+<p><a href="Tutorial.htm"><font face="Verdana">Return to the main
+tutorial page.</font></a></p>
+
+<p><a href="Tut3.htm"><font face="Verdana">Jump to the next step
+in the tutorial.</font></a></p>
+</body>
+</html>

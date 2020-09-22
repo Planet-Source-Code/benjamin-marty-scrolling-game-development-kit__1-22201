@@ -1,0 +1,145 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Define Tile Matching</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>Define Tile Matching</h2>
+
+<p>This dialog is where Tilematch objects are defined. A
+Tilematch object is used in the <a href="MapEdit3.htm">map editor</a>
+to quickly and easily construct coherent structures. This is
+accomplished by defining which tiles belong in which locations
+near the exterior edges of structures.</p>
+
+<p><img src="Images/TileMach.GIF" align="right" hspace="6"
+width="359" height="466">The Tilematch object has 15 internal
+categories of tiles. These 15 categories cover all the needs to
+match neighboring tiles for any structure that is always at least
+2 tiles thick (minimum of a 2-by-2 structure). Each category may
+contain a number of tiles, one of which is chosen randomly at the
+time the matching is done. The ability to contain multiple tiles
+in each category only exists for variety; a perfectly good
+Tilematch can be defined with only one tile in each category. The
+list below lists all 15 categories in order from top left to
+bottom right, and describes when the category is used:</p>
+
+<ul>
+    <li>Top-left corner: Tiles above and left are not members of
+        the Tilematch; tiles below and right are members of the
+        Tilematch.</li>
+    <li>Top center: Tiles above are not members of the Tilematch;
+        tiles below, left and right are members.</li>
+    <li>Top-right corner: Tiles above and right are not members
+        of the Tilematch, tiles below and left are.</li>
+    <li>Southeast inner corner: Tiles on all sides are members of
+        the Tilematch except the tile above and to the left.</li>
+    <li>Southwest inner corner: Tiles on all sides are members of
+        the Tilematch except the tile above and to the right.</li>
+    <li>Left center: Tiles to the left are not members of the
+        Tilematch; tiles below, above and to the right are.</li>
+    <li>Center: Tiles on all sides are members of the Tilematch.</li>
+    <li>Right center: Tiles above left and below are members of
+        the Tilematch, but tiles to the right are not.</li>
+    <li>Northeast inner corner: Tiles on all sides are members of
+        the Tilematch except the tile below and left.</li>
+    <li>Northwest inner corner: Tiles on all sides are members of
+        the Tilematch except the tile tile below and right.</li>
+    <li>Bottom-left corner: Tiles above and to the right are
+        members of the tilematch, but tiles below and to the left
+        are not.</li>
+    <li>Bottom center: Tiles left, right and above are members of
+        the Tilematch, but tiles below are not.</li>
+    <li>Bottom-right corner: Tiles above and left are members of
+        the Tilematch, but tiles below and right are not.</li>
+    <li>Northwest-southeast joiner: Tiles on all sides are
+        members of the tilematch except the tile above-right and
+        the tile below-left.</li>
+    <li>Northeast-southwest joiner: Tiles on all sides are
+        members of the tilematch except the tile above-left and
+        the tile below-right.</li>
+</ul>
+
+<p>Note that when the tile matching dialog is initially
+displayed, it contains some simplistic graphics in each of the
+categories. These are meant only to represent the kind of tile
+that would belong in that slot and do not indicate any content.
+Once a slot is filled in with one or more tiles, the first tile
+in the category associated with that slot will be used to
+represent that slot instead of the simplified graphic. The tile
+may appear somewhat distorted because it is stretched or
+condensed to fit inside the slot's representation. Tiles can be
+added to a category either by dragging the tile from the
+&quot;Tiles available in tileset&quot; box directly to the slot
+for the category, or by clicking the slot and dragging the tile
+into the &quot;Tiles in current slot&quot; box.</p>
+
+<p>When using a Tilematch in the map editor, it always uses a
+2-by-2 &quot;brush&quot; so that it's not possible to draw an
+incoherent structure. (This can, however, occur when using the
+Tilematch eraser.) The tiles are selected based on the
+surrounding tiles on the map. A 4-by-4 square may be altered to
+match the 2-by-2 block being drawn. Each individual tile in the
+4-by-4 area is selected based on the surrounding tiles according
+to the rules above. The Tilematch object forces the middle 4
+tiles to be the center tile. Then it performs the matching,
+changing these 4 center tiles to match their surroundings if
+necessary.</p>
+
+<p>The matching does not end there. Because some tiles around the
+edge of the 4-by-4 area may need to be altered to match the
+center 4 tiles, all their neighboring tiles need to be considered
+in order to determine exactly how they match their surroundings.
+Therefore in the end, a 6-by-6-tile area is considered in drawing
+one click of Tilematch. So starting at the center, there are 3
+layers of effect that using a Tilematch has:</p>
+
+<ul>
+    <li>Layer 1: The center 4 tiles are hard-set according to the
+        selected tilematch</li>
+    <li>Leyer 2: The next 12 tiles are only altered to match the
+        center 4 tiles, but will not be altered to become a tile
+        within the Tilematch if they are not already a member.</li>
+    <li>Layer 3: These 20 tiles are never changed, only observed
+        in order that the rest of the tiles change to the
+        appropriate values.</li>
+</ul>
+
+<p>This said, you may understand the need for one more category.
+&quot;Unclassified tiles in this group&quot; is a category that
+can be used to indicate tiles (in layers 2 and 3 as described
+above) that match up with tiles in this Tilematch, or can be
+altered because they are visually part of the same kind of
+structure, but which are never drawn onto the screen by this
+Tilematch. They are considered part of the Tilematch, but are not
+drawn under any circumstances by the Tilematch itself. For
+instance, if you have one Tilematch object that has square
+corners (call it &quot;SquareMatch&quot;) and another that has
+sloped corners (as depicted in the screenshot above -- call it
+&quot;SlopeMatch&quot;), you would probably want to add the
+sloped corners to the &quot;Unclassified&quot; category in
+&quot;SquareMatch&quot; and add the square corners to the
+&quot;Unclassified&quot; category in &quot;SlopeMatch&quot;. This
+allows two similar looking Tilematches to join together
+seamlessly.</p>
+
+<p>To remove a tile from a category, select the appropriate slot
+and drag the tile from &quot;Tiles in current slot&quot; or
+&quot;Unclassified tiles in this group&quot; to &quot;Tiles
+available in tileset&quot;.</p>
+</body>
+</html>

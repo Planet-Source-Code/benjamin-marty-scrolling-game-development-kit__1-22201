@@ -1,0 +1,241 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Frequently Asked Questions</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>Frequently Asked Questions</h2>
+
+<p>This page lists issues that may frequently arise while using
+GameDev and describes the cause and/or solution to them.</p>
+
+<h3>HELP! My project is corrupted!</h3>
+
+<p>While I'm not currently aware of any serious problems in
+GameDev version 1.2 that would corrupt a project, it may not be
+perfect. If you run across a serious problem, please report it.
+See the <a href="TechSupt.htm">Technical Support</a> page for
+more information. Version 1.1 did have a problem with the
+re-ordering of layers. Since special functions were associated to
+the map by layer index, and I had forgotten to re-index functions
+when the layers were moved, special functions would have serious
+problems when you moved the player's layer to a different
+position in the sequence. This problem has been fixed in version
+1.2, however. Special functions were the only objects connected
+to the map with a layer index. Furthermore, this problem is one
+that can be fixed by the &quot;XML&quot; solution described
+below.</p>
+
+<p>Don't worry yet, there are a few ways to recover data from a
+project. One way to attempt recovering the data yourself is to
+export it as an XML file. Load the XML file into Notepad and see
+if you can locate the problem and fix it. Then re-import the
+project into GameDev. If you think the error is at a project
+level (as opposed to the map level) you can try editing the GDP
+file in Notepad, but keep a backup. Another option, if you own
+Visual Basic 6.0, is to download the GameDev source code and run
+GameDev in a debug environment and attempt to fix your project in
+the debugger. Finally, I'm willing to look into these sort of
+problems myself seeing as how I haven't had a lot of requests for
+help (as of this writing). Feel free to contact me and I'll see
+what I can do.</p>
+
+<p>The best measure to take against a corrupted project, though,
+is to keep backups. Even if GameDev works perfectly, it's all too
+easy to bring up a tileset in 16-bit color and then save it
+(thereby potentially losing valuable color information). Or if
+you ignore the warnings and options and play around with the
+player sprite in the map editor, you could make permanent
+unwanted changes to the map. These kind of things can't be undone
+except by keeping good backups.</p>
+
+<h3>I can't see all my layers (some are missing) in the map
+editor</h3>
+
+<p>Make sure that there are no layers in front of your layer that
+are opaque. A layer on top of another layer (in the foreground)
+will cover up layers below it when:</p>
+
+<ul>
+    <li>The &quot;Transparent layer&quot; checkbox is not checked
+        for the layer</li>
+    <li>The layer consists of tiles that aren't tile number 0,
+        and tiles that are completely opaque. The layer in only
+        transparent on tile number 0 and in areas of other tiles
+        that use the same color as the top left pixel of their
+        respective tileset.</li>
+</ul>
+
+<p>Also, make sure there's something to see. Draw some tiles on
+the layer. You can't see anything until it has some content. Make
+sure to draw tiles other than tile number 0 which is the
+transparent tile for transparent layers and is not drawn (even if
+it contains graphics).</p>
+
+<h3>I just added a new layer, but it's full of tiles</h3>
+
+<p>For the opaque (background) layer, tile number 0 fills the map
+to form the background of the display.</p>
+
+<h3>I added a sprite to the project, but I can't select it as the
+player</h3>
+
+<p>The player sprite needs to have the &quot;Initial
+Instance&quot; checkbox checked. The game can't start without an
+instance of the player on the map. Only &quot;Initial
+Instance&quot; sprites are listed as options for the player
+sprite.</p>
+
+<h3>My sprite is not reacting to solid areas as expected</h3>
+
+<ul>
+    <li>Go to the Sprites and Paths dialog.</li>
+    <li>Click on the sprite definition for your sprite and load
+        it.</li>
+    <li>Go to the Motion tab.</li>
+    <li>Note the current selection for &quot;Solid tiles&quot;.</li>
+    <li>Note the Layer name under the &quot;Paths&quot; list --
+        the layer on which this sprite gets created.</li>
+    <li>Go to the Edit Maps dialog.</li>
+    <li>Click on the layer noted above.</li>
+    <li>Note the tileset selected for this layer.</li>
+    <li>Go to the &quot;Tile Categories&quot; dialog.</li>
+    <li>Select the tileset noted above.</li>
+    <li>In the &quot;Solidity Definition Name&quot; list, you
+        should see the solidity definition that you had selected
+        on the Motion tab in the Sprites and Paths dialog. If
+        not, then you have made an invalid selection for
+        &quot;Solid tiles&quot; on the Motion tab, or have
+        created an instance of this sprite on a layer where it is
+        not prepared to interact properly with the layer.</li>
+    <li>If it is there, load it and verify the correctness of the
+        categories that make up the solidity definition.</li>
+</ul>
+
+<p>When creating a sprite template, the solidity definitions are
+listed for the currently selected path's layer's tileset.
+However, there is nothing preventing you from creating another
+sprite based on the same template and putting that sprite on a
+different layer using a different tileset. It's unlikely that the
+same solidity definition will work will on tilesets other than
+that for which it was designed.</p>
+
+<p>Also, even with a proper solidity definition, only the corners
+of a sprite are checked for interaction with solid map. It's
+possible for pointy areas of the map to get between the corners
+of the sprite.</p>
+
+<h3>I defined a TileMatch, but it doesn't show up in the map
+editor as a selection</h3>
+
+<p>Only TileMatches that apply to the tileset of the layer
+currently being edited are listed.</p>
+
+<h3>I'm using a TileMatch eraser, but the results don't look good</h3>
+
+<p>The eraser cannot prevent you from making areas of the map
+that don't match up. That's because, using the eraser, it is
+possible to delete just one tile from a 2x2 block of well-matched
+tiles. A TileMatch is designed for a minimum width of 2 tiles and
+cannot cleanly match any area that is only 1 tile thick.</p>
+
+<h3>I created a sprite, but it's not showing up on the map</h3>
+
+<p>The &quot;Initial Instance&quot; box needs to be checked for
+an instance of the sprite to automatically be created with the
+map. Make sure you have selected the right path and are looking
+in the right place for this sprite.</p>
+
+<h3>I'm getting errors when I try to play the game</h3>
+
+<p>You may need to select a different display mode. If you have
+selected 24-bit color, maybe your video card doesn't have a
+24-bit color mode, only a 32-bit color mode.</p>
+
+<p>You can't jump right into an empty project and try to play a
+game that doesn't have any data. At a minimum you must have the
+following things defined:</p>
+
+<ul>
+    <li>A Tileset</li>
+    <li>A Map with at least one layer (which requires the
+        existence of the tileset)</li>
+    <li>An indication of where the game starts (see <a
+        href="Player.htm">player settings dialog</a>)</li>
+    <li>A path on the map (to indicate where the player starts)</li>
+    <li>A sprite (which includes a sprite template) based on the
+        path, to represent the player, with &quot;Initial
+        Instance&quot; checked</li>
+    <li>An indication of which sprite is the player sprite (see <a
+        href="MapEdit4.htm">player map interaction</a>)</li>
+</ul>
+
+<p>For assistance in creating a very simple project (about the
+simplest that can be played) see the quick start tutorial in the
+help menu.</p>
+
+<h3>I get a Type Mismatch Error when trying to create something</h3>
+
+<p>Usually this is caused by GameDev trying to read the data off
+the dialog to create the object when the data isn't entered. Make
+sure you have entered all the appropriate parameters to create
+the object and try again.</p>
+
+<h3>What's XML for and how do I use it?</h3>
+
+<p>XML is a plain text data format that can be relatively easily
+read and understood by a human reader. You can view an XML file
+in notepad or IE5 and above. XML is a general purpose format in
+which pretty much any type of data can be stored and described.
+The purpose of exporting a game project in XML format might be to
+edit a parameter that GameDev doesn't allow you to edit the way
+you'd like (if you know what you're doing). It's also a way to
+store all your GDP and MAP file data into a single file. It's
+used to back up the project in memory while playing the game (so
+the state can be restored after playing).</p>
+
+<p>Other tools could easily be written to read, edit and re-save
+all or part of GameDev's XML data files. These files could then
+be re-imported into GameDev, or used in a separate engine or
+editor. Since GameDev is a development kit and not just its own
+game engine, it's appropriate to make it expose all its data in
+an easily understandable format, so you can do anything with the
+data that you want. There is already much information about XML
+available on the web, search around. Many things can be done with
+XML files.</p>
+
+<p>An XML file exported by GameDev stores all the data normally
+stored in the project's GDP file and all the MAP files. It does
+not store the content of media clips or tilesets; it expects
+those files to exist in the same relative path when the XML file
+is imported. The file GameInfo.htm installed with GameDev can be
+used to determine an XML file's dependencies. After importing an
+XML file, the project will not have a filename because the
+filename is normally acquired from the GDP file. Instead it will
+receive a temporary default filename of &quot;Imported.gdp&quot;
+in the path where the XML file was located, until the project is
+saved. GameDev's XML support is not intended as a permanent
+storage mechanism so much as an export/import format for using in
+external programs.</p>
+
+<p>GameDev requires that XML support be installed on the system
+already. In particular is makes use of the
+&quot;MSXML.DOMDocument&quot; COM object, which (at least on my
+system) is implemented in C:\Windows\System\MSXML.DLL. (I believe
+this is delivered with IE5.)</p>
+</body>
+</html>

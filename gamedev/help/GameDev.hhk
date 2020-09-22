@@ -1,0 +1,548 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Animating Sprites">
+		<param name="Name" value="Defining Sprite Frames">
+		<param name="Local" value="Sprites2.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Animating Tiles">
+		<param name="Name" value="Tile Animation">
+		<param name="Local" value="TileAnim.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Author">
+		<param name="Name" value="Technical Support and Contact Information">
+		<param name="Local" value="TechSupt.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Bouncing Sprites">
+		<param name="Name" value="Collision Definitions">
+		<param name="Local" value="CollDef.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Categories">
+		<param name="See Also" value="Tile Categories">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Collision">
+		<param name="Name" value="Collision Definitions">
+		<param name="Local" value="CollDef.htm">
+		<param name="Name" value="Defining Sprite Collisions">
+		<param name="Local" value="Sprites4.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Color Depth">
+		<param name="Name" value="Options">
+		<param name="Local" value="Options.htm">
+		<param name="Name" value="Make Shortcut">
+		<param name="Local" value="Shortcut.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Compile">
+		<param name="Name" value="Make Shortcut">
+		<param name="Local" value="Shortcut.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Contact Information">
+		<param name="Name" value="Technical Support and Contact Information">
+		<param name="Local" value="TechSupt.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Controller Configuration">
+		<param name="Name" value="Controller Configuration">
+		<param name="Local" value="CtrlCnfg.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Display Mode">
+		<param name="See Also" value="Color Depth">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Editor">
+		<param name="Name" value="The Full Screen Map Editor">
+		<param name="Local" value="MapEdit3.htm">
+		<param name="Name" value="The Full Screen Tileset Editor">
+		<param name="Local" value="TSEdit2.htm">
+		<param name="Name" value="GameDev Tutorial Step 3 - Creating a Map">
+		<param name="Local" value="Tut3.htm">
+		<param name="Name" value="GameDev Tutorial Step 1 - Creating Graphics">
+		<param name="Local" value="Tut1.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="map">
+			<param name="Name" value="The Full Screen Map Editor">
+			<param name="Local" value="MapEdit3.htm">
+			<param name="Name" value="GameDev Tutorial Step 3 - Creating a Map">
+			<param name="Local" value="Tut3.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="tileset">
+			<param name="Name" value="GameDev Tutorial Step 1 - Creating Graphics">
+			<param name="Local" value="Tut1.htm">
+			<param name="Name" value="The Full Screen Tileset Editor">
+			<param name="Local" value="TSEdit2.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Files">
+		<param name="Name" value="Scrolling Game Development Kit Project Window">
+		<param name="Local" value="Project.htm">
+		<param name="Name" value="Edit Maps Dialog">
+		<param name="Local" value="MapEdit1.htm">
+		<param name="Name" value="Edit Tilesets Dialog">
+		<param name="Local" value="TSEdit1.htm">
+		<param name="Name" value="Multimedia Manager">
+		<param name="Local" value="Media.htm">
+		<param name="Name" value="GameDev Introduction">
+		<param name="Local" value="Intro.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="map">
+			<param name="Name" value="Edit Maps Dialog">
+			<param name="Local" value="MapEdit1.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="multimedia">
+			<param name="Name" value="Multimedia Manager">
+			<param name="Local" value="Media.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="project">
+			<param name="Name" value="Scrolling Game Development Kit Project Window">
+			<param name="Local" value="Project.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="tileset">
+			<param name="Name" value="Edit Tilesets Dialog">
+			<param name="Local" value="TSEdit1.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Full Screen Editors">
+		<param name="See Also" value="Editor">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Hierarchical View">
+		<param name="Name" value="Scrolling Game Development Kit Project Window">
+		<param name="Local" value="Project.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Importing Graphics">
+		<param name="Name" value="Import Tile">
+		<param name="Local" value="TileImp.htm">
+		<param name="Name" value="Edit Tilesets Dialog">
+		<param name="Local" value="TSEdit1.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Interactions">
+		<param name="Name" value="GameDev Tutorial Step 6 - Player Settings and Inventory">
+		<param name="Local" value="Tut6.htm">
+		<param name="Name" value="Player Map Interactions">
+		<param name="Local" value="MapEdit4.htm">
+		<param name="Name" value="Collision Definitions">
+		<param name="Local" value="CollDef.htm">
+		<param name="Name" value="Defining Sprite Collisions">
+		<param name="Local" value="Sprites4.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="between sprites">
+			<param name="Name" value="Collision Definitions">
+			<param name="Local" value="CollDef.htm">
+			<param name="Name" value="Defining Sprite Collisions">
+			<param name="Local" value="Sprites4.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="between the player and map">
+			<param name="Name" value="Player Map Interactions">
+			<param name="Local" value="MapEdit4.htm">
+			<param name="Name" value="GameDev Tutorial Step 7 - Adding Special Functions">
+			<param name="Local" value="Tut7.htm">
+			<param name="Name" value="GameDev Tutorial Step 6 - Player Settings and Inventory">
+			<param name="Local" value="Tut6.htm">
+			<param name="Name" value="Special Functions">
+			<param name="Local" value="MapEdit5.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Inventory">
+		<param name="Name" value="Player Settings">
+		<param name="Local" value="Player.htm">
+		<param name="Name" value="Special Functions">
+		<param name="Local" value="MapEdit5.htm">
+		<param name="Name" value="GameDev Tutorial Step 6 - Player Settings and Inventory">
+		<param name="Local" value="Tut6.htm">
+		<param name="Name" value="Player Map Interactions">
+		<param name="Local" value="MapEdit4.htm">
+		<param name="Name" value="Collision Definitions">
+		<param name="Local" value="CollDef.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Joystick">
+		<param name="Name" value="Controller Configuration">
+		<param name="Local" value="CtrlCnfg.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Keyboard">
+		<param name="Name" value="Controller Configuration">
+		<param name="Local" value="CtrlCnfg.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Layers">
+		<param name="See Also" value="Map Layers">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Make Shortcut">
+		<param name="Name" value="Make Shortcut">
+		<param name="Local" value="Shortcut.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Map Editor">
+		<param name="Name" value="The Full Screen Map Editor">
+		<param name="Local" value="MapEdit3.htm">
+		<param name="Name" value="GameDev Tutorial Step 3 - Creating a Map">
+		<param name="Local" value="Tut3.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Map Layers">
+		<param name="Name" value="GameDev Tutorial Step 3 - Creating a Map">
+		<param name="Local" value="Tut3.htm">
+		<param name="Name" value="Editing Map Layers">
+		<param name="Local" value="MapEdit2.htm">
+		<param name="Name" value="Frequently Asked Questions">
+		<param name="Local" value="FAQ.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="background">
+			<param name="Name" value="Editing Map Layers">
+			<param name="Local" value="MapEdit2.htm">
+			<param name="Name" value="Frequently Asked Questions">
+			<param name="Local" value="FAQ.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="ordering">
+			<param name="Name" value="Editing Map Layers">
+			<param name="Local" value="MapEdit2.htm">
+			<param name="Name" value="Frequently Asked Questions">
+			<param name="Local" value="FAQ.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Matching Tiles">
+		<param name="See Also" value="Tile Matching">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Media Clips">
+		<param name="Name" value="Multimedia Manager">
+		<param name="Local" value="Media.htm">
+		<param name="Name" value="Player Map Interactions">
+		<param name="Local" value="MapEdit4.htm">
+		<param name="Name" value="Collision Definitions">
+		<param name="Local" value="CollDef.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Motion">
+		<param name="Name" value="Defining Sprite Motion">
+		<param name="Local" value="Sprites3.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Music">
+		<param name="Name" value="Multimedia Manager">
+		<param name="Local" value="Media.htm">
+		<param name="Name" value="GameDev Tutorial Step 8 - Adding Multimedia Content">
+		<param name="Local" value="Tut8.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="New Features">
+		<param name="Name" value="What's New">
+		<param name="Local" value="WhatsNew.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Options">
+		<param name="Name" value="Options">
+		<param name="Local" value="Options.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Paths">
+		<param name="Name" value="Sprites and Paths">
+		<param name="Local" value="Sprites1.htm">
+		<param name="Name" value="The Full Screen Map Editor">
+		<param name="Local" value="MapEdit3.htm">
+		<param name="Name" value="GameDev Tutorial Step 5 - Defining Paths and Sprites">
+		<param name="Local" value="Tut5.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating">
+			<param name="Name" value="The Full Screen Map Editor">
+			<param name="Local" value="MapEdit3.htm">
+			<param name="Name" value="GameDev Tutorial Step 3 - Creating a Map">
+			<param name="Local" value="Tut3.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="deleting">
+			<param name="Name" value="Sprites and Paths">
+			<param name="Local" value="Sprites1.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="using with sprites">
+			<param name="Name" value="Sprites and Paths">
+			<param name="Local" value="Sprites1.htm">
+			<param name="Name" value="GameDev Tutorial Step 5 - Defining Paths and Sprites">
+			<param name="Local" value="Tut5.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Pictures">
+		<param name="Name" value="Special Functions">
+		<param name="Local" value="MapEdit5.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Player">
+		<param name="Name" value="Player Settings">
+		<param name="Local" value="Player.htm">
+		<param name="Name" value="GameDev Tutorial Step 6 - Player Settings and Inventory">
+		<param name="Local" value="Tut6.htm">
+		<param name="Name" value="Player Map Interactions">
+		<param name="Local" value="MapEdit4.htm">
+		<param name="Name" value="Frequently Asked Questions">
+		<param name="Local" value="FAQ.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="configuring controls">
+			<param name="Name" value="Controller Configuration">
+			<param name="Local" value="CtrlCnfg.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="setting start position">
+			<param name="Name" value="Player Map Interactions">
+			<param name="Local" value="MapEdit4.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="setting startup map">
+			<param name="Name" value="Player Settings">
+			<param name="Local" value="Player.htm">
+			<param name="Name" value="GameDev Tutorial Step 6 - Player Settings and Inventory">
+			<param name="Local" value="Tut6.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Project">
+		<param name="Name" value="Scrolling Game Development Kit Project Window">
+		<param name="Local" value="Project.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Rotating">
+		<param name="Name" value="The Full Screen Tileset Editor">
+		<param name="Local" value="TSEdit2.htm">
+		<param name="Name" value="Defining Sprite Frames">
+		<param name="Local" value="Sprites2.htm">
+		<param name="Name" value="GameDev Tutorial Step 1 - Creating Graphics">
+		<param name="Local" value="Tut1.htm">
+		<param name="Name" value="GameDev Tutorial Step 5 - Defining Paths and Sprites">
+		<param name="Local" value="Tut5.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating a rotating sprite">
+			<param name="Name" value="Defining Sprite Frames">
+			<param name="Local" value="Sprites2.htm">
+			<param name="Name" value="GameDev Tutorial Step 5 - Defining Paths and Sprites">
+			<param name="Local" value="Tut5.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="drawing rotated graphics">
+			<param name="Name" value="The Full Screen Tileset Editor">
+			<param name="Local" value="TSEdit2.htm">
+			<param name="Name" value="GameDev Tutorial Step 1 - Creating Graphics">
+			<param name="Local" value="Tut1.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Scripting">
+		<param name="Name" value="GameDev Tutorial Step 9 - Adding Script Code">
+		<param name="Local" value="Tut9.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Shortcut">
+		<param name="Name" value="Make Shortcut">
+		<param name="Local" value="Shortcut.htm">
+		<param name="Name" value="Options">
+		<param name="Local" value="Options.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Solidity">
+		<param name="See Also" value="Tile Solidity">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sound">
+		<param name="Name" value="Multimedia Manager">
+		<param name="Local" value="Media.htm">
+		<param name="Name" value="GameDev Tutorial Step 8 - Adding Multimedia Content">
+		<param name="Local" value="Tut8.htm">
+		<param name="Name" value="Player Map Interactions">
+		<param name="Local" value="MapEdit4.htm">
+		<param name="Name" value="Collision Definitions">
+		<param name="Local" value="CollDef.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Special Functions">
+		<param name="Name" value="Special Functions">
+		<param name="Local" value="MapEdit5.htm">
+		<param name="Name" value="GameDev Tutorial Step 7 - Adding Special Functions">
+		<param name="Local" value="Tut7.htm">
+		<param name="Name" value="Collision Definitions">
+		<param name="Local" value="CollDef.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Sprites">
+		<param name="Name" value="Sprites and Paths">
+		<param name="Local" value="Sprites1.htm">
+		<param name="Name" value="GameDev Tutorial Step 5 - Defining Paths and Sprites">
+		<param name="Local" value="Tut5.htm">
+		<param name="Name" value="Frequently Asked Questions">
+		<param name="Local" value="FAQ.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="adding to the map">
+			<param name="Name" value="The Full Screen Map Editor">
+			<param name="Local" value="MapEdit3.htm">
+			<param name="Name" value="GameDev Tutorial Step 3 - Creating a Map">
+			<param name="Local" value="Tut3.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="animation">
+			<param name="Name" value="Defining Sprite Frames">
+			<param name="Local" value="Sprites2.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating at runtime">
+			<param name="Name" value="Collision Definitions">
+			<param name="Local" value="CollDef.htm">
+			<param name="Name" value="Special Functions">
+			<param name="Local" value="MapEdit5.htm">
+			<param name="Name" value="GameDev Tutorial Step 9 - Adding Script Code">
+			<param name="Local" value="Tut9.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="creating new definitions">
+			<param name="Name" value="Sprites and Paths">
+			<param name="Local" value="Sprites1.htm">
+			<param name="Name" value="GameDev Tutorial Step 5 - Defining Paths and Sprites">
+			<param name="Local" value="Tut5.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="deleting at runtime">
+			<param name="Name" value="Special Functions">
+			<param name="Local" value="MapEdit5.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="player">
+			<param name="See Also" value="Player">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="reacting to collisions">
+			<param name="Name" value="Collision Definitions">
+			<param name="Local" value="CollDef.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Stopping Sprites">
+		<param name="Name" value="Collision Definitions">
+		<param name="Local" value="CollDef.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Technical Support">
+		<param name="Name" value="Technical Support and Contact Information">
+		<param name="Local" value="TechSupt.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tile Categories">
+		<param name="Name" value="Tile Categories">
+		<param name="Local" value="GrpTile.htm">
+		<param name="Name" value="GameDev Tutorial Step 4 - Defining Tile Categories and Solidity">
+		<param name="Local" value="Tut4.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tile Matching">
+		<param name="Name" value="Define Tile Matching">
+		<param name="Local" value="MachTile.htm">
+		<param name="Name" value="GameDev Tutorial Step 2 - Defining Tile Matching">
+		<param name="Local" value="Tut2.htm">
+		<param name="Name" value="The Full Screen Map Editor">
+		<param name="Local" value="MapEdit3.htm">
+		<param name="Name" value="Managing Tile Matching">
+		<param name="Local" value="TSMatch.htm">
+		<param name="Name" value="Frequently Asked Questions">
+		<param name="Local" value="FAQ.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tile Solidity">
+		<param name="Name" value="Tile Categories">
+		<param name="Local" value="GrpTile.htm">
+		<param name="Name" value="GameDev Tutorial Step 4 - Defining Tile Categories and Solidity">
+		<param name="Local" value="Tut4.htm">
+		<param name="Name" value="Defining Sprite Motion">
+		<param name="Local" value="Sprites3.htm">
+		<param name="Name" value="Frequently Asked Questions">
+		<param name="Local" value="FAQ.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tiles">
+		<param name="See Also" value="Tileset">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tileset">
+		<param name="Name" value="Edit Tilesets Dialog">
+		<param name="Local" value="TSEdit1.htm">
+		<param name="URL" value="Tut1.htm">
+		<param name="Name" value="The Full Screen Tileset Editor">
+		<param name="Local" value="TSEdit2.htm">
+		<param name="Name" value="GameDev Tutorial Step 1 - Creating Graphics">
+		<param name="Local" value="Tut1.htm">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="animating">
+			<param name="See Also" value="Animating Tiles">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="automatically matching tiles">
+			<param name="See Also" value="Tile Matching">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="defining solid tiles">
+			<param name="See Also" value="Tile Solidity">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Video">
+		<param name="Name" value="Multimedia Manager">
+		<param name="Local" value="Media.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="What's New">
+		<param name="Name" value="What's New">
+		<param name="Local" value="WhatsNew.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="XML">
+		<param name="Name" value="Scrolling Game Development Kit Project Window">
+		<param name="Local" value="Project.htm">
+		<param name="Name" value="Frequently Asked Questions">
+		<param name="Local" value="FAQ.htm">
+		<param name="Name" value="GameDev Introduction">
+		<param name="Local" value="Intro.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

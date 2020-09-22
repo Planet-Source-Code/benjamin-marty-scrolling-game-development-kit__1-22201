@@ -1,0 +1,604 @@
+[Root]
+Most Recent Package=Scrolling Game Development Kit - No VB Runtime
+
+[Package|Scrolling Game Development Kit|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Program Files\MyProjects\GameDev\Package
+RA Server Support=No
+
+[Package|Scrolling Game Development Kit|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Scrolling Game Development Kit|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Scrolling Game Development Kit|Files Found]
+BMDXCtls.dll=C:\Program Files\MyProjects\BMDXCtls\ReleaseMinDependency\BMDXCtls.dll
+ScrHost.dll=C:\Program Files\MyProjects\ScrHost\ReleaseMinDependency\ScrHost.dll
+
+[Package|Scrolling Game Development Kit|Files Released]
+AutPrx32.dll=
+GameDev.CHI=
+AutMgr32.exe=
+RACMgr32.exe=
+
+[Package|Scrolling Game Development Kit|Missing Dependency Information]
+C:\Program Files\MyProjects\ScrHost\ReleaseMinDependency\ScrHost.dll=
+C:\Program Files\MyProjects\BMDXCtls\ReleaseMinDependency\BMDXCtls.dll=
+C:\WINDOWS\SYSTEM\quartz.dll=
+C:\WINDOWS\SYSTEM\VB5STKIT.DLL=
+
+[Package|Scrolling Game Development Kit|Out-of-Date Dependency Information]
+
+[Package|Scrolling Game Development Kit|Files Added]
+c:\program files\myprojects\gameprj\tutorial\tutorial.map=
+c:\program files\myprojects\gameprj\tutorial\gamedev.vbs=
+c:\program files\myprojects\gameprj\tutorial\open.wav=
+c:\program files\myprojects\gameprj\tutorial\tutorial.bmp=
+c:\program files\myprojects\gameprj\tutorial\tutorial.gdp=
+c:\program files\myprojects\gameprj\tutorial\ben9.mid=
+c:\program files\myprojects\copying.txt=
+c:\program files\myprojects\readme.txt=
+c:\program files\myprojects\gamedev\help\gamedev.chm=
+c:\program files\myprojects\gamedev\mapedit.vbs=
+c:\program files\myprojects\gamedev\tileed.vbs=
+c:\program files\myprojects\gameprj\sample\ben5.mid=
+c:\program files\myprojects\gameprj\sample\bug.bmp=
+c:\program files\myprojects\gameprj\sample\outside.map=
+c:\program files\myprojects\gameprj\sample\dngnedit.vbs=
+c:\program files\myprojects\gameprj\sample\dngnplay.vbs=
+c:\program files\myprojects\gameprj\sample\dungn1.map=
+c:\program files\myprojects\gameprj\sample\fireball.bmp=
+c:\program files\myprojects\gameprj\sample\getkey.wav=
+c:\program files\myprojects\gameprj\sample\getpotn.wav=
+c:\program files\myprojects\gameprj\sample\initmsg.wav=
+c:\program files\myprojects\gameprj\sample\opendoor.wav=
+c:\program files\myprojects\gameprj\sample\outside.bmp=
+c:\program files\myprojects\gameprj\sample\bugmsg.wav=
+c:\program files\myprojects\gameprj\sample\wizthank.wav=
+c:\program files\myprojects\gameprj\sample\splash.gif=
+c:\program files\myprojects\gameprj\sample\walls.bmp=
+c:\program files\myprojects\gameprj\sample\wiz1.bmp=
+c:\program files\myprojects\gameprj\sample\wiz2.bmp=
+c:\program files\myprojects\gameprj\sample\wizinfo.wav=
+c:\program files\myprojects\gameprj\sample\sample.gdp=
+AutPrx32.dll=This file is needed for RA server support.
+AutMgr32.exe=This file is needed for RA server support.
+RACMgr32.exe=This file is needed for RA server support.
+C:\Program Files\MyProjects\GameDev\GameInfo.htm=
+C:\Program Files\MyProjects\GameDev\QuickTut.txt=
+
+[Package|Scrolling Game Development Kit|Files Removed]
+c:\windows\system\vb5stkit.dll=
+
+[Package|Scrolling Game Development Kit|Files In Project]
+C:\Program Files\MyProjects\GameDev\GameDev.exe=Yes
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\SYSTEM\quartz.dll=Yes
+C:\Program Files\MyProjects\BMDXCtls\ReleaseMinDependency\BMDXCtls.dll=Yes
+C:\Program Files\MyProjects\ScrHost\ReleaseMinDependency\ScrHost.dll=Yes
+C:\WINDOWS\SYSTEM\Comdlg32.ocx=Yes
+C:\WINDOWS\SYSTEM\hhctrl.ocx=Yes
+C:\WINDOWS\SYSTEM\ITSS.DLL=Yes
+C:\WINDOWS\SYSTEM\itircl.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.map=Yes
+C:\Program Files\MyProjects\GamePrj\Tutorial\GameDev.vbs=Yes
+C:\Program Files\MyProjects\GamePrj\Tutorial\Open.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.gdp=Yes
+C:\Program Files\MyProjects\GamePrj\Tutorial\Ben9.mid=Yes
+C:\WINDOWS\SYSTEM\hh.exe=Yes
+C:\Program Files\MyProjects\COPYING.txt=Yes
+C:\Program Files\MyProjects\README.txt=Yes
+C:\Program Files\MyProjects\GameDev\Help\GameDev.chm=Yes
+C:\Program Files\MyProjects\GameDev\MapEdit.vbs=Yes
+C:\Program Files\MyProjects\GameDev\TileEd.vbs=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\ben5.mid=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Bug.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Outside.map=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\DngnEdit.vbs=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\DngnPlay.vbs=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Dungn1.map=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Fireball.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\GetKey.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\GetPotn.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\InitMsg.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\OpenDoor.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Outside.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\BugMsg.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\WizThank.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Splash.gif=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Walls.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Wiz1.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Wiz2.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\WizInfo.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Sample.gdp=Yes
+C:\WINDOWS\SYSTEM\VB5STKIT.DLL=No
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=Yes
+C:\WINDOWS\SYSTEM\Mscomct2.ocx=Yes
+C:\Program Files\MyProjects\GameDev\GameInfo.htm=Yes
+C:\Program Files\MyProjects\GameDev\QuickTut.txt=Yes
+
+[Package|Scrolling Game Development Kit|Configure Registry Files]
+Applicable=No
+
+[Package|Scrolling Game Development Kit|Configure Remote Servers]
+Applicable=No
+
+[Package|Scrolling Game Development Kit|Install Locations]
+C:\Program Files\MyProjects\GameDev\GameDev.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\quartz.dll=$(WinSysPath)
+C:\Program Files\MyProjects\BMDXCtls\ReleaseMinDependency\BMDXCtls.dll=$(AppPath)
+C:\Program Files\MyProjects\ScrHost\ReleaseMinDependency\ScrHost.dll=$(AppPath)
+C:\WINDOWS\SYSTEM\COMCT232.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Comdlg32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMCTL32.OCX=$(WinSysPath)
+C:\Program Files\MyProjects\GameDev\Help\GameDev.chm=$(AppPath)
+C:\WINDOWS\SYSTEM\hhctrl.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\ITSS.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\itircl.dll=$(WinSysPath)
+C:\WINDOWS\hh.exe=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.map=$(AppPath)\Tutorial
+C:\Program Files\MyProjects\GamePrj\Tutorial\GameDev.vbs=$(AppPath)\Tutorial
+C:\Program Files\MyProjects\GamePrj\Tutorial\Open.wav=$(AppPath)\Tutorial
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.bmp=$(AppPath)\Tutorial
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.gdp=$(AppPath)\Tutorial
+C:\Program Files\MyProjects\GamePrj\Tutorial\Ben9.mid=$(AppPath)\Tutorial
+C:\WINDOWS\SYSTEM\hh.exe=$(WinSysPath)
+C:\Program Files\MyProjects\COPYING.txt=$(AppPath)
+C:\Program Files\MyProjects\README.txt=$(AppPath)
+C:\Program Files\MyProjects\GameDev\MapEdit.vbs=$(AppPath)
+C:\Program Files\MyProjects\GameDev\TileEd.vbs=$(AppPath)
+C:\Program Files\MyProjects\GamePrj\Sample\ben5.mid=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Bug.bmp=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Outside.map=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\DngnEdit.vbs=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\DngnPlay.vbs=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Dungn1.map=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Fireball.bmp=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\GetKey.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\GetPotn.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\InitMsg.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\OpenDoor.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Outside.bmp=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\BugMsg.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\WizThank.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Splash.gif=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Walls.bmp=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Wiz1.bmp=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Wiz2.bmp=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\WizInfo.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Sample.gdp=$(AppPath)\Sample
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Mscomct2.ocx=$(WinSysPath)
+C:\Program Files\MyProjects\GameDev\GameInfo.htm=$(AppPath)
+C:\Program Files\MyProjects\GameDev\QuickTut.txt=$(AppPath)
+
+[Package|Scrolling Game Development Kit|Configure Shared Files]
+Applicable=Yes
+C:\Program Files\MyProjects\GameDev\GameDev.exe=Yes
+C:\Program Files\MyProjects\GameDev\Help\GameDev.chm=No
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.map=No
+C:\Program Files\MyProjects\GamePrj\Tutorial\GameDev.vbs=No
+C:\Program Files\MyProjects\GamePrj\Tutorial\Open.wav=No
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.bmp=No
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.gdp=No
+C:\Program Files\MyProjects\GamePrj\Tutorial\Ben9.mid=No
+C:\Program Files\MyProjects\BMDXCtls\ReleaseMinDependency\BMDXCtls.dll=Yes
+C:\Program Files\MyProjects\ScrHost\ReleaseMinDependency\ScrHost.dll=Yes
+C:\Program Files\MyProjects\COPYING.txt=No
+C:\Program Files\MyProjects\README.txt=No
+C:\Program Files\MyProjects\GameDev\MapEdit.vbs=No
+C:\Program Files\MyProjects\GameDev\TileEd.vbs=No
+C:\Program Files\MyProjects\GamePrj\Sample\ben5.mid=No
+C:\Program Files\MyProjects\GamePrj\Sample\Bug.bmp=No
+C:\Program Files\MyProjects\GamePrj\Sample\Outside.map=No
+C:\Program Files\MyProjects\GamePrj\Sample\DngnEdit.vbs=No
+C:\Program Files\MyProjects\GamePrj\Sample\DngnPlay.vbs=No
+C:\Program Files\MyProjects\GamePrj\Sample\Dungn1.map=No
+C:\Program Files\MyProjects\GamePrj\Sample\Fireball.bmp=No
+C:\Program Files\MyProjects\GamePrj\Sample\GetKey.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\GetPotn.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\InitMsg.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\OpenDoor.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\Outside.bmp=No
+C:\Program Files\MyProjects\GamePrj\Sample\BugMsg.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\WizThank.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\Splash.gif=No
+C:\Program Files\MyProjects\GamePrj\Sample\Walls.bmp=No
+C:\Program Files\MyProjects\GamePrj\Sample\Wiz1.bmp=No
+C:\Program Files\MyProjects\GamePrj\Sample\Wiz2.bmp=No
+C:\Program Files\MyProjects\GamePrj\Sample\WizInfo.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\Sample.gdp=No
+C:\Program Files\MyProjects\GameDev\GameInfo.htm=No
+C:\Program Files\MyProjects\GameDev\QuickTut.txt=No
+
+[Package|Scrolling Game Development Kit|Distribution]
+Type=single
+Size=
+Title=Scrolling Game Development Kit
+
+[Package|Scrolling Game Development Kit|Package]
+PackageFolder=C:\Program Files\MyProjects\GameDev\Package
+ProjectFolder=C:\Program Files\MyProjects\GameDev
+ServerSideCab=
+File1=C:\Program Files\MyProjects\GameDev\Package\setup.exe
+File2=C:\Program Files\MyProjects\GameDev\Package\Setup.Lst
+File3=C:\Program Files\MyProjects\GameDev\Package\GameDev.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Scrolling Game Development Kit|IconGroups]
+Group0=Scrolling Game Development Kit
+PrivateGroup0=0
+Parent0=$(Programs)
+
+[Package|Scrolling Game Development Kit|Scrolling Game Development Kit]
+Icon1=GameDev.exe "$(AppPath)Tutorial\Tutorial.gdp" /p
+Title1=Play Tutorial Project
+StartIn1=$(AppPath)
+Key1=Icon3
+Icon2=GameDev.exe
+Title2=Scrolling Game Development Kit
+StartIn2=$(AppPath)
+Key2=Icon1
+Icon3=GameDev.exe "$(AppPath)Tutorial\Tutorial.gdp"
+Title3=Edit Tutorial Project
+StartIn3=$(AppPath)
+Key3=Icon2
+Icon4=README.txt
+Title4=Readme
+StartIn4=$(AppPath)
+Key4=Icon4
+Icon5=COPYING.txt
+Title5=License
+StartIn5=$(AppPath)
+Key5=Icon5
+Icon6=GameDev.chm
+Title6=GameDev Help
+StartIn6=$(AppPath)
+Key6=Icon6
+Icon7=GameDev.exe "$(AppPath)Sample\Sample.gdp" /p "$(AppPath)Sample\DngnPlay.vbs"
+Title7=Play Dungeon Project
+StartIn7=$(AppPath)
+Key7=Icon8
+Icon8=GameDev.exe "$(AppPath)Sample\Sample.gdp" /e "$(AppPath)Sample\DngnEdit.vbs"
+Title8=Edit Dungeon Project
+StartIn8=$(AppPath)
+Key8=Icon9
+Icon9=$(WinSysPath)hh.exe -mapid 200 "$(AppPath)gamedev.chm"
+Title9=Read Tutorial
+StartIn9=$(AppPath)
+Key9=Icon7
+Icon10=QuickTut.txt
+Title10=Read Quick Tutorial
+StartIn10=$(AppPath)
+Key10=Icon10
+Icon11=GameInfo.htm
+Title11=XML Dependency Check
+StartIn11=$(AppPath)
+Key11=Icon11
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Program Files\MyProjects\GameDev\PackageNoVBRun
+RA Server Support=No
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Files Found]
+BMDXCtls.dll=C:\Program Files\MyProjects\BMDXCtls\ReleaseMinDependency\BMDXCtls.dll
+ScrHost.dll=C:\Program Files\MyProjects\ScrHost\ReleaseMinDependency\ScrHost.dll
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Files Released]
+AutPrx32.dll=
+GameDev.CHI=
+AutMgr32.exe=
+RACMgr32.exe=
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Missing Dependency Information]
+C:\Program Files\MyProjects\ScrHost\ReleaseMinDependency\ScrHost.dll=
+C:\Program Files\MyProjects\BMDXCtls\ReleaseMinDependency\BMDXCtls.dll=
+C:\WINDOWS\SYSTEM\quartz.dll=
+C:\WINDOWS\SYSTEM\VB5STKIT.DLL=
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Out-of-Date Dependency Information]
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Files Added]
+c:\program files\myprojects\gameprj\tutorial\tutorial.map=
+c:\program files\myprojects\gameprj\tutorial\gamedev.vbs=
+c:\program files\myprojects\gameprj\tutorial\open.wav=
+c:\program files\myprojects\gameprj\tutorial\tutorial.bmp=
+c:\program files\myprojects\gameprj\tutorial\tutorial.gdp=
+c:\program files\myprojects\gameprj\tutorial\ben9.mid=
+c:\program files\myprojects\copying.txt=
+c:\program files\myprojects\readme.txt=
+c:\program files\myprojects\gamedev\help\gamedev.chm=
+c:\program files\myprojects\gamedev\mapedit.vbs=
+c:\program files\myprojects\gamedev\tileed.vbs=
+c:\program files\myprojects\gameprj\sample\ben5.mid=
+c:\program files\myprojects\gameprj\sample\bug.bmp=
+c:\program files\myprojects\gameprj\sample\outside.map=
+c:\program files\myprojects\gameprj\sample\dngnedit.vbs=
+c:\program files\myprojects\gameprj\sample\dngnplay.vbs=
+c:\program files\myprojects\gameprj\sample\dungn1.map=
+c:\program files\myprojects\gameprj\sample\fireball.bmp=
+c:\program files\myprojects\gameprj\sample\getkey.wav=
+c:\program files\myprojects\gameprj\sample\getpotn.wav=
+c:\program files\myprojects\gameprj\sample\initmsg.wav=
+c:\program files\myprojects\gameprj\sample\opendoor.wav=
+c:\program files\myprojects\gameprj\sample\outside.bmp=
+c:\program files\myprojects\gameprj\sample\bugmsg.wav=
+c:\program files\myprojects\gameprj\sample\wizthank.wav=
+c:\program files\myprojects\gameprj\sample\splash.gif=
+c:\program files\myprojects\gameprj\sample\walls.bmp=
+c:\program files\myprojects\gameprj\sample\wiz1.bmp=
+c:\program files\myprojects\gameprj\sample\wiz2.bmp=
+c:\program files\myprojects\gameprj\sample\wizinfo.wav=
+c:\program files\myprojects\gameprj\sample\sample.gdp=
+AutPrx32.dll=This file is needed for RA server support.
+AutMgr32.exe=This file is needed for RA server support.
+RACMgr32.exe=This file is needed for RA server support.
+C:\Program Files\MyProjects\GameDev\GameInfo.htm=
+C:\Program Files\MyProjects\GameDev\QuickTut.txt=
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Files Removed]
+c:\windows\system\msvbvm60.dll=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\oleaut32.dll=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\olepro32.dll=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\asycfilt.dll=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\stdole2.tlb=
+c:\program files\microsoft visual studio\vb98\wizards\pdwizard\redist\comcat.dll=
+c:\windows\system\vb5stkit.dll=
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Files In Project]
+C:\Program Files\MyProjects\GameDev\GameDev.exe=Yes
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=No
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=No
+C:\WINDOWS\SYSTEM\quartz.dll=Yes
+C:\Program Files\MyProjects\BMDXCtls\ReleaseMinDependency\BMDXCtls.dll=Yes
+C:\Program Files\MyProjects\ScrHost\ReleaseMinDependency\ScrHost.dll=Yes
+C:\WINDOWS\SYSTEM\Comdlg32.ocx=Yes
+C:\WINDOWS\SYSTEM\hhctrl.ocx=Yes
+C:\WINDOWS\SYSTEM\ITSS.DLL=Yes
+C:\WINDOWS\SYSTEM\itircl.dll=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=Yes
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.map=Yes
+C:\Program Files\MyProjects\GamePrj\Tutorial\GameDev.vbs=Yes
+C:\Program Files\MyProjects\GamePrj\Tutorial\Open.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.gdp=Yes
+C:\Program Files\MyProjects\GamePrj\Tutorial\Ben9.mid=Yes
+C:\WINDOWS\SYSTEM\hh.exe=Yes
+C:\Program Files\MyProjects\COPYING.txt=Yes
+C:\Program Files\MyProjects\README.txt=Yes
+C:\Program Files\MyProjects\GameDev\Help\GameDev.chm=Yes
+C:\Program Files\MyProjects\GameDev\MapEdit.vbs=Yes
+C:\Program Files\MyProjects\GameDev\TileEd.vbs=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\ben5.mid=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Bug.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Outside.map=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\DngnEdit.vbs=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\DngnPlay.vbs=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Dungn1.map=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Fireball.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\GetKey.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\GetPotn.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\InitMsg.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\OpenDoor.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Outside.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\BugMsg.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\WizThank.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Splash.gif=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Walls.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Wiz1.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Wiz2.bmp=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\WizInfo.wav=Yes
+C:\Program Files\MyProjects\GamePrj\Sample\Sample.gdp=Yes
+C:\WINDOWS\SYSTEM\VB5STKIT.DLL=No
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=Yes
+C:\WINDOWS\SYSTEM\Mscomct2.ocx=Yes
+C:\Program Files\MyProjects\GameDev\GameInfo.htm=Yes
+C:\Program Files\MyProjects\GameDev\QuickTut.txt=Yes
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Configure Registry Files]
+Applicable=No
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Configure Remote Servers]
+Applicable=No
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Install Locations]
+C:\Program Files\MyProjects\GameDev\GameDev.exe=$(AppPath)
+C:\WINDOWS\SYSTEM\MSVBVM60.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\SYSTEM\quartz.dll=$(WinSysPath)
+C:\Program Files\MyProjects\BMDXCtls\ReleaseMinDependency\BMDXCtls.dll=$(AppPath)
+C:\Program Files\MyProjects\ScrHost\ReleaseMinDependency\ScrHost.dll=$(AppPath)
+C:\WINDOWS\SYSTEM\COMCT232.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Comdlg32.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\COMCTL32.OCX=$(WinSysPath)
+C:\Program Files\MyProjects\GameDev\Help\GameDev.chm=$(AppPath)
+C:\WINDOWS\SYSTEM\hhctrl.ocx=$(WinSysPath)
+C:\WINDOWS\SYSTEM\ITSS.DLL=$(WinSysPath)
+C:\WINDOWS\SYSTEM\itircl.dll=$(WinSysPath)
+C:\WINDOWS\hh.exe=$(WinSysPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\SYSTEM\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Program Files\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.map=$(AppPath)\Tutorial
+C:\Program Files\MyProjects\GamePrj\Tutorial\GameDev.vbs=$(AppPath)\Tutorial
+C:\Program Files\MyProjects\GamePrj\Tutorial\Open.wav=$(AppPath)\Tutorial
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.bmp=$(AppPath)\Tutorial
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.gdp=$(AppPath)\Tutorial
+C:\Program Files\MyProjects\GamePrj\Tutorial\Ben9.mid=$(AppPath)\Tutorial
+C:\WINDOWS\SYSTEM\hh.exe=$(WinSysPath)
+C:\Program Files\MyProjects\COPYING.txt=$(AppPath)
+C:\Program Files\MyProjects\README.txt=$(AppPath)
+C:\Program Files\MyProjects\GameDev\MapEdit.vbs=$(AppPath)
+C:\Program Files\MyProjects\GameDev\TileEd.vbs=$(AppPath)
+C:\Program Files\MyProjects\GamePrj\Sample\ben5.mid=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Bug.bmp=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Outside.map=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\DngnEdit.vbs=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\DngnPlay.vbs=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Dungn1.map=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Fireball.bmp=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\GetKey.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\GetPotn.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\InitMsg.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\OpenDoor.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Outside.bmp=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\BugMsg.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\WizThank.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Splash.gif=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Walls.bmp=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Wiz1.bmp=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Wiz2.bmp=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\WizInfo.wav=$(AppPath)\Sample
+C:\Program Files\MyProjects\GamePrj\Sample\Sample.gdp=$(AppPath)\Sample
+C:\WINDOWS\SYSTEM\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\SYSTEM\Mscomct2.ocx=$(WinSysPath)
+C:\Program Files\MyProjects\GameDev\GameInfo.htm=$(AppPath)
+C:\Program Files\MyProjects\GameDev\QuickTut.txt=$(AppPath)
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Configure Shared Files]
+Applicable=Yes
+C:\Program Files\MyProjects\GameDev\GameDev.exe=Yes
+C:\Program Files\MyProjects\GameDev\Help\GameDev.chm=No
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.map=No
+C:\Program Files\MyProjects\GamePrj\Tutorial\GameDev.vbs=No
+C:\Program Files\MyProjects\GamePrj\Tutorial\Open.wav=No
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.bmp=No
+C:\Program Files\MyProjects\GamePrj\Tutorial\Tutorial.gdp=No
+C:\Program Files\MyProjects\GamePrj\Tutorial\Ben9.mid=No
+C:\Program Files\MyProjects\BMDXCtls\ReleaseMinDependency\BMDXCtls.dll=Yes
+C:\Program Files\MyProjects\ScrHost\ReleaseMinDependency\ScrHost.dll=Yes
+C:\Program Files\MyProjects\COPYING.txt=No
+C:\Program Files\MyProjects\README.txt=No
+C:\Program Files\MyProjects\GameDev\MapEdit.vbs=No
+C:\Program Files\MyProjects\GameDev\TileEd.vbs=No
+C:\Program Files\MyProjects\GamePrj\Sample\ben5.mid=No
+C:\Program Files\MyProjects\GamePrj\Sample\Bug.bmp=No
+C:\Program Files\MyProjects\GamePrj\Sample\Outside.map=No
+C:\Program Files\MyProjects\GamePrj\Sample\DngnEdit.vbs=No
+C:\Program Files\MyProjects\GamePrj\Sample\DngnPlay.vbs=No
+C:\Program Files\MyProjects\GamePrj\Sample\Dungn1.map=No
+C:\Program Files\MyProjects\GamePrj\Sample\Fireball.bmp=No
+C:\Program Files\MyProjects\GamePrj\Sample\GetKey.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\GetPotn.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\InitMsg.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\OpenDoor.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\Outside.bmp=No
+C:\Program Files\MyProjects\GamePrj\Sample\BugMsg.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\WizThank.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\Splash.gif=No
+C:\Program Files\MyProjects\GamePrj\Sample\Walls.bmp=No
+C:\Program Files\MyProjects\GamePrj\Sample\Wiz1.bmp=No
+C:\Program Files\MyProjects\GamePrj\Sample\Wiz2.bmp=No
+C:\Program Files\MyProjects\GamePrj\Sample\WizInfo.wav=No
+C:\Program Files\MyProjects\GamePrj\Sample\Sample.gdp=No
+C:\Program Files\MyProjects\GameDev\GameInfo.htm=No
+C:\Program Files\MyProjects\GameDev\QuickTut.txt=No
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Distribution]
+Type=single
+Size=
+Title=Scrolling Game Development Kit
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Package]
+PackageFolder=C:\Program Files\MyProjects\GameDev\PackageNoVBRun
+ProjectFolder=C:\Program Files\MyProjects\GameDev
+ServerSideCab=
+File1=C:\Program Files\MyProjects\GameDev\PackageNoVBRun\setup.exe
+File2=C:\Program Files\MyProjects\GameDev\PackageNoVBRun\Setup.Lst
+File3=C:\Program Files\MyProjects\GameDev\PackageNoVBRun\GameDev.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Scrolling Game Development Kit - No VB Runtime|IconGroups]
+Group0=Scrolling Game Development Kit
+PrivateGroup0=0
+Parent0=$(Programs)
+
+[Package|Scrolling Game Development Kit - No VB Runtime|Scrolling Game Development Kit]
+Icon1=GameDev.exe "$(AppPath)Tutorial\Tutorial.gdp" /p
+Title1=Play Tutorial Project
+StartIn1=$(AppPath)
+Key1=Icon3
+Icon2=GameDev.exe
+Title2=Scrolling Game Development Kit
+StartIn2=$(AppPath)
+Key2=Icon1
+Icon3=GameDev.exe "$(AppPath)Tutorial\Tutorial.gdp"
+Title3=Edit Tutorial Project
+StartIn3=$(AppPath)
+Key3=Icon2
+Icon4=README.txt
+Title4=Readme
+StartIn4=$(AppPath)
+Key4=Icon4
+Icon5=COPYING.txt
+Title5=License
+StartIn5=$(AppPath)
+Key5=Icon5
+Icon6=GameDev.chm
+Title6=GameDev Help
+StartIn6=$(AppPath)
+Key6=Icon6
+Icon7=GameDev.exe "$(AppPath)Sample\Sample.gdp" /p "$(AppPath)Sample\DngnPlay.vbs"
+Title7=Play Dungeon Project
+StartIn7=$(AppPath)
+Key7=Icon8
+Icon8=GameDev.exe "$(AppPath)Sample\Sample.gdp" /e "$(AppPath)Sample\DngnEdit.vbs"
+Title8=Edit Dungeon Project
+StartIn8=$(AppPath)
+Key8=Icon9
+Icon9=$(WinSysPath)hh.exe -mapid 200 "$(AppPath)gamedev.chm"
+Title9=Read Tutorial
+StartIn9=$(AppPath)
+Key9=Icon7
+Icon10=QuickTut.txt
+Title10=Read Quick Tutorial
+StartIn10=$(AppPath)
+Key10=Icon10
+Icon11=GameInfo.htm
+Title11=XML Dependency Check
+StartIn11=$(AppPath)
+Key11=Icon11

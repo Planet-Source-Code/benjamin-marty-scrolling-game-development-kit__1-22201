@@ -1,0 +1,87 @@
+<HTML>
+<HEAD>
+<TITLE>Get GameDev XML Project Information</TITLE>
+<SCRIPT language="javascript">
+function addDep(strAdd)
+{
+   txtDeps.value = txtDeps.value + strAdd + "\r\n";
+}
+
+function addInc(strAdd)
+{
+   txtIncl.value = txtIncl.value + strAdd + "\r\n";
+}
+
+function GetInfo()
+{
+   var oOption;
+   var colNodes;
+   var nIdx;
+   var nMax;
+   var strAdd;
+
+   txtDeps.value = "";
+   txtIncl.value = "";
+
+   xmlInfo.XMLDocument.load(filInfo.value);
+   nMax = xmlInfo.XMLDocument.selectSingleNode("/GameProject/Tilesets/@Count").text;
+
+   for (nIdx = 0; nIdx < nMax; nIdx++)
+   {      
+      addDep(xmlInfo.XMLDocument.selectSingleNode("/GameProject/Tilesets/Tileset[@Index=" + nIdx + "]/ImagePath").text);
+   }
+   nMax = xmlInfo.XMLDocument.selectSingleNode("/GameProject/Media/@Count").text;
+   for (nIdx = 0; nIdx < nMax; nIdx++)
+   {      
+      addDep(xmlInfo.XMLDocument.selectSingleNode("/GameProject/Media/Clip[@Index=" + nIdx + "]/MediaFile").text);
+   }
+
+   nMax = xmlInfo.XMLDocument.selectSingleNode("/GameProject/Maps/@Count").text;
+   addInc("(Implicit GDP project file)");
+   for (nIdx = 0; nIdx < nMax; nIdx++)
+   {      
+      addInc(xmlInfo.XMLDocument.selectSingleNode("/GameProject/Maps/Map[@Index=" + nIdx + "]/Path").text);
+   }
+
+   colNodes = xmlInfo.XMLDocument.selectNodes("/GameProject/Maps/Map/Specials/Special[MediaName != '']");
+   nMax = colNodes.length;
+   for (nIdx = 0; nIdx < nMax; nIdx++)
+   {
+      if (parseInt(colNodes[nIdx].selectSingleNode("Flags").text) & 2048)
+      {
+         addDep(colNodes[nIdx].selectSingleNode("MediaName").text);
+      }
+   }
+
+   colNodes = xmlInfo.XMLDocument.selectNodes("/GameProject/Maps/Map/Specials/Special[FuncType = 1]");
+   nMax = colNodes.length;
+   for (nIdx = 0; nIdx < nMax; nIdx++)
+   {
+      if (colNodes[nIdx].selectSingleNode("Value").text.substr(0,4) == "#PIC")
+      {
+         strAdd = colNodes[nIdx].selectSingleNode("Value").text.substr(4);
+         while (strAdd.substr(0,1) == " ")
+            strAdd = strAdd.substr(1);
+         addDep(strAdd);
+      }
+   }
+}
+</SCRIPT>
+</HEAD>
+<BODY>
+<XML id="xmlInfo" name="xmlInfo" SRC="">
+</XML>
+<P>Select an XML exported GameDev project: <INPUT id="filInfo" name"filInfo" type="file"></P>
+<P><INPUT type="button" value="Get Information" onclick="GetInfo()"></P>
+<TABLE><TR>
+<TD VALIGN="top">Referenced External Files:</TD>
+<TD><TEXTAREA id="txtDeps" name="txtDeps" rows="6" cols="40"></TEXTAREA>
+</TD></TR>
+<TR>
+<TD VALIGN="top">Files contained in XML:</TD>
+<TD><TEXTAREA id="txtIncl" name="txtIncl" rows="6" cols="40"></TEXTAREA>
+</TD></TR>
+</TABLE>
+<P>(This information does not include script files or files that may be referenced by script files)</P>
+</BODY>
+</HTML>

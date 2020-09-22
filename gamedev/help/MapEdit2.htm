@@ -1,0 +1,76 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Editing Map Layers</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap><a
+        href="MapEdit1.htm"><font color="#FFFFFF" size="2"
+        face="Arial"><strong>Up to Edit Maps Dialog</strong></font></a></td>
+    </tr>
+</table>
+
+<h2>Editing Map Layers</h2>
+
+<p>This is part of a series of pages describing the <a
+href="MapEdit1.htm">Edit Maps Dialog</a>. This page describes the
+Layers tab.</p>
+
+<p>The map layers are where the main content of a map is really
+stored. Each Layer object contains an array of tiles which define
+the contents of an entire area covering the map. Multiple layers
+can be defined to represent foreground and background layers of
+the map, and they can scroll at different speeds. The size of the
+layer (fundamentally defined in tiles) is determined entirely by
+the map its contained in. This size is calculated when the layer
+is created or updated. A lower scroll rate, for instance, will
+result in a layer requiring fewer tiles than a similar layer with
+a higher scroll rate. In order for the layer to have content
+accross the entire area of a map, it's necessary for a faster
+scrolling layer to have more content.</p>
+
+<p>To create a layer, you must first select a map which will own
+the layer. Then enter a name for the layer (which must be unique
+in the space of layer names for this map). Select a tileset which
+the layer uses. The tiles of each layer are restricted to the 256
+(maximum) tiles contained in a tileset. (If you need more tiles
+you can add another transparent layer with the same scroll rate
+using a different tileset.) The X scroll rate and Y scroll rate
+indicate how fast the layer scrolls relative to the map. It's a
+good idea for your main layer (where the player is and probably
+where all the action takes place) to have values of 1 here. Any
+layer that scrolls slower than this would have values between 0
+and 1, and any layer than scrolls faster would have a value
+greater than 1. Don't get carried away with scroll rates.
+Remember that a faster scrolling layer requires more tiles. If
+you have a map that's 16,000 pixels x 16,000 pixels, and that
+layer's tileset uses tiles that are 16x16 pixels, a layer that
+scrolls at a rate of 1,1 would require about 1 MB while a layer
+that scrolls at a rate of 2,2 would require about 4 MB.</p>
+
+<p>The last option to select for a layer is the &quot;Transparent
+layer&quot; checkbox. You should always have exactly one layer
+that is not transparent, and the remainder of the layers should
+have this box checked. And of course, if you want to see all
+these layers, the transparent layers should all be on top of the
+non-transparent layer.</p>
+
+<p>The &quot;Screen Depth&quot; here is not a persistent
+property. It is only used to determine what video mode to use
+when the Edit button is clicked. The Edit button will display <a
+href="MapEdit3.htm">The Full Screen Map Editor</a>. Use the
+&quot;Update Layer&quot; button whenever you have clicked on a
+layer and made changes to its properties. All layer information
+and parameters are stored within the MAP file.</p>
+</body>
+</html>

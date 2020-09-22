@@ -1,0 +1,40 @@
+#define IDH_Intro 100
+
+#define IDH_CollDef 101
+#define IDH_CtrlCnfg 102
+#define IDH_GrpTile 103
+#define IDH_MachTile 104
+#define IDH_MapEdit1 105
+#define IDH_MapEdit2 106
+#define IDH_MapEdit3 107
+#define IDH_MapEdit4 108
+#define IDH_MapEdit5 109
+#define IDH_Media 110
+#define IDH_Player 111
+#define IDH_Project 112
+#define IDH_Sprites1 113
+#define IDH_Sprites2 114
+#define IDH_Sprites3 115
+#define IDH_Sprites4 116
+#define IDH_TileAnim 117
+#define IDH_TileImp 118
+#define IDH_TSDisp 119
+#define IDH_TSEdit1 120
+#define IDH_TSEdit2 121
+#define IDH_TSMatch 122
+#define IDH_Options 123
+#define IDH_Shortcut 124
+
+#define IDH_Tutorial 200
+#define IDH_Tut1 201
+#define IDH_Tut2 202
+#define IDH_Tut3 203
+#define IDH_Tut4 204
+#define IDH_Tut5 205
+#define IDH_Tut6 206
+#define IDH_Tut7 207
+#define IDH_Tut8 208
+#define IDH_Tut9 209
+
+#define IDH_FAQ 1000
+#define IDH_TechSupt 1001

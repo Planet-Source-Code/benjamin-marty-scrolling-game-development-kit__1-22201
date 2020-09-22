@@ -1,0 +1,108 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Multimedia Manager</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>Multimedia Manager</h2>
+
+<p>This dialog can be used to include media clips in the project
+and to assign these media clips to background music for maps and
+sound effects for special functions.</p>
+
+<p>To add a new clip:</p>
+
+<ul>
+    <li>Under &quot;Clip name&quot; assign it a name by which it
+        can be referred to within the project.</li>
+    <li>Locate the file containing the media in &quot;Media
+        file&quot; (path relative to the GDP file).</li>
+    <li>Check &quot;Keep loaded&quot; if the clip should be kept
+        in memory, for instance, to continue playing it where
+        playback was left off while halting the clip to play
+        another clip, or to make this clip play faster.</li>
+    <li>Check &quot;Play looping&quot; to make this clip start
+        over when its done playing (good for background music).</li>
+    <li>Check &quot;Modal&quot; if you want the game to freeze
+        while the media clip is played (required for video clips)</li>
+    <li>Check &quot;Suspend other media to play&quot; if you want
+        all other sound to fade out before starting this clip,
+        and te re-start when this clip is done (good for clips
+        that are too complicated for some sound cards to handle
+        simultaneously).</li>
+    <li>Adjust the volume. Note that anything below the top few
+        pixels may be inaudible on some or most (or all?) sound
+        cards currently available. The whole scale was included
+        because according to Microsoft documentation, the
+        framework can support 10,000 volume levels.</li>
+    <li>Assign an X and Y if this is a video clip. The clip will
+        play in its native size, so make sure that there's enough
+        room on a 640x480 display for the whole rectangle to
+        appear on screen given the X and Y for top and left.</li>
+    <li>Click the &quot;Add Clip&quot; button.</li>
+</ul>
+
+<p>The &quot;Assign Media&quot; tab allows you to associate media
+clips with certain aspects of the game. To set the background
+music for a particular map, select the map from the
+&quot;Maps&quot; dropdown list, then select the clip that should
+play as background music for that map. The path is relative to
+the path of the GDP file.</p>
+
+<p>The other aspect to which a multimedia clip can be assigned is
+a special function. A special function can cause a media clip to
+start playing or stop playing, or it can change the media
+associated with the background music clip. To assign a media clip
+to a special function, select the function from the list. Then
+select &quot;Play clip&quot; or &quot;Stop clip&quot; and pick a
+media clip from the &quot;Function media clip&quot; dropdown
+list. Changes take effect immediately and do not need to be
+applied.</p>
+
+<p>When a clip is stopped, if its &quot;Keep loaded&quot;
+attribute is set, it will remember it's current position and
+resume playing from the same position when the clip is played
+again. If &quot;Keep loaded&quot; is not set, the clip will be
+completely unloaded from memory and, if played again, will be
+reloaded and started from the beginning.</p>
+
+<p>Changing the background music is a bit different. The
+background music does not change from one clip to another clip,
+but instead changes the media associated with the clip set as the
+&quot;Background music&quot; clip. So when a function is set to
+change the background music it requires a filename rather than a
+clip name. When the function is activated the current background
+music will fade out, the new media file will be loaded, and the
+new background music will start. This all happens without
+changing the clip associated with the map's &quot;Background
+music&quot; attribute.</p>
+
+<p>All media clip information (except the clip itself, which is
+its own media file) is stored in the project file. A special
+function's reference to a media clip, however is stored in the
+map with the special function itself. This is one of the many
+reasons the GDP file and the MAP files need to be in sync.</p>
+
+<p>As of version 1.2 there are a couple other events with which
+media clips can be associated. A <a href="CollDef.htm">collision
+definition</a> can trigger a media clip to play, as can a <a
+href="MapEdit4.htm">player map interaction</a>. These
+associations are stored in the MAP file. Rather than defining
+these in the media clips dialog, they are defined in their
+respective dialogs.</p>
+</body>
+</html>

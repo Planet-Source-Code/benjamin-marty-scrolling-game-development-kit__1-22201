@@ -1,0 +1,496 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>GameDev Tutorial Step 1 - Creating Graphics</title>
+</head>
+
+<body bgcolor="#D3DFFA">
+
+<h2><font face="Verdana">GameDev Tutorial - Creating a Simple
+Game</font></h2>
+
+<table border="0" cellpadding="0" cellspacing="6">
+    <tr>
+        <td><img src="Images/Painting.GIF" width="125"
+        height="125"></td>
+        <td valign="top"><h3><font face="Verdana">Step 1 -
+        Creating Graphics</font></h3>
+        <p><font face="Verdana">The tileset editor within GameDev
+        opens a full screen display in order to ensure the
+        desired color depth for the images. This may make it
+        difficult to follow this tutorial on-screen, so before
+        beginning you may wish to print this page out for
+        reference as you proceed with this first step of the
+        tutorial. However, if that's not an option, GameDev does
+        allow you to Alt-Tab between the full-screen display and
+        the desktop.</font></p>
+        </td>
+    </tr>
+</table>
+
+<p><font face="Verdana">From the main project view in GameDev,
+all areas of the program can be accessed via the View menu. We
+want to start out editing Tilesets. Tilesets store the graphics
+for all the tiles and sprites. Select &quot;Tilesets&quot; from
+the view menu and the Edit Tilesets dialog will appear.</font></p>
+
+<p><font face="Verdana">From the Edit Tilesets dialog you can
+create new Tilesets, create Tilesets based on existing images,
+import pieces of other images into a Tileset and manage tilesets
+in other ways. Right now we want to create a new Tileset, but
+first we need to specify some parameters for the tileset.</font></p>
+
+<ul>
+    <li><font face="Verdana">Leave the default values of 32 for
+        tile width and tile height.</font></li>
+    <li><font face="Verdana">Change the number of Tile Rows to 4
+        instead of 10 (click the arrows or enter a the number),
+        but leave Tile Columns at 10.</font></li>
+    <li><font face="Verdana">Each tileset needs a distinct name.
+        Lets name this tileset Tutorial. Type the word Tutorial
+        into the Name field.</font></li>
+</ul>
+
+<p><font face="Verdana">If you want to skip this step and use
+graphics already prepared for the tutorial, you can click the
+&quot;Load Image&quot; button and load Tutorial.bmp which
+contains the graphics we will be creating in this step.</font></p>
+
+<p><font face="Verdana">The next step is to click the Create
+button. Before you do this, note the selection for screen depth
+at the bottom of the window. This is not a setting saved with the
+tileset, but is an option for how to open the full-screen display
+to begin the tile editor. It can, however, affect the format of
+the tileset. For this tutorial, let's leave the selection at
+16-bit color. Some video cards do not support 24-bit color or
+32-bit color. Editing a tileset in 16-bit color mode will reduce
+the format of the graphics to 16-bit color. Be careful if you
+load a 24-bit color image into a 16-bit color editor, some color
+information can be permanently lost.</font></p>
+
+<p><font face="Verdana">After clicking the Create button the full
+screen tile editor is presented.</font></p>
+
+<p><font face="Verdana"><img src="Images/TileEdit.GIF"
+width="640" height="480"></font></p>
+
+<p><font face="Verdana">The first thing we should do is click the
+button that reads &quot;Make 16-bit&quot;. This forces all colors
+in the color palette to map exactly to a 16-bit color. If this is
+not done, a flood fill may fill an area with a dithered color.
+The change is imperceptible (at least to me) but if you start
+filling and re-fillling areas with inexact colors, you will see
+the problem.</font></p>
+
+<p><img src="Images/SteelCtr.GIF" align="left" hspace="6"
+width="32" height="32"><font face="Verdana">Lets start with some
+very basic graphics that we can use to draw tiles on the map, and
+later on, to include in our sprite definitions. We'll start with
+a tile representing a solid chunk of steel. The fifth color from
+the left on the bottom row of the palette looks like a good steel
+grey. Left click on this color, then click the &quot;Solid
+rectangle&quot; button. Drag the mouse from coordinate 0,0 to
+31,31 - that should result in a grey rectangle accross the whole
+grid. (Mouse coordinates can be seen directly below the grid on
+the left side.)</font></p>
+
+<p><font face="Verdana">When drawing graphics onto the tile
+editor, the mouse can be clicked on either the grid with the
+magnified view of the tile, or on the tile graphic itself, to the
+right of the grid at the top. These areas represent the tile in
+memory that has not been stored into the tileset... consider it a
+working area for the tile graphic.</font></p>
+
+<p><font face="Verdana">Now let's add some shinyness/irregularity
+to the &quot;steel surface&quot;. The eighth color from the end
+of the palette looks like a good steel blue. Select this and then
+click the line button. Draw some parallel diagonal lines on the
+gray tile. Try some white lines too (the last color). Draw the
+lines at a 45 degree angle to the edge for reasons we'll see
+later.</font></p>
+
+<p><font face="Verdana">It looks a little pixeled, let's try to
+fix that. Click the &quot;Smooth&quot; button and drag a
+rectangle over the entire grid (just as was done for the grey
+rectangle). Viola, automatic pixel blurring (almost as good as
+anti-aliasing).</font></p>
+
+<p><font face="Verdana">Good enough, let's store this tile in the
+Tileset. When the tile editor first comes up, the very first tile
+in the Tileset is selected by default. We don't want to store the
+tile in the first &quot;slot&quot; because this is the tile used
+as the background when drawing the map (tile zero). Since we're
+going to stick with a black background right now, select the next
+tile. To do this, click the right arrow (&quot;&gt;&quot;) button
+below the grid or click on the next tile in the tileset window
+near the bottom right. Store the tile into that slot by clicking
+the &quot;Store&quot; button below the grid.</font></p>
+
+<p><font face="Verdana">If you want to draw a second similar tile
+(this might be good so that not all solid metal looks exactly the
+same) click the clear button and repeat the process starting with
+the gray rectangle. Store the resulting tile into another empty
+slot in the tileset.</font></p>
+
+<p><img src="Images/MetalNum.jpg" align="right" hspace="6"
+width="137" height="147"><font face="Verdana">The tile(s) you
+have just drawn will be the center of a number of tiles that we
+will use on the map to construct larger structures. Now we need
+to define some edge pieces that can be put around this tile to
+make it blend nicely with the background. Let's start with a
+block for the top edge and we'll move on from there.</font></p>
+
+<p><font face="Verdana">To make the edge pieces we will fade the
+steel gray to a darker shadowed color, and at the very edge have
+a solid bright surface. Let's create our own shadowed color in
+the palette. Pick a color that we haven't used (with a left mouse
+click on the palette). Now use the R++, R+, R-, R--, G++, G-
+(etc.) buttons to adjust the components of that color. Get
+something around R=20, G=20, B=40.</font></p>
+
+<p><img src="Images/SteelTop.gif" align="left" hspace="6"
+width="32" height="32"><font face="Verdana">To make a smooth
+gradient from the shadowed grey to steel grey, click the vertical
+gradient button. It's possible to make gradients in the palette
+itself, but we don't need to because we're drawing a simple
+vertical gradient rectangle. Now select the colors for the
+gradient: left-click on the shadowed grey and right-click on the
+steel grey. Drag a rectangle (left mouse button) on the grid that
+covers the whole tile. This should result in a smooth gradient
+with the shadowed color at the top and the lighter steel grey at
+the bottom.</font></p>
+
+<p><font face="Verdana">Draw some of the same diagonal lines that
+we drew for the center block, but confine them mainly to the
+lower half of this tile. Also, perform the same smooth operation
+afterwards. (Don't forget to select the proper tools before
+drawing on the grid.)</font></p>
+
+<p><font face="Verdana">Now we need to add the solid edge on top.
+A shorter gradient to white should do the trick. Left click on
+white and right click on the shadowed color. Click the vertical
+gradient button and draw a 4-pixel-high rectangle accross the top
+of the tile. This tile is done! Store it to a blank slot in the
+tileset and we'll move on.</font></p>
+
+<p><font face="Verdana">When drawing gradient rectangles, the
+color selected with the mouse button always goes on the corner
+where the drag was started. If you use the right mouse button to
+drag, the color selected with the right mouse button goes at that
+corner.</font></p>
+
+<table border="0" cellpadding="0" cellspacing="6">
+    <tr>
+        <td><font face="Verdana">This edge tile can be easily
+        manipulated to quickly make the tiles for all the edges.
+        In the process you'll learn how to use the rotate and
+        flip commands.</font><p><font face="Verdana">Click the
+        Copy button. The flip and rotate commands only operate on
+        the copied clip of graphics, not directly on the tile.
+        Select the whole tile (drag accross the whole grid). Now
+        the whole tile has been copied into the tile editors
+        &quot;clipboard&quot; (which is not the system
+        clipboard).</font></p>
+        </td>
+        <td valign="top"><img src="Images/ArLeft.gif" width="51"
+        height="48"><p><img src="Images/ArRight.gif" width="51"
+        height="50"></p>
+        </td>
+    </tr>
+</table>
+
+<p><font face="Verdana">To make the tile for the right edge,
+click the &quot;Right 15&quot; button until the rotation is at
+-90 degrees. The tile is facing the right direction now, but the
+diagonal lines are going the wrong direction. Now since the lines
+were drawn at a 45 degree angle there's a simple solution to
+this. Click the X Flip button to flip the copied clip
+horizontally. Now when we paste the clip the diagonal lines will
+be going in the right direction. Click the &quot;Paste+&quot;
+button. This is the tool used to paste the clip when it is
+rotated (Paste will paste exactly what you see under
+&quot;Clip&quot;).</font></p>
+
+<p><font face="Verdana">As you move the mouse pointer over the
+grid you will see the clip draw in it's rotated orientation,
+centered around the mouse pointer. Move the pointer until the
+rotated clip covers all the pixels on the grid, then click the
+left mouse button. You now have a tile for the right edge. Store
+this tile into a blank slot in the tileset.</font></p>
+
+<p><font face="Verdana">Now continue to rotate and flip the tile
+in various ways until you have a tile for all the flat edges
+(left, right, top, bottom). Store each of these into the tileset.</font></p>
+
+<p><font face="Verdana">The corner tiles will take a bit more
+effort. To get us started, load the tile for the top edge. We're
+going to need one column of pixels that contains the exact
+gradient used in the edge tiles. If your diagonal lines (or their
+smoothed pixels) have affected the edges of this tile, avoid
+these edges in the following steps (You may need to re-create the
+gradient without diagonal lines if both edges of your gradient
+were affected by the diagonal lines).</font></p>
+
+<p><font face="Verdana">Copy one column of pixels by clicking the
+copy button and dragging from the top of the tile to the bottom
+of the tile without enclosing more that one column width of
+pixels. Be sure to do this on a column of pixels that has not
+been affected by the diagonal lines. This column of pixels will
+be used as a pattern to reproduce the gradient diagonally.</font></p>
+
+<p><font face="Verdana">Now click the clear button to clear out
+the grid to prepare for a new tile. Paste the column of pixels
+along the left side of the of the new tile so it extends from the
+top to the bottom of the leftmost column of pixels in the tile.
+Now use the rotate buttons to set the rotation to -90 degrees
+(right 90 degrees). Click on Paste+ and paste the one row of
+pixels along the bottom of the tile. There should be one pixel
+where the two paste operations intersect at the bottom left
+corner and the color of that pixel should be the same in both.</font></p>
+
+<p><font face="Verdana">Now that the edges are set up to match
+neighboring tiles, we'll fill in the rest. This tile will be a
+sloped tile to fill in the top right corner of a block of steel
+tiles. The slope will extent from the top left corner to the
+bottom right, filled in on the bottom left half of the tile. The
+easiest way to do this is to click the &quot;Make R. Button
+Pick&quot; button and then click the line button to start drawing
+lines. Note that when you now right-click on the grid, the color
+at that pixel will be assigned to the currently selected color in
+the palette (primary selection). So be sure the currently
+selected color is not an important color. If you do lose an
+important color, you can click the Reset button to re-initialize
+the color palette. Remember to click &quot;Make 16-bit&quot;
+again.</font></p>
+
+<p><font face="Verdana">Right-click the top-leftmost pixel of the
+tile (white) then left click and drag down to the
+bottom-rightmost pixel. Right-click on the pixel to the left
+(30,31) then click and drag to 0,1. Right-click on 0,2 then click
+and drag to 29,31. Continue this process until the lower left
+half of the tile is completely filled in. Store the new tile into
+a blank slot in the tileset.</font></p>
+
+<p><img src="Images/SteelAll.GIF" align="left" hspace="6"
+width="96" height="96"><font face="Verdana">Before adding any
+diagonal lines to this image, we should rotate/flip it in all
+directions to get the 4 corner pieces we will need (If you add
+the diagonal lines too soon, the tile will only be usable for two
+corners instead of four, if you want all the diagonal lines to be
+parallel). So flip and rotate as necessary and store all 4 corner
+pieces into the tileset. After this is done you may wish to go
+add diagonal lines to them. Be careful not to smooth any area
+beyond the white edge or the white will smear into the black.</font></p>
+
+<p><font face="Verdana">Only 6 more tiles are necessary for a
+complete set of tiles that can be used to make any shape.
+Currently we only have the tiles necessary for a convex shape. To
+allow concave shapes we need inner corners. Copy the same column
+of pixels used in the previous section on making the sloped
+tiles. However, this time the top pixel (white) should be
+excluded from the copy, resulting in a 31-pixel column instead of
+a 32-pixel column. This is done because in a series of sloped
+tiles, the neighboring exterior tiles will contain the white
+pixels while this new tile resides entirely on the interior.
+Paste the copied graphic at the top of the leftmost column of a
+blank tile, as before, but this time, rotate it the other
+direction and paste the second image (horizontal row of pixels)
+along the top so the 2 lightest-grey pixels overlap.</font></p>
+
+<p><font face="Verdana">The bottom-most pixel and right-most
+pixels should be copied from the neighboring pixel. Since there
+were only 31 pixels in the copied graphic, the bottom and right
+would be black, but we want it to be grey. This can be
+accomplished by pasting each version of the graphic twice: for
+instance, paste the graphic at 0,1 before pasting at 0,0.</font></p>
+
+<p><img src="Images/SteelInn.GIF" align="left" hspace="6"
+width="65" height="64"><font face="Verdana">Now connect the edges
+with diagonal lines like before. Right-click on the
+bottom-leftmost pixel, then click and drag to the top-rightmost
+pixel. Then right-click on 30,0 and click and drag to 0,30. Right
+click on 0,29, then click and drag to 29,0. Repeat until the
+upper left half of the tile is completely filled. Store the tile
+when complete and <strong>KEEP </strong>this copy of the tile as
+is because we will need it for the last 2 tiles. Now fill the
+lower right half of the tile with the steel gray color. This is
+actually the tile that we will use on the map. Rotate it 4
+directions and store it, add diagonal lines and smooth if you
+wish.</font></p>
+
+<p><font face="Verdana">The two remaining tiles apply when two
+2-by-2 blocks of tiles overlap at their corners. Load the tile
+that was stored to &quot;<strong>KEEP</strong>&quot; in the
+previous step. It should be noted here that &quot;Paste+&quot;
+treats a color as the transparent color if it appears in all 4
+corners of the copies clip.</font></p>
+
+<p><img src="Images/SteelAng.GIF" align="left" hspace="6"
+width="33" height="64"><font face="Verdana">This being said, we
+want to have a transparent color - we'll want to make all 4
+corners black. Left-click an unused color in the palette and
+(assuming R. Button Pick is turned on) right-click the lightest
+grey pixel at the top left corner (this pixel represents the area
+closest to the exterior edge of the tile). We need to remember
+that color for later. Now put a black pixel in each corner of the
+tile currently loaded into the grid. Then copy the entire tile
+into the &quot;clipboard&quot; with the copy button (and then
+dragging over the whole grid). Now set the rotation to 180
+degrees and click on Paste+. You should see when you move the
+mouse over the grid that the triangle fits nicely into the empty
+half of the tile without disturbing the half of the tile already
+there. Match it up so the whole tile is full (except the corners)
+and click to paste. Select the previously stored color from the
+palette, select the &quot;Pixel&quot; button and put the light
+grey pixels back on the exterior corners (there are now two of
+them). Then select the steel grey color from the color palette
+and click the two steel grey pixels into place in the other two
+corners.</font></p>
+
+<p><font face="Verdana">Store the tile into the tileset, copy it
+into the clipboard, flip it, paste it and store this one too, and
+you're done! These are all the tiles necessary to create a
+complete TileMatch definition.</font></p>
+
+<hr>
+
+<h4><font face="Verdana">Sprite Graphics</font></h4>
+
+<p><font face="Verdana">We have the tiles we need for the the
+basic framework of the map, but it won't be very interesting
+without something else to put on the map. The most fun type of
+sprite to make is one that turns is all directions (well, 36
+directions feels like all directions anyway). For this we need 36
+consecutive blank tiles. There's not enough room in the tileset
+to store these tiles right now. So this is a good time to
+demonstrate the &quot;Update&quot; command on the tileset.</font></p>
+
+<p><font face="Verdana">Close the tileset editor with the close
+button. This would also be a good time to save what you've done
+so far. After closing the full screen editor, click the tileset
+name in the list (the &quot;[L]&quot; means it's currently loaded
+into memory). Click the Save button and specify a path and
+filename for the BMP file.</font></p>
+
+<p><font face="Verdana">Now click the tileset name (if it's not
+already selected) and increase the number of rows from 4 to 8.
+Then click the Update button. The screen will flip into full
+screen mode momentarily while the graphics are manipulated on a
+full screen display. If you select the tileset and click the Edit
+button to return to the editor now, you will see there are 4 new
+rows of blank tiles. This is enough to create a 36-state rotating
+sprite.</font></p>
+
+<p><img src="Images/ShipRite.GIF" align="left" hspace="6"
+width="32" height="32"><font face="Verdana">Let's create a simple
+spaceship type graphic. It should be pointing to the right
+because when we define the sprite using the graphic, the
+automatic sprite frame assignment starts at zero degrees (which
+corresponds to something pointing to the right).</font></p>
+
+<p><font face="Verdana">My ship was composed entirely of
+ellipses. The entire ship should be constrained to a few pixels
+from the edge, even more near the corners. The reason for this
+has to do with rotation. When the image is rotated 45 degrees,
+the rotated image must also fit inside the same square. So if you
+want to make a ship shaped exactly like mine, here are my
+parameters</font></p>
+
+<ul>
+    <li><font face="Verdana">Dark red ellipse from 6,5 to 19,26
+        (the body of the ship)</font></li>
+    <li><font face="Verdana">Light red ellipse from 15,9 to 28,22
+        (the head of the ship)</font></li>
+    <li><font face="Verdana">Grey ellipse from 4,6 to 8,10 (left
+        thruster)</font></li>
+    <li><font face="Verdana">Grey ellipse from 4,21 to 8,25
+        (right thruster)</font></li>
+</ul>
+
+<p><font face="Verdana">Store this image of the ship into the
+tileset in a blank slot. Choose a slot on a row that doesn't have
+any other images. The automatic rotation process will store
+rotated image in the 35 cells following the current cell,
+overwriting anything that may already be contained in them.</font></p>
+
+<p><font face="Verdana">Click the &quot;Turn AA On&quot; to turn
+Anti-Aliasing on. If the button reads &quot;Turn AA Off&quot;
+then Anti-Aliasing is already turned on. Then click the
+&quot;Make 360°/10°&quot; button. Watch as the original tile is
+rotated to 35 other consecutive orientations and stored into the
+tileset.</font></p>
+
+<p>&nbsp;</p>
+
+<p><img src="Images/Ship120.GIF" align="left" hspace="6"
+width="32" height="32"><font face="Verdana">Notice that the
+images that didn't fall exactly at a multiple of 90 degrees are a
+bit blurred by the anti-aliasing and don't quite match the images
+that are at exactly 90-degree increments. To make all the images
+look more uniform let's smooth the images that still have sharp
+edges. For each ship image in the tileset that has the sharp
+edges (there should be 4) do the following:</font></p>
+
+<ul>
+    <li><font face="Verdana">Select it in the tileset</font></li>
+    <li><font face="Verdana">Click the Get button</font></li>
+    <li><font face="Verdana">Click the Smooth button to select
+        the smoothing tool</font></li>
+    <li><font face="Verdana">Drag a rectangle over the entire
+        tile editing grid</font></li>
+    <li><font face="Verdana">Click the Store button.</font></li>
+</ul>
+
+<p><font face="Verdana">Those are all the graphics we need for
+our sprite. Just a little more left before the tileset's done.</font></p>
+
+<hr>
+
+<h4><font face="Verdana">Inventory Graphics</font></h4>
+
+<p><font face="Verdana">Generally a single graphic can be used
+both to represent an item on the map as well as in the inventory.
+We're going to create two simple tiles to represent items the
+player can pick up and own.</font></p>
+
+<p><img src="Images/Scraper.gif" align="left" hspace="6"
+width="32" height="32"><font face="Verdana">Your artwork may be
+better than mine here so feel free to improvise. The first item I
+wanted to represent was a &quot;scraper&quot;. This is something
+that can be used to &quot;scrape&quot; away walls. I used the
+pencil tool to draw a sharpened-looking &quot;tool&quot; onto a
+representation of the front of the ship. Then I used the smooth
+tool to pretend it didn't look so bad. You may wish to draw
+something more drill-like.</font></p>
+
+<p><img src="Images/Staff.GIF" align="left" hspace="6" width="32"
+height="32"><font face="Verdana">The second item is some sort of
+staff. I drew the base and the ball separately, smoothed them,
+then joined them together by transparently pasting the base over
+the ball using Paste+. Some near-black pixels had to be removed
+after smoothing (before copying) for this to look good. Remember
+all four corners of a copied graphic must be <strong>exactly</strong>
+the same color in order for Paste+ to pick a transparent color.</font></p>
+
+<p><font face="Verdana">These two tiles should be stored into two
+blank slots in the tileset. There should be plenty remaining.</font></p>
+
+<p><font face="Verdana">These are all the graphics we need for
+our basic tutorial. Click the close button, select the tileset in
+the list of tilesets in the &quot;Edit Tilesets&quot; window and
+click the &quot;Save Image&quot; button. Specify the name of the
+same bitmap used earlier and save our completed Tutorial tileset.</font></p>
+
+<p><font face="Verdana">This concludes Step 1 of the GameDev
+tutorial - Creating Graphics.</font></p>
+
+<p><a href="Tutorial.htm"><font face="Verdana">Return to the main
+tutorial page.</font></a></p>
+
+<p><a href="Tut2.htm"><font face="Verdana">Jump to the next step
+in the tutorial.</font></a></p>
+</body>
+</html>

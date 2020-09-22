@@ -1,0 +1,134 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Edit Tilesets Dialog</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>Edit Tilesets Dialog</h2>
+
+<p>Since the full screen Tileset Editor (accessed through the
+Create and Edit buttons on this dialog) is very involved, help
+for this topic has been split into two files:</p>
+
+<ul>
+    <li>This file describes the use of the dialog itself</li>
+    <li><a href="TSEdit2.htm">The Full Screen Tileset Editor</a>
+        describes the use of the editor.</li>
+</ul>
+
+<p>At the top left of this dialog is a list of
+&quot;Tilesets&quot; defined in the project. A Tileset is an
+appropriately sized bitmap associated with a tile width and a
+tile height used to split up the bitmap into tiles. The graphics
+for a tileset are stored in a BMP Windows bitmap file while the
+overall definition (the reference to the file, and parameters
+indicating how the graphics are split into tiles) is stored in
+the GDP project file. Indicated in this list of tileset
+definitions is a &quot;[U]&quot; or &quot;[L]&quot; at the
+begining of each entry indicating if the tileset graphics are
+currently loaded into memory (&quot;[L]&quot;) or unloaded
+(&quot;[U]&quot;). Often times GameDev will attempt to only load
+those graphics that are being used and unload a tileset graphic
+when its done being used. Of course a modified tileset must
+remain in memory until it is saved (or discarded).</p>
+
+<p>Selecting a tileset in this list will load the parameters of
+the tileset into the fields below. The &quot;Tile Columns&quot;
+and &quot;Tile Rows&quot; values will not be filled in unless the
+tileset image is loaded. This is because the rows and columns are
+calculated based on the image size (divided by the tile size),
+and the image size is unknown unless the image is loaded. You may
+then modify them and update the tileset. Creating a tileset
+generally follows these steps:</p>
+
+<ul>
+    <li>Specify a width and height (in pixels) for the tiles in
+        the tileset in the &quot;Tile Width&quot; and &quot;Tile
+        Height&quot; fields. Maximum dimension (limited by
+        tileset editor) is 64 pixels.</li>
+    <li>Specify the number of rows and columns of tiles in the
+        tileset. The total number of tiles (rows * columns) must
+        be 256 or less. The number of columns should not cause
+        the width of the tileset to exceed 640 pixels (columns *
+        width &lt;= 640). <strong>Technical Note:</strong>
+        According to updated DirectX documentation, DirectX 5.0
+        and later allows you to create surfaces wider that the
+        current display resolution, but if the video hardware
+        does not support this, the surface will be created in
+        system memory instead of display memory resulting in
+        slower graphics operations. GameDev, having been designed
+        with the limitation in mind, was never designed to
+        display tilesets wider than the display in the <a
+        href="MapEdit3.htm">Map Editor</a> so you will be unable
+        to use a tileset wider than the display in GameDev.</li>
+    <li>Type a name for the new tileset.</li>
+    <li>Select a video mode compatible with your video card for
+        the&quot;Screen Depth&quot; setting (if you select an
+        incompatible mode you will just get an error and be
+        returned to the edit tilesets dialog). Be careful not to
+        select 16-bit color if you're going to edit an existing
+        24-bit color tileset. The tileset takes on the color
+        depth of the display, and once you lose the extra color
+        information you can't get it back unless you still have a
+        saved copy.</li>
+    <li>Click the &quot;Create&quot; button to create the bitmap
+        and open it up in the full screen editor.</li>
+</ul>
+
+<p>The Edit button will load the selected tileset into the editor
+to update the graphics. Save Image will save the graphics to a
+specified BMP file. The path that the image for the currently
+selected tileset is currently saved to is displayed in the
+&quot;Path&quot; box at the bottom right. Save All saves all
+loaded tileset graphics, prompting for filenames if necessary.
+Load Image can be used to load an existing bitmap as a new
+tileset. Before clicking the Load Image button you must specify a
+name for the new tileset and specify the tile width and tile
+height. The columns and rows will be calculated based on the
+image size. If the width of the image is not a multiple of the
+tile width or the height of the image not a multiple of the tile
+height, some pixels will be cropped off, the tileset will exclude
+the partial tiles.</p>
+
+<p>The Remove button removes the tileset definition from the
+project. It does not do anything to the BMP file itself. The
+Import Tile button can be used to import a single tile from
+another image. Unlike the &quot;Load Image&quot; button, this
+lets you pick a single tile-sized piece out of an existing
+picture instead of loading the whole image into the project.
+After selecting the portion you want to import, the tile is
+loaded into the editor. The tileset itself is not affected until
+you store the tile into a slot in the tileset.</p>
+
+<p>The update button can be used to change the parameters of a
+tileset after it is created or loaded from an existing image. If
+you change the tile size, partial tiles may be clipped off. Be
+sure to select an appropriate screen depth before activating this
+command because it uses the full screen tileset editor
+momentarily to update the image (for instance, if the number of
+tiles changed). Note that updates to the parameters are made in
+this order:</p>
+
+<ul>
+    <li>The size of the bitmap is updated to the new number of
+        columns and rows (based on the old tile size)</li>
+    <li>The size of the tiles is updated</li>
+    <li>The number of columns and rows is recalculated based on
+        the new tile size (when you click on the tileset)</li>
+</ul>
+</body>
+</html>
