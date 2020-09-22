@@ -1,0 +1,169 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Defining Sprite Frames</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap><a
+        href="Sprites1.htm"><font color="#FFFFFF" size="2"
+        face="Arial"><strong>Up to Sprites and Paths</strong></font></a></td>
+    </tr>
+</table>
+
+<h2>Defining Sprite Frames</h2>
+
+<p>This is part of a series of pages describing the <a
+href="Sprites1.htm">Sprites and Paths</a> dialog. This page
+describes the Frames tab.</p>
+
+<p>The Frames tab defines parameters relating to the appearance
+of the sprite. Every sprite template contains a number of
+&quot;Frames&quot; that define which tiles from which tilesets
+are used to draw the sprite in various states. This tab defines
+what those states are, how many frames (for animated states) each
+state has, and which tilesets and tiles to use for each of these.</p>
+
+<p>The first field &quot;States&quot; is used to select one of
+the basic predefined set of states that a GameDev sprite can
+have:</p>
+
+<ul>
+    <li>Single: This type of sprite does not turn to face
+        different directions at all. The single state is assumed
+        to be omni-directional, or the sprites using this
+        template are expected to always face in one direction.</li>
+    <li>Left/Right: This type of sprite has just two states. It's
+        most useful for sprites representing a walking being of
+        some sort (viewed from the side). When travelling
+        leftward the &quot;Left&quot; state is used and when
+        travelling rightward the &quot;Right&quot; state is used.
+        If the sprite is motionless or travelling straight
+        vertically, the current state is retained from whatever
+        it was before. The initial state is &quot;Left&quot;.</li>
+    <li>8-Directions: This type of sprite has 8 states
+        representing the 8 directions that can be represented
+        with a gamepad (Up, Up-Right, Right, Down-Right, Down,
+        Down-Left, Left, Up-Left). This sprite takes on the state
+        representing the direction most closely resembling its
+        direction of travel. If its vertical velocity exceeds its
+        horizontal velocity by a factor of 2, it takes on a
+        vertical state. Likewise, if its horizontal velocity
+        exceeds its vertical velocity by a factor of 2, it takes
+        on a horizontal state. Otherwise it takes on a diagonal
+        state representing both axes of travel. When motionless
+        the sprite remembers its last state.</li>
+    <li>360°/10°: This type has 36 states each representing 10
+        degrees of rotation from the neighboring states.
+        Selecting this type actually affects how the input is
+        interpreted. A 360° sprite interprets &quot;Left&quot;
+        and &quot;Right&quot; as &quot;Rotate left&quot; and
+        &quot;Rotate right&quot; instead of &quot;Move left&quot;
+        and &quot;Move right&quot; as is the case with the other
+        types. &quot;Up&quot; and &quot;Down&quot; are used for
+        forward and reverse acceleration. The first (default)
+        state for this sprite is zero degrees -- pointing
+        rightward.</li>
+</ul>
+
+<p>The checkbox &quot;Separate states for accelerating and
+drifting&quot; doubles the number of states when checked. Each
+state is effectively split into an &quot;accelerating&quot; state
+and a &quot;drifting&quot; state. The accelerating states are
+used when the input indicates thrust. For a sprite driven by the
+input device this means pressing any direction -- or for the
+360° type sprite, pressing up or down. The drifting states are
+used when no thrust is indicated. Otherwise the states act the
+same. This is useful to represent, for instance, a ship with
+firing thrusters as opposed to a ship drifting without any firing
+thrusters.</p>
+
+<p>The &quot;Editing sprite state&quot; field indicates which
+state is currently being edited. The states listed here are
+determined by the &quot;States&quot; field and the checkbox. The
+&quot;Animation Speed&quot; slider applies to the entire
+template, not to the individual states, but the Tileset does
+apply do the individual states, meaning you can select a
+different tileset for each state if need be. It is recommended
+that all tilesets used for a particular sprite contain the same
+sized tiles.</p>
+
+<p>At the bottom of the Frames tab is where the tiles for the
+individual frames of animation for each state can be dragged into
+the appropriate states. The tiles at the right are obtained from
+the currently selected tileset (which is assigned to the
+currently selected state). The preview window at the left
+displays the animation for the current state. The animation runs
+faster for higher animation speeds. (If you have the <a
+href="TileAnim.htm">Tile Animation</a> dialog and the Sprites and
+Paths dialog both open at the same time, only one preview can
+animate; if you experience problems, close one of these dialogs.)
+If the preview is empty, drag a tile from the tileset tiles at
+the right into the preview window to define which tile to display
+for the current state. If the current state is animated, continue
+to drag more tiles from the tileset into the current state in
+sequence until the desired animation for the current state is
+complete. If the state is not animated, one frame is sufficient.</p>
+
+<p>Note that an animated sprite (a sprite with animated states)
+does not always animate at a constant speed. The animation speed
+is a factor of both the animation speed property as well as the
+speed at which the sprite is travelling. This causes a running
+sprite, for instance, to stop the running animation when the
+sprite is not moving, or to run slower when the sprite is moving
+slower.</p>
+
+<p>There are three buttons between the preview and the tileset
+tiles. The &quot;Clear&quot; button clears the current state of
+all frames. The &quot;Clear All&quot; button clears all states in
+this template of all frames. The &quot;&lt;36-State&lt;&quot;
+button is useful for a 360°/10° sprite. It starts at the
+currently selected state and the currently selected tile in the
+tileset tiles window. Then it appends the current tile to the
+current state and moves to the next state and the next tile. The
+process is repeated until 36 states are processed. If it reaches
+the last state it starts back at the first state, and if it
+reaches the last tile it starts back at the first tile. 36 frames
+are always appended somewhere, so the sprite template will always
+contain 36 more frames after this command than it did before. The
+common use for this is, on a new sprite template, to select the
+&quot;Right&quot; state (the first one) and the image of the
+sprite pointing to the right. Then clicking the
+&quot;&lt;36-State&lt;&quot; button fills out all the frames for
+the sprite automatically, assuming the subsequent tiles are all
+in order in the tileset (which is easy when using the make
+360°/10° button in the <a href="TSEdit2.htm">Tileset Editor</a>).
+If there are multiple frames of animation for the sprite, simply
+repeat the process selecting the first sprite for the second
+frame, go back to the &quot;Right&quot; state and click
+&quot;&lt;36-State&lt;&quot; again. If there are separate
+accelerating states, &quot;Right Accelerating&quot; and
+&quot;Right Drifting&quot; can be selected in two presses of
+&quot;&lt;36-State&lt;&quot; to assign all 72 states. There is no
+fully automatic way to create a 36-state sprite that uses
+multiple tilesets. Each frame within a state must use the same
+tileset as all the other frames in that state.</p>
+
+<p>Current limitations: there is no way to re-arrange the frames
+within a state; there is no way to delete a single frame from a
+state (use Clear All and re-add relavent tiles); there is no way
+to set different delays for different animation frames (add
+multiple copies of the same tile); there is no way to use a
+different tileset for each frame within a state; there is no way
+to separate &quot;Positive acceleration&quot; (forward) from
+&quot;Negative acceleration&quot; (backward) states; there is no
+distinct state for &quot;stopped&quot; when the sprite stops
+moving -- it remains in the state it was in displaying the frame
+where it ended up. Some of these limitations may be overcome
+through the use of scripting.</p>
+</body>
+</html>

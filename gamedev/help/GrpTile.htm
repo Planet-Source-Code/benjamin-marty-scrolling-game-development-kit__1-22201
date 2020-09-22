@@ -1,0 +1,141 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Tile Categories</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>Tile Categories</h2>
+
+<p>This dialog allows you to categorize tiles for the purposes of
+defining &quot;Solidity Definitions&quot; and for use with player
+map interactions. The lower half of the dialog is dedicated to
+defining Solidity Definitions.</p>
+
+<p>Each tile category applies to a specific tileset. While the
+categories are saved with the project (in the GDP file), they are
+effectively indexed by tileset. This means you can have a
+category named &quot;Solid&quot; for Tileset1 and another
+category named &quot;Solid&quot; for Tileset2. A category simply
+consists of a number of tile indexes. Internally the category is
+a sequence of 256 bits (32 bytes) which can be used to very
+quickly determine whether a tile is a member of the category.
+Each bit represents &quot;Yes&quot; or &quot;No&quot; for whether
+one of the possible 256 tiles in the tileset is a member of the
+category.</p>
+
+<p>The process of defining a category generally consists of these
+steps:</p>
+
+<ul>
+    <li>Select a tileset from the &quot;Tileset&quot; box</li>
+    <li>Enter a name for the category you wish to create (or
+        select the name of a category you wish to edit) from
+        &quot;Current Category&quot;</li>
+    <li>Drag tiles from the lower box (&quot;Tiles available in
+        tileset&quot;) to the upper box (&quot;Tiles in this
+        category&quot;) to add tiles to the category.</li>
+    <li>If you want to remove tiles from the category, drag them
+        from the upper box to the lower box.</li>
+</ul>
+
+<p>By dragging a tile into the upper box, the category named in
+&quot;Current Category&quot; is automatically created if it
+doesn't already exist. Changes to a category take effect
+immediately and do not need to be explicitly updated. Deleting a
+category simply involves selecting it from the &quot;Current
+Category&quot; list and clicking the &quot;Delete Category&quot;
+button. Only one category will be deleted. Categories with the
+same name for different tilesets will not be affected.</p>
+
+<h3>Solidity Definitions</h3>
+
+<p>A Solidity Definition can be used in the &quot;Sprites and
+Paths&quot; dialog to define how particular types of sprites see
+the map (which tiles they see as solid etc).</p>
+
+<p>To create a &quot;Solidity Definition&quot; you must have at
+least one group of tiles that represent blocks that are solid (or
+partially solid). Since Solidity Definitions are also specific to
+a tileset, you must first select a tileset from the tileset list
+at the top left of the dialog. Type the name of the Solidity
+Definition you want to create into the &quot;Solidity Definition
+Name&quot; field. This name, like a category name, is specific to
+a tileset. Alternatively, select an existing solidity definition
+if you want to edit one. Then, in the &quot;Solid tile
+category&quot; list, select the category of tiles that represents
+solid blocks in the current tileset (or &quot;&lt;none&gt;&quot;
+of you don't have any completely solid tiles). Tiles in this
+category are interpreted as completely solid. If you have tiles
+that represent the following shapes, select that category in the
+corresponding box indicated below (black area = non-solid):</p>
+<div align="center"><center>
+
+<table border="1" cellpadding="3" cellspacing="3">
+    <tr>
+        <td><img src="Images/Uphill.GIF" width="32" height="32"></td>
+        <td>Uphill tile category</td>
+    </tr>
+    <tr>
+        <td><img src="Images/Downhill.GIF" width="32" height="32"></td>
+        <td>Downhill tile category</td>
+    </tr>
+    <tr>
+        <td><img src="Images/UpCeil.GIF" width="32" height="32"></td>
+        <td>Ceiling up tile category</td>
+    </tr>
+    <tr>
+        <td><img src="Images/DownCeil.GIF" width="32" height="32"></td>
+        <td>Ceiling down tile category</td>
+    </tr>
+</table>
+</center></div>
+
+<p>All uncategorized tiles are assumed to be empty (non-solid).</p>
+
+<p>If your tiles are not square, these are the rules used for
+determining which part of the tile is solid:</p>
+
+<ul>
+    <li>The slope of all separations between solid and non-solid
+        are 0, infinity, -1 or 1 (all diagonal lines are at nice
+        45 degree angles)</li>
+    <li>The uphill slope of an uphill tile always starts at the
+        bottom left; anything above that is empty and anything to
+        the right of that is solid.</li>
+    <li>The downhill slope of a downhill tile always starts at
+        the top left; anything below that is solid and anything
+        to the right of that is empty.</li>
+    <li>The uphill slope of an upward ceiling tile always starts
+        at the bottom left; anything above that is solid and
+        anything to the right of that is empty.</li>
+    <li>The downhill slope of a downward ceiling tile always
+        starts at the top left; anything below that is empty and
+        anything to the right of that is solid.</li>
+</ul>
+
+<p>To delete a Solidity Definition, select the tileset you wish
+to delete it from at the top left, select the name from
+&quot;Solidity Definition Name&quot; and then click
+&quot;Delete&quot;. This does not delete the categories involved
+in the solidity definition, just the grouping of these categories
+as a Solidity Definition (just as deleting a category does not
+delete the tiles themselves).</p>
+
+<p>All tile categories and solidity definitions are saved in the
+GDP project file.</p>
+</body>
+</html>

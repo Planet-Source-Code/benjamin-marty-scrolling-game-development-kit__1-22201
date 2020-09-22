@@ -1,0 +1,106 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Scrolling Game Development Kit Project Window</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>Scrolling Game Development Kit Project Window</h2>
+
+<p>This is the main window for the program. Closing this closes
+all other windows and exits. The view menu (or the third section
+of toolbar buttons) is the access point to reach all other
+dialogs in the project. The content of the window displays a
+hierarchy of the project to give a better visual representation
+of how the objects in the project are related. Note that the
+hierarchy is not always the internal hierarchy (for instance,
+paths do not &quot;own&quot; sprites) -- it's just a convenient
+view of the data relationships in the project.</p>
+
+<p>The hierarchy is only updated when a project is loaded, when
+&quot;Refresh Tree&quot; is selected from the context menu (right
+mouse button) on the tree, or when importing project data from
+XML, which can occur after playing the map (to restore the
+project's original state). Other than that, the data displayed in
+this tree are static. The tree can also be used to navigate to
+various elements. By double clicking on an element or
+right-clicking and selecting &quot;Go to Item&quot;, the
+appropriate dialog for editing the item will come up and load the
+specified item.</p>
+
+<p>The File menu allows you to:</p>
+
+<ul>
+    <li>Create a new project (erase the current project from
+        memory)</li>
+    <li>Open an existing project</li>
+    <li>Save the current project (and its dependencies)</li>
+    <li>Export the project (GDP file and MAP files) to an XML
+        file. If you plan to later import the XML file, note that
+        it expects the tilesets and media files to be in the same
+        relative path when it is re-imported. (These are not part
+        of the XML)</li>
+    <li>Import the project from XML.</li>
+    <li>Play the current game/project. As of version 1.2, this
+        can optionally save the current state of the project in
+        memory (as an XML string) and restore it while returning
+        to the editing environment. (This is the default action.)</li>
+    <li><a href="Shortcut.htm">Create a shortcut</a> to run the
+        current project</li>
+    <li>Exit the program</li>
+</ul>
+
+<p>When saving the project, all dependencies must already have a
+filename or a dialog will be displayed requesting that you save
+them first to assign them a filename. The project save command
+will not display dialogs to save all the dependencies, only save
+them if they already have assigned paths. This save command
+always prompts for the filename, filling in the current filename
+by default.</p>
+
+<p>The contents of the view menu are as follows:</p>
+
+<ul>
+    <li>Tilesets: Displays the <a href="TSEdit1.htm">Edit
+        Tilesets</a> dialog.</li>
+    <li>Maps: Displays the <a href="MapEdit1.htm">Edit Maps</a>
+        dialog.</li>
+    <li>Tile Matching: Displays the <a href="MachTile.htm">Tile
+        Matching</a> dialog.</li>
+    <li>Tile Animation: Displays the <a href="TileAnim.htm">Tile
+        Animation</a> dialog.</li>
+    <li>Tile Categories: Displays the <a href="GrpTile.htm">Tile
+        Categories</a> dialog.</li>
+    <li>Sprites and Paths: Displays the <a href="Sprites1.htm">Sprites
+        and Paths</a> dialog.</li>
+    <li>Collision Definitions: Displays the <a href="CollDef.htm">Collision
+        Definitions</a> dialog.</li>
+    <li>Player Settings: Displays the <a href="Player.htm">Player
+        Settings</a> dialog.</li>
+    <li>Media Clips: Displays the <a href="Media.htm">Media
+        Manager</a> dialog.</li>
+    <li>Controller Configuration: Displays the <a
+        href="CtrlCnfg.htm">Controller Configuration</a> dialog.</li>
+    <li>Options: Displays the <a href="Options.htm">GameDev
+        Options</a> dialog</li>
+</ul>
+
+<p>The help menu contains commands to display this help file and
+the program's about box. It also provides access to two
+tutorials. <strong>At any point in the program you should be able
+to press F1 and bring up help applicable to the active window</strong>.</p>
+</body>
+</html>

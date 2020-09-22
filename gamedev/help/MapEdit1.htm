@@ -1,0 +1,108 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Edit Maps Dialog</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>Edit Maps Dialog</h2>
+
+<p>This is probably the most involved dialog in GameDev. For this
+reason, the documentation is split into 5 parts:</p>
+
+<ul>
+    <li>This page describes the overall dialog in general terms,
+        and provides information on editing attributes of the map
+        itself in the top half of the dialog.</li>
+    <li>Help on the Layers tab is available in <a
+        href="MapEdit2.htm">Editing Map Layers</a>.</li>
+    <li>Help on the full screen map editor (accessible from the
+        Edit button in the Layers tab) is available in <a
+        href="MapEdit3.htm">The Full Screen Map Editor</a>.</li>
+    <li>Help on the Player Interaction tab is available in <a
+        href="MapEdit4.htm">Player Map Interactions</a>.</li>
+    <li>Help on the Special Functions tab is available in <a
+        href="MapEdit5.htm">Special Functions</a>.</li>
+</ul>
+
+<p>At the top of the dialog you will see the list of all the maps
+in the current project. Clicking on one of these loads the
+remainder of the dialog with information related to this map. If
+the map has been saved to a file, this filename will appear in
+the &quot;Path&quot; field. A map must be selected in the top
+half of this dialog to use most of the bottom half.</p>
+
+<p>A map is somewhat separated from the individual layers that
+make up its main contents. This is because, while a map can have
+an overall size (dictating how far the player on the map can
+travel), the individual layers may scroll at different rates.
+Therefore the size of the map itself and the size of the
+individual layers must have some inherent separation. To begin
+understanding how to use the Edt Maps dialog let's step through a
+short description of each of the fields associated directly with
+a map:</p>
+
+<ul>
+    <li>Map Name determines how the map is referenced within the
+        project. This is separate from the filename. If you
+        decide to change the filename or path of the map (by
+        clicking Save Map), the map name can remain the same and
+        still be accessed by the rest of project without
+        requiring changes anywhere else. Map names must be unique
+        within the space of all the map names.</li>
+    <li>Map Display: The Left, Top, Width and Height fields of
+        the map display indicate where on the screen the map is
+        drawn. This is useful if you want to reserve one portion
+        of the display just for the map, and another portion
+        purely for display of the inventory. Left should be in
+        the range 0 to 639 and Top should be in the range 0 to
+        479. The sum of Left and Width should be no greater than
+        640 and the sum of Top and Height should be no greater
+        than 480. For the map to occupy the entire display, 0, 0,
+        640 and 480 are the values for Left, Top, Width and
+        Height respectively.</li>
+    <li>The size of the map is determined in pixels in the Width
+        and Height fields. Since (as mentioned above) the map can
+        consist of multiple layers that may scroll at different
+        rates and may use different sized tiles, it's necessary
+        for the overall map size to be determined in pixels. The
+        size of the map in pixels is used to determine the size
+        of the layers added to the map based on the layer's
+        scroll rate and tile size. This allows the size of the
+        map to be changed (using the Update button) so that all
+        the layers within the map can be automatically resized.</li>
+    <li>The Path is a read-only field indicating where the map
+        file is saved if it has been saved. To change this, use
+        the &quot;Save Map&quot; button and specify a new path
+        name.</li>
+</ul>
+
+<p>The Name, Path and &quot;Map Display&quot; parameters are
+saved in the GDP project file while the width and height (and
+everything else related to a map) are stored in the MAP file
+indicated by the Path parameter. The distinction here is that the
+Width and Height are very closely tied to the remainder of the
+map (the size of the layers), but the display parameters, name
+and path are attributes that the project needs to know in order
+to reference, load and display the map.</p>
+
+<p>Entering the parameters described in the top half of the
+dialog and clicking the &quot;New Map&quot; button creates the
+new map object and adds it to the list. This map, however,
+consists of very little data -- just the parameters that were
+entered. The main content of a map is stored in its layers.</p>
+</body>
+</html>

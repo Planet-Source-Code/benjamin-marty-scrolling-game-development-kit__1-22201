@@ -1,0 +1,114 @@
+The Scrolling Game Development Kit ("GameDev")
+http://gamedev.sourceforge.net/
+Quick Start Tutorial
+Written by Benjamin Marty
+           BlueMonkMN@email.com
+January 21, 2001
+
+The purpose of this document is to demonstrate the bare minimum required
+to create a fully functional game in GameDev.  The idea is to show that
+it is, in fact, relatively simple to create a simple game once one is
+familiar with the tool.  Many steps are listed here, but they are all
+very simple, listing every individual click of the mouse and entry from
+the keyboard.  While this may still look like a lot of work for a
+"bare minimum", realize that this "bare minimum" is still a fairly
+complex game because GameDev was designed for creating fairly complex
+scrolling games.  Once you reach the "bare minimum" level of
+functionality, expanding on this is easier, after becoming familiar with
+all the pieces required to get *something* working.  Don't forget, F1
+from any dialog brings up a relavent help window.
+
+If you complete this tutorial and are hungry for something beyond the
+bare minimum, follow through the complete tutorial available in
+GameDev's help menu.  Visit the web site or feel free to contact me
+about any questions that may arise (see top of document for addresses).
+
+1. Create a tileset
+   1a. Select "Tilesets" from the view menu.
+   1b. Enter a name for the tileset; in the name field type "Wall".
+   1c. Click the Create button.
+   1d. Select the last color in the palette (white).
+   1e. Click the floodfill button.
+   1f. Click on the grid representing the current tile to fill it white.
+   1g. Click the ">" button to move to the second slot in the tileset.
+   1h. Click the Store button to save the image into the tileset.
+   1i. Click the Clear button to clear the current image.
+   1j. Click the "Solid Ellipse" button.
+   1k. Select the first non-black color from the palette (orange).
+   1l. Drag from the top left to the bottom right of the grid
+       to draw a solid ellipse.
+   1m. Click the ">" button to select the next available tile slot.
+   1n. Click "store" to save the "orange ball" into the tileset.
+   1o. Click the Close button to exit the tileset editor.
+   1p. Click the Close button on the "Edit Tilesets" dialog.
+
+2. Create a map.
+   2a. Select "Maps" from the View menu.
+   2b. In the "Map Name" field, enter "Test"
+   2c. Enter 0, 0, 640, 480 in the Left, Top, Width and Height fields
+       respectively, in the "Map Display" frame.
+   2d. After "Map size in pixels" enter 2048 for Width and Height.
+   2e. Click the new map button.
+   2f. In the "Layer Name" field, enter "Main"
+   2g. Select "Wall" from the "Tileset" dropdown.
+   2h. Enter 1 into "X Scroll Rate" and "Y Scroll Rate"
+   2i. Select "Test" from the "Maps" list.
+   2j. Click the "New Layer" button.
+   2k. Select "Main" in the "Map Layers" list.
+   2l. Click the "Edit" button.
+   2m. Hold the right mouse button, move to "Maze", move over "Normal"
+       and release the button.  (This is how menus work here.)
+   2n. Move the mouse to the top left corner, hold the left button
+       and drag to the bottom right corner; wait for the map to scroll
+       all the way down (until the numbers stop changing) and release.
+   2o. The screen will become white; move the mouse to the top left
+       corner and wait for the map to scroll all the way back up.
+       By the time you get there there should be a complete maze.
+   2p. Hold the right mouse button and, from the "Paths" menu, select
+       "New Path"
+   2q. Enter "Start" as the path name and press Enter.
+   2r. Locate a blank (black) tile that is surrounded by black tiles on
+       all sides; left click the mouse once in this tile.
+   2s. Right-click to terminate the path after setting that first point.
+   2t. Press Escape (or select menu "Close") to exit the map editor.
+   2u. Close the "Edit Maps" dialog.
+
+3. Define solid tiles.
+   3a. Select "Tile Categories" from the View Menu.
+   3b. Select "Wall" from the "Tileset" dropdown.
+   3c. Type "SolidWall" into "Current Category"
+   3d. Drag the image of the white block into "Tiles in this category".
+   3e. Enter "Walls" into "Solidity Definition Name".
+   3f. Select "SolidWall" from the "Solid tile category" dropdown.
+   3g. Click the "Save" button.
+   3h. Close the dialog.
+
+4. Create a sprite.
+   4a. Select "Sprites and Paths" from the view menu.
+   4b. Select "start" from the "Paths" list.
+   4c. Enter "Player" in the "Name" field under "Sprite definitions".
+   4d. Enter "Ball" into the "Template" field.
+   4e. Check the "Initial instance" box.
+   4f. On the "Frames" tab, select "Single" from the "States" dropdown.
+   4g. Select "Wall" from the "Tileset" dropdown.
+   4h. Drag the image of the orange ball into the "State preview" box.
+   4j. Click on the "Motion" tab.
+   4k. Select "Walls" from the "Solid tiles" dropdown.
+   4l. Select "Input device" from the "Controlled by" dropdown.
+   4m. Drag the "Movement Speed" slider to the right.
+   4n. Click the "Create Sprite" button at the top right.
+   4o. Close the dialog.
+
+5. Set the startup map and player sprite.
+   5a. Select "Player settings" from the "View" menu.
+   5b. Select "Test" from the "Start on Map" dropdown.
+   5c. Click OK.
+   5d. Select "Maps" from the "View" menu.
+   5e. Select "Test" from the "Maps" list.
+   5f. Click the "Player Interaction" tab.
+   5g. Select "Player" from the "Player sprite" dropdown.
+   5h. Close the dialog.
+
+Done.  To play the game, select "Play" from the "File" menu.
+Use the arrow keys to move the orange ball.
+Press 'Q' or Escape to quit.

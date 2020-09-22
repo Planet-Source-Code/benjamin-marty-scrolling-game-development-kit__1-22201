@@ -1,0 +1,187 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>GameDev Tutorial Overview</title>
+</head>
+
+<body bgcolor="#D3DFFA" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2><font face="Verdana">GameDev Tutorial</font></h2>
+
+<p><font face="Verdana">This tutorial will lead you through the
+steps of creating a simple game using GameDev, the Scrolling Game
+Development Kit. In the process you will see how various aspects
+of the program function. The following is an overview of the
+steps we will take:</font></p>
+
+<table border="0" cellpadding="0" cellspacing="6">
+    <tr>
+        <td><ul>
+            <li><a href="Tut1.htm"><font face="Verdana">Create
+                the graphics.</font></a><font face="Verdana">
+                Almost everything in GameDev is directly or
+                indirectly dependent on graphics. These graphics
+                are called Tilesets. GameDev stores images of all
+                the tiles in memory (or in files) and loads them
+                into display memory when the map editor or game
+                player is invoked. Tilesets are used for map
+                tiles and sprite graphics alike.</font></li>
+        </ul>
+        </td>
+        <td><img src="Images/Painting.GIF" width="144"
+        height="144"></td>
+    </tr>
+    <tr>
+        <td><ul>
+            <li><a href="Tut2.htm"><font face="Verdana">Define
+                tile matching properties.</font></a><font
+                face="Verdana"> Using tile matching, the creation
+                of a professional looking map can proceed very
+                quickly. Tile matching, when properly defined,
+                will automatically match a 2-by-2 square of tiles
+                to the surrounding map. This allows you to draw
+                cohesive structures without constantly having to
+                change the tile currently being drawn.</font></li>
+        </ul>
+        </td>
+        <td><img src="Images/TileMoon.GIF" width="141"
+        height="125"></td>
+    </tr>
+    <tr>
+        <td><ul>
+            <li><a href="Tut3.htm"><font face="Verdana">Create a
+                map.</font></a><font face="Verdana"> Maps can
+                have multiple layers in the Scrolling Game
+                Development Kit. Layers can scroll at different
+                rates. Maps are central to the game. They contain
+                all the paths and sprites and special functions.
+                The map editor has the ability to generate random
+                mazes built into it, which will help to generate
+                an interesting map very quickly.</font></li>
+        </ul>
+        </td>
+        <td><img src="Images/Map.GIF" width="140" height="143"></td>
+    </tr>
+    <tr>
+        <td><ul>
+            <li><a href="Tut4.htm"><font face="Verdana">Define
+                tile categories and solidity.</font></a><font
+                face="Verdana"> Tiles can be grouped into
+                categories. These categories are useful for
+                determining which tiles are solid and what their
+                shapes are like. This allows the player and other
+                sprites to interact with the shape of the map. A
+                solidity definition can consist of slanted and
+                square tiles. These solidity definitions are then
+                associated with sprites which use it to interact
+                with the map in a way appropriate to the
+                particular sprite.</font></li>
+        </ul>
+        </td>
+        <td><img src="Images/Wall.GIF" width="141" height="141"></td>
+    </tr>
+    <tr>
+        <td><ul>
+            <li><a href="Tut5.htm"><font face="Verdana">Define
+                some paths and sprites.</font></a><font
+                face="Verdana"> Paths are defined in the map
+                editor. They can then be linked to sprite
+                definitions. There are various ways that sprites
+                can move and interact with other sprites and the
+                map. Even though every sprite is associated with
+                a path, not every sprite needs to follow the path
+                associated with it. Even the main player sprite
+                has a path, just to determine the starting
+                position.</font></li>
+        </ul>
+        </td>
+        <td><img src="Images/Paths.GIF" width="134" height="153"></td>
+    </tr>
+    <tr>
+        <td><ul>
+            <li><a href="Tut6.htm"><font face="Verdana">Set up
+                player information and inventory.</font></a><font
+                face="Verdana"> The player is a special sprite
+                designated by the game developer to exhibit some
+                extra features. The player detemines where the
+                map scrolls. The player is also the only sprite
+                for which GameDev handles inventory and complex
+                map interaction. Complex interactions include
+                information about which tiles grant and use
+                inventory items.</font></li>
+        </ul>
+        </td>
+        <td><img src="Images/Treasure.GIF" width="141"
+        height="138"></td>
+    </tr>
+    <tr>
+        <td><ul>
+            <li><a href="Tut7.htm"><font face="Verdana">Add
+                special functions.</font></a><font face="Verdana">
+                Special functions are created in the map editor
+                and the effect defined in the </font><a
+                href="MapEdit1.htm"><font face="Verdana">Edit
+                Maps Dialog</font></a><font face="Verdana">.
+                Special functions allow the developer to define
+                some very specific events that can occur while
+                playing the game. These functions include
+                teleporting the player, creating sprites,
+                displaying messages or images, altering the map,
+                and deleting sprites to mention a few.</font></li>
+        </ul>
+        </td>
+        <td><img src="Images/Chart.GIF" width="140" height="98"></td>
+    </tr>
+    <tr>
+        <td><ul>
+            <li><a href="Tut8.htm"><font face="Verdana">Add
+                multimedia content.</font></a><font
+                face="Verdana"> Each map can define its own
+                background music which can be changed by special
+                functions. Special functions can also play their
+                own media file in response to an event. Video
+                clips are also supported. As of version 1.2,
+                media clips can be associated with sprite
+                collisions and tile interactions too. The Media
+                Manager in GameDev smoothly fades between
+                changing media, automatically fading out audio
+                when appropriate.</font></li>
+        </ul>
+        </td>
+        <td><img src="Images/Music.GIF" width="142" height="111"></td>
+    </tr>
+    <tr>
+        <td><ul>
+            <li><a href="Tut9.htm"><font face="Verdana">Add
+                script.</font></a><font face="Verdana"> Script
+                can be used to control aspects of the game that
+                can't be controlled through existing means.
+                Scripts have full access to the object hierarchy
+                of the project, and other aspects of the gaming
+                engine. Events raised by objects can also be
+                trapped and responded to by script code.
+                Scripting can be used for very specific control
+                of various aspects of a game.</font></li>
+        </ul>
+        </td>
+        <td><img src="Images/Script.GIF" width="100" height="106"></td>
+    </tr>
+</table>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+</body>
+</html>

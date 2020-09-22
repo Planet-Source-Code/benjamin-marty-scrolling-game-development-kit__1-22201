@@ -1,0 +1,159 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Player Map Interactions</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap><a
+        href="MapEdit1.htm"><font color="#FFFFFF" size="2"
+        face="Arial"><strong>Up to Edit Maps Dialog</strong></font></a></td>
+    </tr>
+</table>
+
+<h2>Player Map Interactions</h2>
+
+<p>This is part of a series of pages describing the <a
+href="MapEdit1.htm">Edit Maps Dialog</a>. This page describes the
+Player Interaction tab.</p>
+
+<p>Here you can define which sprite is the player sprite (which
+sprite causes the map to scroll), and how this sprite can
+interact with map tiles using inventory. Selecting a sprite as
+the player sprite is not related to what controls that sprite. A
+player sprite can be controlled automatically or by the input
+device. The main features of the player sprite are that it causes
+the map to scroll and it is the one sprite that can interact with
+tiles and special functions.</p>
+
+<p>To select a player sprite, you must have a sprite with the
+&quot;Initial Instance&quot; option checked. The player sprite
+must be created with the map, so only &quot;Initial
+Instance&quot; sprites are listed as selections in the first
+field. The remainder of the tab is dedicated to defining
+interactions between the player sprite and various categories of
+map tiles. The player sprite must be specified before
+interactions can be defined because many aspects of the
+interaction depend on properties of the player sprite (especially
+the layer on which the player sprite resides). Defining an
+interaction consists of entering the parameters for the
+interaction and then clicking the &quot;New&quot; button to add
+these parameters to the map as a new interaction definition. The
+arrow buttons at the bottom can be used to scroll through
+existing interactons.</p>
+
+<p>The first field in the Map Interaction frame is used to
+specify a tile category which triggers the interaction. All
+interactions are based on a tile category, even if the
+interaction is only concerned with a single tile. For information
+on creating tile categories, see <a href="GrpTile.htm">Tile
+Categories</a>. The interaction is triggered whenever the player
+touches any tile in the category specified in this field. If the
+player touches multiple tiles in this category at the same time,
+the interaction is triggered for each tile in sequence.</p>
+
+<p>The &quot;Initially&quot; option indicates that this
+interaction should only be triggered when the player initially
+touches the tile, and should not be triggered again unless the
+player stops touching the tile and then starts again. The
+&quot;Continuously&quot; option indicates that the interaction
+should be constantly triggered (each frame advance of the game)
+as long as the player continues to touch this tile and as long as
+the tile continues to be a member of the category. (If the tile
+changes to a tile not in the category, the interaction will not
+continue to be triggered by it.)</p>
+
+<p>After these two options is a field in which you can indicate
+the kind of effect this interaction will have:</p>
+
+<ul>
+    <li>No Effect on Inventory: This option might make sense for
+        an interaction that is only used for script code.</li>
+    <li>Add Item to Inventory: This is usually the case when
+        you're defining what an inventory item looks like on the
+        map. This interaction would probably consist of removing
+        the tile from the map and adding the item to the
+        inventory.</li>
+    <li>Subtract Item from Inventory: This uses up an item in the
+        inventory to perform the interaction.</li>
+    <li>Use Item Without Subtracting: This ensures that the
+        player owns the specified item, but does not remove the
+        item from the inventory to perform the interaction.</li>
+</ul>
+
+<p>Relavent inventory item refers to an item defined in the <a
+href="Player.htm">Player Settings Dialog</a>. For actions (listed
+above) that involve the inventory, this field indicates which
+item is involved. If &quot;No effect on inventory&quot; was
+selected, then the &quot;Relavent inventory item&quot; setting is
+irrelavent. However it is still stored with the interaction. This
+piece of information could be set and then used by script code if
+the interaction raises an event. The script code might have use
+for a reference to an inventory item.</p>
+
+<p>&quot;Remove tile if inventory OK&quot; will change the map
+tile:</p>
+
+<ul>
+    <li>If &quot;Add item to inventory&quot; is selected and the
+        player does not have the maximum number they can hold of
+        the specified item .</li>
+    <li>If &quot;Subtract item from inventory&quot; or &quot;Use
+        item without subtracting&quot; is selected and the player
+        has 1 or more of the specified item.</li>
+</ul>
+
+<p>&quot;Don't remove&quot; will never alter the map tile in
+response to this interaction (perhaps this is where you can
+always fill up on a particular item). &quot;Always remove&quot;
+will remove the tile from the map whenever the player touches it,
+regardless of the player's inventory.</p>
+
+<p>Below these options is a setting to indicate what the tile is
+changed to when it is &quot;removed&quot;. A tile cannot simply
+be removed from the map because every pixel on the layer must map
+to *some* tile. If you want to replace the tile with background,
+then &quot;0&quot; is the appropriate value here. However, it's
+possible to replace this tile with any other tile when the tile
+is removed. The new tile could in turn trigger another
+interaction (if the &quot;Continuously&quot; option is selected).
+So chains of interactions could be build up on a single type of
+tile.</p>
+
+<p>To specify a particular sound effect to play when the tile
+interaction activates, select a media clip from the list after
+&quot;Play media clip:&quot;. </p>
+
+<p>Finally, the &quot;Raise an event for this interaction&quot;
+determines whether the OnTileInteraction event should be
+triggered whenever the player touches a tile in the specified
+category for this interaction. If this is checked, the X and Y
+coordinates of the tile (in tile coordinates, not pixels), tile
+value, &quot;NewTouch&quot; flag and Interaction index are passed
+to the event. The &quot;NewTouch&quot; flag indicates whether the
+player has just started touching the tile (true) or if the player
+was already touching it (false). The interaction index indicates
+the ordinal index of the interaction within the map, so the same
+interaction definition can be located in the script code if need
+be.</p>
+
+<p>The New button creates a new interaction definition based on
+the paremeters currently entered. The Delete button deletes the
+current interaction (indicated in the title of the &quot;Map
+Interaction&quot; frame). The Update button updates the current
+interaction (indicated in the title of the &quot;Map
+Interaction&quot; frame) to the entered parameters.
+&quot;&lt;&lt;&quot; goes to the first interaction,
+&quot;&lt;&quot; to the previous interaction, &quot;&gt;&quot; to
+the next interaction, and &quot;&gt;&gt;&quot; to the last.</p>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>GameDev Tutorial Step 7 - Adding Special Functions</title>
+</head>
+
+<body bgcolor="#D3DFFA">
+
+<h2><font face="Verdana">GameDev Tutorial - Creating a Simple
+Game</font></h2>
+
+<table border="0" cellpadding="0" cellspacing="6">
+    <tr>
+        <td><img src="Images/Chart.GIF" width="233" height="163"></td>
+        <td valign="top"><h3><font face="Verdana">Step 7 - Adding
+        Special Functions</font></h3>
+        <p><font face="Verdana">Special functions can display a
+        message, change the player sprite, jump to a new map,
+        transport the player to a new location, change the map
+        (by copying rectangles from other places on the map),
+        create a new </font><a href="Tut5.htm"><font
+        face="Verdana">sprite</font></a><font face="Verdana">
+        instance, or simply raise an event to be handled by </font><a
+        href="Tut9.htm"><font face="Verdana">script</font></a><font
+        face="Verdana">. Each function corresponds to a rectangle
+        drawn on the map in the </font><a href="Tut3.htm"><font
+        face="Verdana">map editor</font></a><font face="Verdana">.
+        Then the parameters of the function can be defined on the
+        special functions tab of the map editing dialog. We will
+        be defining the parameters of 4 functions we created in </font><a
+        href="Tut3.htm"><font face="Verdana">step 3</font></a><font
+        face="Verdana">. They will all be functions that alter
+        the map in terms of the other two defined functions.</font></p>
+        </td>
+    </tr>
+</table>
+
+<p><font face="Verdana">Open up the Map Editing dialog (View;
+Maps) and select TutorialMap. Switch to the Special Functions tab
+in the lower portion of the dialog and you will see all the
+special functions defined on this map listed along the left side.
+The parameters of a function are further split into two tabs.
+Action parameters determine what triggers the function and how
+its triggering interacts with the inventory. Effect determines
+what the function does when its triggered.</font></p>
+
+<p><font face="Verdana"><img src="Images/FuncCord.jpg"
+align="left" hspace="6" width="329" height="425"></font><font
+face="Verdana">Before setting the parameters for our special
+functions you will need to know the coordinates of the closed
+passage (the tile coordinates of the top left corner). If you do
+not know these, go back to the Layers tab, click on the Main
+layer and click the Edit button. Locate the top left tile of the
+obstruction in the passageway and put the mouse over it. Note the
+coordinates displayed in the upper-left corner (then close the
+editor). These are the coordinates required for defining our
+special functions. In my case the coordinates are 38,7. If you
+had to go to the layers tab to get these coordinates, now return
+to the Special Functions tab.</font></p>
+
+<p><font face="Verdana">Select the OpenSesame1 function. In the
+Action Parameters tab check the &quot;Initial touch only&quot;
+and &quot;Uses inventory item&quot; boxes. Select
+&quot;SesameStaff&quot; as the item used and leave &quot;How
+many&quot; at 1 (only 1 SesameStaff is required). Leaving the
+&quot;Remove item(s) from inventory on use&quot; checkbox
+unchecked will ensure that the item can't be used up. Click the
+update button before continuing. This was necessary in version
+1.1 and earlier because when the Function field was set on the
+Effect tab, the parameters were reloaded into the relavent
+controls, and this included reloading everything on the Action
+Parameters tab. In version 1.2 this should be fixed so that you
+can define both the action parameters and the effect before
+clicking update and everything will be stored properly in one
+update.</font></p>
+
+<p><font face="Verdana">In the Effect tab select &quot;Alter
+map&quot; for the function. Under &quot;Copy tiles from
+function&quot; select &quot;Open&quot;. This will copy the tiles
+underneath the rectangle for the &quot;Open&quot; function to the
+specified coordinates. In the &quot;X&quot; and &quot;Y&quot;
+fields, enter the coordinates noted above (X=38 and Y=7 in my
+case). Don't touch the &quot;Pick coordinates&quot; box. That
+field is not a stored parameter, but rather a control you can use
+to set the coordinates based on the two functions involved. For
+instance, if you were to select &quot;Match top-lefts&quot;, the
+coordinates would be automatically entered such that the top left
+corner of the &quot;Open&quot; rectangle would be copied to the
+top left corner of the &quot;OpenSesame1&quot; rectangle. This
+isn't useful in this case because the location of the
+&quot;OpenSesame1&quot; function is irrelavent to the area of the
+map we want to change (it's nearby, but no corner matches the
+same corner of the area we want to change). Click the
+&quot;Update&quot; button to save the new parameters for this
+function. Switch back to the Action Parameters tab and verify
+that the parameters are all still correct for OpenSesame1.</font></p>
+
+<p><font face="Verdana">Now select the OpenSesame2 function. All
+the parameters on the Action Parameters and the Effect tabs
+should be the same because this function should do the same thing
+as OpenSesame1. Make sure they are and hit Update.</font></p>
+
+<p><font face="Verdana">The CloseSesame functions will be a bit
+different from the OpenSesame functions. Select each CloseSesame
+function and set the parameters as follows:</font></p>
+
+<ul>
+    <li><font face="Verdana">Initial touch only checked</font></li>
+    <li><font face="Verdana">Uses inventory item unchecked</font></li>
+    <li><font face="Verdana">Function = &quot;Alter map&quot;</font></li>
+    <li><font face="Verdana">Copy tiles from function =
+        &quot;Closed&quot;</font></li>
+    <li><font face="Verdana">Coordinates same as OpenSesame</font></li>
+</ul>
+
+<p><font face="Verdana">The Open and Closed functions don't need
+to be defined at all because they are not going to be used as
+functions. They are only used to define the rectangles that are
+copied by other functions.</font></p>
+
+<p><font face="Verdana">That's everything! The game is completely
+playable now. Save the map and save the project. Now try playing
+it by selecting &quot;Play&quot; from the File menu on the main
+project window. The arrow keys control the motion of the ship. To
+change this you can select &quot;Controller Configuration&quot;
+from the view menu.</font></p>
+
+<p><font face="Verdana">This concludes step 7 of the GameDev
+tutorial - Adding Special Functions.</font></p>
+
+<p><a href="Tutorial.htm"><font face="Verdana">Return to the main
+tutorial page.</font></a></p>
+
+<p><a href="Tut8.htm"><font face="Verdana">Jump to the next step
+in the tutorial.</font></a></p>
+</body>
+</html>

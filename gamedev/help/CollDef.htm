@@ -1,0 +1,154 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Collision Definitions</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>Collision Definitions</h2>
+
+<p>Use this screen to define what happens when sprites touch each
+other. There are 16 customizable &quot;collisions classes&quot;
+for each map. The &quot;Collision Class Names&quot; box allows
+you to name these to suit your usage. Any sprite may be a member
+of any number of these collision classes. A sprite that is not a
+member of any collision class will not participate in any
+collisions.</p>
+
+<p>You can define a number of collisions tests for each map. A
+test consists of two classes and a number of flags indicating the
+effect of the collision. There are also some inventory parameters
+that can control activation of the collision, a special function
+that can be activated when the collision occurs and a media clip
+that can be specified to play when the collision occurs. The two
+classes selected indicate which sprites should be tested for
+collisions. For instance, if &quot;Player&quot; is selected in
+the first box and &quot;Platform&quot; is selected in the second
+box, every time the game advances one frame, all sprites which
+are a member of the &quot;Player&quot; class will be tested for a
+collision with all sprites of the &quot;Platform&quot; class
+(other than itself). Whenever a collision is detected, the
+sprites respond as indicated. In this case the sprite that is a
+&quot;Player&quot; represents the &quot;A&quot; sprite and the
+sprite that is a &quot;Platform&quot; represents the
+&quot;B&quot; sprite.</p>
+
+<p>When two sprites collide, all applicable collision tests for
+these sprites are processed, so there would be a number of
+collisions if there were two sprites classified as both player
+and platform, and two tests - one between platform and player and
+another between player and platform. When these two sprites come
+into contact:</p>
+
+<ul>
+    <li>Sprite 1 as the player hits sprite 2 as the platform</li>
+    <li>Sprite 2 as the player hits sprite 1 as the platform</li>
+    <li>Sprite 1 as the platform hits sprite 2 as the player</li>
+    <li>Sprite 2 as the platform hits sprite 1 at the player</li>
+</ul>
+
+<p>All these collisions would be tested for each frame advance of
+the game, so be careful how liberally you define collisions. The
+number of tests would grow exponentially (in this case) as the
+number of player-platform-class sprites increases.</p>
+
+<p>As of version 1.2, GameDev supports inventory parameters in a
+collision definition. Selecting &quot;owns&quot; indicates that
+the player must own a minimum number of the specified item in
+order for this collision test to respond. Selecting
+&quot;lacks&quot; indicates that if the player does not have a
+specified minimum of the specified item, then this collision test
+will respond. These tests go well in pairs. For instance, if the
+player runs into a Thief sprite and owns at least 1 dagger, the
+response could be to terminate the Thief sprite and play an
+&quot;I gotcha&quot; sound effect. In a separate collision test,
+you could specify that if the player runs into a Thief sprite and
+lacks 1 dagger (does not own at least 1) the response should be
+to bounce off the Thief and play an &quot;ouch!&quot; sound
+effect. Checking the &quot;Remove inventory after use&quot; box
+indicates that the item(s) should be removed from the inventory
+if the player owned a sufficient number of items that were
+required for the collision. Note that these parameters only take
+effect when the number is greater than 0. Inventory parameters
+for the collision are ignored when the number is 0. </p>
+
+<p>There are a number of effects that a collision can bring
+about, and many of these can be combined:</p>
+
+<ul>
+    <li>A rides on B: The sprite of the first class starts riding
+        on the sprite of the second class like a platform. Some
+        of its inertia is maintained so it can be difficult for a
+        sprite to get onto a quick, horizontally moving platform.</li>
+    <li>A and B swap velocities: This attempts to make the
+        sprites move apart from each other by swapping components
+        of the sprites' velocities. This often, but not always,
+        looks like a &quot;bounce&quot;. Sometimes one sprite
+        ends up pushing the other until it passes through it.
+        (GameDev doesn't allow defining sprites as solid like
+        solidity definitions.)</li>
+    <li>A stops; B stops: The sprite definition and template of
+        the sprite are cloned (so changes don't affect other
+        sprites based on the same template or definition). Then
+        the sprite's template is altered such that it becomes
+        inert and its velocity is set to 0. Effectively, the
+        indicated sprite stops moving (and may fall to the
+        ground).</li>
+    <li>Terminate A; Terminate B: The sprite is removed from the
+        layer and no longer drawn.</li>
+    <li>Add new A; Add new B: A new instance based on the
+        sprite's definition is created. If &quot;A and B swap
+        velocities&quot; is also selected, the new sprite is
+        moved to the location of this sprite instead of assuming
+        its default start position. If &quot;Terminate&quot; is
+        also selected, the current sprite starts over at the
+        beginning of its path.<br>
+        <strong>Note: </strong>The &quot;Add new&quot; effects
+        should be used with caution. If the effect does not
+        include some action that stops the collision from
+        happening again, you can quickly end up with too many
+        sprites for the game to continue functioning at a
+        reasonable speed. It may be preferable to activate a
+        special function that creates a sprite, thereby exposing
+        the ability to place a limit on the number that can be
+        created.</li>
+    <li>Activate special function: When the two sprites collide,
+        activate the specified special function. The special
+        function is activated regardless of the activation
+        parameters of the function -- no inventory is required or
+        affected for the activation of the function in this way.
+        Only inventory parameters of the collision are taken into
+        account.</li>
+    <li>Play media clip: A media clip can play when the collision
+        occurs.</li>
+    <li>Script: When a collision occurs the Player object raises
+        the &quot;OnSpritesCollide&quot; event that can be
+        trapped by script code, which in turn can respond by
+        doing anything supported by scripting. The name of the
+        layer where the collision occurred, the indexes of two
+        sprites involved in the collision as well as the index of
+        the collision definition are passed as parameters.</li>
+</ul>
+
+<p>You should keep in mind that the number of collision tests and
+the number of sprites that are a member of any collision class
+can increase the work required by the game engine exponentially,
+so try to limit collision detection requirements to a minimum.</p>
+
+<p>Collision Definitons are saved in the MAP file of the map for
+which they are defined.</p>
+</body>
+</html>

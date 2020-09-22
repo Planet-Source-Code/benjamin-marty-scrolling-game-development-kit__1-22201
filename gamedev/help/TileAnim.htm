@@ -1,0 +1,112 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Tile Animation</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>Tile Animation</h2>
+
+<p>This dialog allows you to define how map tiles animate.
+Because the map is completely redrawn for every frame anyway, you
+should be able to animate every visible tile without visibly
+reducing the speed at which GameDev plays or edits a map.</p>
+
+<p>The process of defining a new tile animation generally follows
+these steps:</p>
+
+<ul>
+    <li>Select a map from the &quot;Available Maps&quot; list.</li>
+    <li>Select a layer within that map from the &quot;Layers in
+        Map&quot; list. (An animation applies to a specific
+        layer. Even other layers that use the same tileset will
+        not animate unless they also have tile animation(s)
+        defined.)</li>
+    <li>Click the &quot;New Anim.&quot; button.</li>
+    <li>Enter a name for the new tile animation definition. This
+        name should be unique in within the space of all tile
+        animations in the project.</li>
+    <li>When the tiles appropriate to the layer appear in the
+        &quot;Tiles in Layer's Tileset&quot; box, drag a
+        &quot;base tile&quot; into the &quot;Tile to
+        Animate&quot; box. This &quot;base tile&quot; defines
+        which tile on the map will be replaced with the animation
+        you're about to define. Since the map can only contain
+        single-byte values, you have to replace one of these
+        values (the &quot;base&quot; tile for the animation) with
+        the animation, you can't have 255 tiles <strong>and</strong>
+        additional animations. So when you want to place an
+        animated tile on the map, you place this base tile there
+        to put the animation at that position.</li>
+    <li>Drag a sequence of tiles from the tileset box into the
+        &quot;Animation Frames&quot; box. A vertical
+        &quot;cursor&quot; is displayed as the mouse hovers over
+        the Animation Frames box, indicating where the new tile
+        will be inserted.</li>
+    <li>Finally, enter delay values for each frame to achieve the
+        appropriate animation speed. The tile animation is
+        updated as it is edited and does not need to be
+        explicitly saved or updated in the project.</li>
+</ul>
+
+<p>You can also drag and re-arrange the tiles within the
+Animation Frames box. If you do not hold the shift key while
+dragging within the Animation Frames box, the tile will be copied
+to the new location (indicated by the &quot;+&quot; on the drag
+pointer). Hold shift to move a tile to a new location in the
+animation sequence. To remove a frame from the animation frames
+sequence, drag it back into the tileset tiles box. Multiple tiles
+can be dragged at once by first selecting them while holding the
+Ctrl key. Tile images can also be dragged into external
+applications, but only one at a time.</p>
+
+<p>The &quot;Preview&quot; box displays a rough estimate of how
+the tile will look when it shows up on the map. The actual speed
+of the animation is hard to estimate, but the preview should get
+the relative delays of the frames correct. If you have troubles
+making the preview animate, check that the <a href="Sprites1.htm">Sprites
+and Paths</a> dialog is not up. The sprites and paths dialog also
+has an animated preview, and because of the way the previews are
+handled, only one preview can animate at a time.</p>
+
+<p>To edit an existing animation, bring this dialog up, select
+the map and layer in which it is defined, and then select the
+name of the tile animation. The appropriate tiles will
+automatically be loaded and the animated preview will be started.
+You can then manipulate the delays and/or the tiles in the
+&quot;Animation Frames&quot; list immediately, or specify a new
+base tile.</p>
+
+<p>Tile animation is accomplished by remapping one tile value to
+another. The BMDXCtls graphics engine on which GameDev is based
+keeps a list of 255 mappings (one for each tile value). This
+mapping indicates when another tile should be drawn instead of
+the tile index associated with the byte at a particular position
+in the map. For every tile it draws on the map, it looks in this
+mapping array at the appropriate position. Instead of directly
+drawing the tile associated with the byte index, it uses the
+mapping to get a tile index for the byte value. All GameDev has
+to do then is manipulate this mapping array, cycling the mappings
+according to the animation definition; it does not have to
+iterate through each tile and change its appearance. This results
+in an insignificant amount of work to animate a single tile or a
+whole screen full of tiles based on a single animation
+definition.</p>
+
+<p>All tile animation information (except, of course, the tile
+graphics themselves) is stored in the GDP project file.</p>
+</body>
+</html>

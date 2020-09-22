@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="What's New">
+		<param name="Local" value="WhatsNew.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="User Interface Help">
+		<param name="Local" value="Intro.htm">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Project Window">
+			<param name="Local" value="Project.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Make Shortcut">
+			<param name="Local" value="Shortcut.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Edit Tilesets Dialog">
+			<param name="Local" value="TSEdit1.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="The Full Screen TilesetEditor">
+				<param name="Local" value="TSEdit2.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Display Tileset">
+			<param name="Local" value="TSDisp.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Import Tile">
+			<param name="Local" value="TileImp.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Managing Tile Matching">
+			<param name="Local" value="TSMatch.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Define Tile Matching">
+			<param name="Local" value="MachTile.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Edit Maps Dialog">
+			<param name="Local" value="MapEdit1.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Editing Map Layers">
+				<param name="Local" value="MapEdit2.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="The Full Screen Map Editor">
+				<param name="Local" value="MapEdit3.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Player Map Interactions">
+				<param name="Local" value="MapEdit4.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Special Functions">
+				<param name="Local" value="MapEdit5.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Tile Categories">
+			<param name="Local" value="GrpTile.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Tile Animation">
+			<param name="Local" value="TileAnim.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Sprites and Paths">
+			<param name="Local" value="Sprites1.htm">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Defining Sprite Frames">
+				<param name="Local" value="Sprites2.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Defining Sprite Motion">
+				<param name="Local" value="Sprites3.htm">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Defining Sprite Collisions">
+				<param name="Local" value="Sprites4.htm">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Collision Definitions">
+			<param name="Local" value="CollDef.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Player Settings">
+			<param name="Local" value="Player.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Controller Configuration">
+			<param name="Local" value="CtrlCnfg.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Multimedia Manager">
+			<param name="Local" value="Media.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="GameDev Options">
+			<param name="Local" value="Options.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Tutorial">
+		<param name="Local" value="Tutorial.htm">
+		<param name="ImageNumber" value="1">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Step 1 - Creating Graphics">
+			<param name="Local" value="Tut1.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Step 2 - Defining Tile Matching">
+			<param name="Local" value="Tut2.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Step 3 - Creating a Map">
+			<param name="Local" value="Tut3.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Step 4 - Defining Tile Categories and Solidity">
+			<param name="Local" value="Tut4.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Step 5 - Defining Paths and Sprites.">
+			<param name="Local" value="Tut5.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Step 6 - Player Settings and Inventory">
+			<param name="Local" value="Tut6.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Step 7 - Adding Special Functions">
+			<param name="Local" value="Tut7.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Step 8 - Adding Multimedia Content">
+			<param name="Local" value="Tut8.htm">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Step 9 - Adding Script Code">
+			<param name="Local" value="Tut9.htm">
+			</OBJECT>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Frequently Asked Questions">
+		<param name="Local" value="FAQ.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Technical Support and Contact Information">
+		<param name="Local" value="TechSupt.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>

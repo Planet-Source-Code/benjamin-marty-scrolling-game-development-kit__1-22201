@@ -1,0 +1,306 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Special Functions</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap><a
+        href="MapEdit1.htm"><font color="#FFFFFF" size="2"
+        face="Arial"><strong>Up to Edit Maps Dialog</strong></font></a></td>
+    </tr>
+</table>
+
+<h2>Special Functions</h2>
+
+<p>This is part of a series of pages describing the <a
+href="MapEdit1.htm">Edit Maps Dialog</a>. This page describes the
+Special Functions tab.</p>
+
+<p>In order to edit special functions you must have a map
+selected and the player sprite must have been specified. This is
+required because some aspects of a special function require the
+layer in which the player sprite resides.</p>
+
+<p>Along the left side of this tab are listed the special
+functions defined on the selected map. This is the top level of
+navigation within this tab. Selecting one of these special
+functions loads the information for the function into the
+sub-tabs at the right.</p>
+
+<p><strong>Note:</strong> In version 1.1 and earlier, only
+functions on the player sprite's layer were listed here because
+the only way to activate a function was for the player (on the
+same layer) to touch it. The problem with this is that there was
+no way to edit or delete functions that may have accidentally
+been added to other layers. Furthermore, there is now the ability
+to activate any special function(s) when the game begins. So for
+multiple reasons, all special functions on the selected map are
+now listed. Functions that reside on a layer other than the
+player's layer are discernible by the fact that the &quot;Action
+Parameters&quot; tab hides the controls relavent to the player
+when such a function is selected.</p>
+
+<h3>Action Parameters</h3>
+
+<p>The first sub-tab restricts when the special function will
+take effect and whether it can be activated again. The first
+three check boxes indicate which actions can trigger the special
+function.</p>
+
+<ul>
+    <li>Going Up: Requires that the player be pressing up on the
+        input device</li>
+    <li>Button: Requires that the player be pressing button 1 on
+        the input device</li>
+    <li>Down: Requires that the player be pressing down on the
+        input device</li>
+</ul>
+
+<p>If more than one of these boxes are checked, any of the
+actions can be done alone to trigger the function. (Button and
+Down does not require that both down and the button be pressed to
+activate the function, just one or the other.) The remaining
+boxes determine other parameters about when the function is
+activated:</p>
+
+<ul>
+    <li>Remove after use: Remove this function from the map after
+        it is triggered (be careful with this in the editor -- if
+        the function is activated while editing the map, it will
+        no longer be there when the editor is closed. See <a
+        href="Options.htm">GameDev Options</a> for details)</li>
+    <li>Initial touch only: Activate this function only when the
+        player first touches it instead of repeatedly activating
+        it as long as the player is touching the function.</li>
+    <li>Uses inventory item: Check this to specify that the
+        player must possess one or more of a particular item in
+        order to activate the function. When checked you can
+        select which item is required and how many. There is also
+        the option of removing this many items from the inventory
+        if the function is activated, or allowing the player to
+        keep it/them.</li>
+    <li>Activate once before gameplay begins: This is useful for
+        things like displaying a title screen or instructions
+        when the game starts up in play mode.</li>
+</ul>
+
+<h3>Effect</h3>
+
+<p>This tab has a lot of content to support the various types of
+special functions that are defined in GameDev. The
+&quot;Function&quot; field at the top of this tab determines what
+the selected special function should do when it is activated. The
+information presented below the function field is specific to the
+selected function.</p>
+
+<h4>Display a Message</h4>
+
+<p><img src="Images/FuncMsg.gif" width="265" height="129"></p>
+
+<p>This type of function pops up a box that displays a message or
+image and waits for the player to press a button. The game
+freezes until the message is acknowledged. To display an image
+enter &quot;#PIC&quot; as the first 4 characters of the message
+and then enter the path and filename of a bitmap to display. A
+space following &quot;#PIC&quot; is optional, however there must
+be no spaces before or inside the text &quot;#PIC&quot; itself.
+The path should be relative to the path of the GDP file for the
+project. The image will display centered on the screen and act
+just like a message until the player presses a button.</p>
+
+<h4>Switch to a New Sprite</h4>
+
+<p><img src="Images/FuncSpr.gif" width="265" height="129"></p>
+
+<p>This changes the player sprite to a new sprite. This could
+come in handy for changing the appearance or functionality of the
+player, or switching it to an automatically controlled sprite for
+a period of time while it travels from one point to another. The
+new sprite will continue to interact with the map as the player
+sprite always does. There are a few options associated with this
+function:</p>
+
+<ul>
+    <li>Swap &quot;Controlled by&quot;: Normally the player
+        sprite is the only sprite controlled by the input device.
+        If the sprite you are switching to is controlled by
+        something else, you may want to check this option so that
+        the new sprite will be controlled by the keyboard and the
+        previous sprite (if it continues to exist) is controlled
+        by whatever the new sprite was previously controlled by.
+        This should give the effect that the player just took
+        over control of another sprite. Be careful with this
+        option because it changes the sprite template (since
+        that's where the &quot;Controlled by&quot; attribute is
+        determined). All sprites based on the same template as
+        the two sprites will be affected similarly (and possibly
+        permanently; see <a href="Options.htm">GameDev Options</a>
+        for details. This action is <em>not</em> one of the
+        features disabled by the &quot;disable player edits&quot;
+        option.)</li>
+    <li>New Instance: If this is not checked, GameDev will
+        attempt to locate an existing instance of the indicated
+        sprite definition and switch the player to that sprite.
+        If this is checked, or if no instance exists, the player
+        will transfer to a new instance of the specified sprite
+        definition.</li>
+    <li>Delete old sprite: If this is checked, the current player
+        sprite will be deleted as player control is transferred
+        to the new sprite.</li>
+    <li>Same location as old: If this is checked, the new sprite
+        (whether an existing instance or a new instance) will be
+        transported to the location of the player sprite instead
+        of starting in its own current or default locaton. This
+        should have the effect of making it look like the player
+        just changed/upgraded into something else (without
+        moving).</li>
+</ul>
+
+<h4>Switch to a New Map</h4>
+
+<p><img src="Images/FuncMap.gif" width="265" height="129"></p>
+
+<p>There would be little point in having multiple maps within a
+project if the player were not able to jump between them. This
+function will transport the player to another map. The current
+map is unloaded and the new map is initialized (default instances
+of sprites are created where appropriate). Then you have the
+option of starting the player in the default location for this
+map or overriding the player start position and/or sprite with
+one of your own choosing. Selecting &quot;(default)&quot; from
+the &quot;As this sprite&quot; box uses the sprite specified as
+the Player sprite for the map. The definition you select must be
+a sprite that has &quot;Initial Instance&quot; checked and would
+be automatically created when the map is initialized. If you want
+to override the starting position instead of using the default
+position for the sprite, you may check the &quot;Set start
+position&quot; box and specify an X and Y coordinate in pixels.
+This coordinate is given as an offset from the top left corner of
+the layer in which the sprite resides.</p>
+
+<p>When the player switches to a new map, the inventory is
+retained. There may be different interactions defined on the map,
+but all maps are defined in terms of the same inventory. This is
+the reason for separating the inventory's interaction with the
+map (on the <a href="MapEdit4.htm">Player Interaction</a> tab)
+from the inventory definition itself (on the <a href="Player.htm">Player
+Settings</a> dialog).</p>
+
+<h4>Teleport to a Location</h4>
+
+<p><img src="Images/FuncTele.gif" width="265" height="129"></p>
+
+<p>The player can be teleported either to an absolute position or
+to a position offset from the player's current position.
+Coordinates are given in pixels. For an absolute teleport (if the
+&quot;Offset&quot; box is left unchecked) coordinates are given
+in pixels from the top left corner of the layer in which the
+player resides, and a preview of the destination location is
+displayed at the right. The coordinates specify where the top
+left corner of the sprite should end up.</p>
+
+<h4>Alter Map</h4>
+
+<p><img src="Images/FuncAltr.gif" width="265" height="129"></p>
+
+<p>This is a particularly useful function for changing a piece of
+the map. It copies the tiles from under another special function
+and puts them wherever you want. Everything must occur on the
+same layer as the player. It's not possible to copy tiles accross
+layers, or to copy areas of tiles from one place to another on a
+layer other than the layer where the special function was
+triggered. All the tiles will be copied from under the specified
+special function to the location specified. The location
+specified indicates the top left corner of where the tiles are
+output. The &quot;Pick cordinates&quot; box is not part of the
+special function, but rather a tool you can use to calculate
+coordinates. If the function being defined happens to contain the
+destination rectangle (aligned to one corner) you can use the
+Pick coordinates box to enter the coordinates necessary to copy
+the rectangle to the appropriate corner.</p>
+
+<p>For instance you may have an &quot;UnBlockPassage&quot;
+function defined at 24,20 to 26,23 and you have an
+&quot;OpenedPassage&quot; function defined at 100,50 to 101,53
+(notice the open passage is one tile narrower horizontally).
+&quot;UnBlockPassage&quot; represents the area the player can
+touch to activate a function that copies an image of an opened
+passageway into the tiles at 25,20 to 26,23.
+&quot;OpenedPassage&quot; represents this image being copied.
+Since 26,23 (the bottom right corner) happens to be the same for
+&quot;UnBlockPassage&quot; and for the rectangle you want to
+affect, you can select &quot;Match bottom-rights&quot; from the
+&quot;Pick coordinates list&quot; and it will enter the
+coordinates &quot;25,20&quot; for you (the top left corner of
+where the copy must begin to make the bottom right corners
+match). This tool is convenient if you don't know the coordinates
+of the destinaton, but you know the destination matches a corner
+of the function you're currently defining.</p>
+
+<h4>Create Sprite</h4>
+
+<p><img src="Images/FuncCSpr.gif" width="265" height="129"></p>
+
+<p>Use this function to create a new instance of a sprite based
+on the specified sprite definition. You can override the default
+start position for the sprite if you like by checking the
+&quot;Set start position&quot; box and entering a pixel
+coordinate. If the &quot;Absolute&quot; option is selected, the
+coordinate will be interpreted as pixels relative to the top left
+corner of the layer. If &quot;Relative&quot; is selected, the
+coordinate will be added to the position of the player. The top
+left corner of the new sprite will start at the specified offset
+from the top left corner of the player sprite. The &quot;Maximum
+count&quot; parameter sets a maximum on how many of the sprite
+the function should allow. The function will not create another
+instance of the sprite if the maximum number already exist. (The
+last parameter is new with version 1.2.)</p>
+
+<h4>Raise an Event</h4>
+
+<p>This function does not require any parameters. Instead all the
+work in this case is handled in script. This is a particularly
+useful option as it allows you to do anything you want if the
+other function types do not cover the effect you want the special
+function to have. The Player object's
+&quot;OnSpecialFunction&quot; event is raised when the function
+is triggered, and the &quot;SpecialFunction&quot; object that was
+triggered is passed to the script code as a parameter.</p>
+
+<h4>Delete Sprites</h4>
+
+<p><img src="Images/FuncDSpr.gif" width="265" height="129"></p>
+
+<p>To prevent the map from becoming over-populated with sprites
+you may want to make frequent use of this function. It allows you
+to delete one or all instances of sprites based on the specified
+sprite definition. Specifying a minimum will prevent all sprites
+from being deleted by the function; the function will only delete
+sprites if the minimum number will still exist. Specifying a
+minumum and checking the &quot;Delete all above min.&quot; box
+will delete sprites until the specified number of sprites exist
+for that type of sprite. If the minimum is set to zero and the
+box is checked, all sprites of the specified type will be deleted
+at once.</p>
+
+<p>When the parameters for a special function are complete, you
+must press the Update button to save them to the currently
+selected special function. There's one more button that may be
+useful in calculating some of the parameters for special
+functions. The button to the left of the Update button is a
+calculator button that will run Windows calculator. You might
+need this in converting between tile coordinates and pixel
+coordinates (by multiplying the tile coordinate by tile size or
+dividing pixel coordinate by tile size).</p>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Defining Sprite Collisions</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap><a
+        href="Sprites1.htm"><font color="#FFFFFF" size="2"
+        face="Arial"><strong>Up to Sprites and Paths</strong></font></a></td>
+    </tr>
+</table>
+
+<h2>Defining Sprite Collisions</h2>
+
+<p>This is part of a series of pages describing the <a
+href="Sprites1.htm">Sprites and Paths</a> dialog. This page
+describes the Collisions tab.</p>
+
+<p>This tab allows you to specify membership of a sprite template
+within up to 16 collision classes. A sprite may be a member of
+any number of collision classes, but as more sprites become
+members of more collision classes, the work done by GameDev
+starts to increase exponentially (depending on what kind of
+collision tests are defined in the <a href="CollDef.htm">Collision
+Definitions</a> dialog). Ideally, the game would be concerned
+only with collisions between the player and various other types
+of sprites. This way GameDev only needs to loop through N sprites
+testing for collisions with the player instead of N-squared
+sprites, checking each sprite for collisions with all other
+sprites (O(n) vs O(n^2) if you're familiar with &quot;Big O&quot;
+notation).</p>
+
+<p><img src="Images/SprColl.gif" align="left" hspace="6"
+width="530" height="458">The collision classes listed on this
+tab, and the collision tests performed among them, are defined
+and manipulated on the <a href="CollDef.htm">Collision
+Definitions</a> dialog. This tab is only used to specify which
+templates are associated with sprites in which collision classes.
+For instance, assume sprite template &quot;PlatformT&quot; is a
+member of the &quot;PlatformC&quot; collision class, and sprite
+template &quot;PlayerT&quot; is a member of the
+&quot;RiderC&quot; collision class. Also assume you have a sprite
+&quot;Platform1&quot; based on template &quot;PlatformT&quot; and
+a sprite &quot;Player1&quot; based on template
+&quot;PlayerT&quot;. And assume that there is a collision test
+defined between &quot;RiderC&quot; and &quot;PlatformC&quot; to
+force sprites in the &quot;RiderC&quot; class to ride on sprites
+of the &quot;PlatformC&quot; class. When collisions are tested,
+the Player1 sprite will be tested for collision with the
+Platform1 sprite because the template for Player1 puts it in the
+&quot;RiderC&quot; class, and the template for Platform1 puts it
+in the &quot;PlatformC&quot; class. Since these classes have a
+collision test defined between them, all sprites based on PlayerT
+will be tested for collisions with all sprites based on
+PlatformT.</p>
+
+<p>The case for selecting multiple classes would probably usually
+involve the player sprite. For instance, the player sprite may
+act as a &quot;Rider&quot; on platforms, and also as a
+&quot;Bouncer&quot; of ... say, fruit. When a &quot;fruit&quot;
+sprite falls out of a tree, it could bounce off of anything in
+the &quot;bouncer&quot; class. Having multiple collision classes
+allows finer grained control over which collisions your
+interested in. This can be important if you need to refine the
+number of collision tests to improve efficiency.</p>
+
+<p>Note: The collision class names by default are simply numbered
+1 to 16. Each map can have its own set of collision class names.
+When you activate this tab, you may see the numbered collision
+class names, even if you have defined your own names. If this is
+the case, you need to select a path in the top left corner to
+indicate which map you're template applies to. There needs to be
+some reference to a map in order to load the appropriate
+collision class names from that map.</p>
+
+<p>The &quot;Select All&quot; button makes the current template a
+member of all collision classes. The &quot;Clear All&quot; button
+makes the template a member of no collision class. The
+&quot;Define...&quot; button displays the <a href="CollDef.htm">Collision
+Definitions</a> dialog.</p>
+</body>
+</html>

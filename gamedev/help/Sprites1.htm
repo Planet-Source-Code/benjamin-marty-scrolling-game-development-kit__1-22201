@@ -1,0 +1,192 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Sprites and Paths</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap>&nbsp;</td>
+    </tr>
+</table>
+
+<h2>Sprites and Paths</h2>
+
+<p>This dialog has many parts, so the help has been split into 4
+parts:</p>
+
+<ul>
+    <li>This page describes basic path and sprite definition
+        maniupulation in the top half of the dialog.</li>
+    <li>Help on the Frames tab is available in <a
+        href="Sprites2.htm">Defining Sprite Frames</a>.</li>
+    <li>Help on the Motion tab is available in <a
+        href="Sprites3.htm">Defining Sprite Motions</a>.</li>
+    <li>Help on the Collisions tab is available in <a
+        href="Sprites4.htm">Defining Sprite Collisions</a>.</li>
+</ul>
+
+<p>The top of the dialog contains two lists. The list on the left
+displays all the paths in the project and the list on the right
+displays all the sprites in the project. If these lists get
+unwieldy, an alternative method of selecting paths and sprites is
+to use the hierarchy in the main <a href="Project.htm">project
+window</a>. When a path is selected, the first sprite that
+references that path is automatically selected in the sprite
+definition list on the right (unless the already-selected sprite
+references the selected path). When a sprite definition is
+selected, nothing is changed unless you click the &quot;Load
+Sprite&quot; button (otherwise it could be very inconvenient to
+update existing sprites). Once you load a sprite definition, the
+path it references is selected in the path list at the left.</p>
+
+<p>When a path is selected you can see the map and layer to which
+it applies listed below the &quot;Path Points&quot; list. This
+map and layer are used to determine many aspects relating to the
+creation of a sprite (for instance, which map the sprite is added
+to when it is created, since sprites are saved in the MAP file).</p>
+
+<p>Before continuing, it will be helpful to understand the
+differences between a sprite, a sprite definition and a sprite
+template.</p>
+
+<dl>
+    <dt>Sprite</dt>
+    <dd>This is a particular instance of a graphic at a
+        particular position in a particular layer in the map,
+        moving at a particular velocity. It depends on its
+        definition and template for information on where to move
+        next. Sprites are not persistent objects (at least not by
+        default, in this release). They are created at their
+        respective starting positions each time the map is
+        loaded/initialized.</dd>
+    <dt>Sprite Definition</dt>
+    <dd>This links a sprite to a template, and adds specific
+        information about which path to follow and whether an
+        instance of the sprite should be automatically created
+        with the map. There can be multiple sprites based on the
+        same Sprite Definition. The Sprite Definition is saved
+        with the map and contains all the information necessary
+        to create a sprite instance. Sprite definitions are not
+        changed in the process of playing a game -- they are
+        static and persistent (unless altered by script code).</dd>
+    <dt>Sprite Template</dt>
+    <dd>The majority of the information about a sprite is defined
+        here. Since there can be many sprites with similar
+        attributes, it's efficient to separate this information
+        off into a singular point of reference. The Sprite
+        Template contains a reference to a <a href="GrpTile.htm">Solidity
+        Definition</a> (indicating which tiles this type of
+        sprite sees as solid), animation speed, state definition
+        information (how many states, how many frames in each
+        animated state, which tile in each animation frame), what
+        rules control the movement of this type of sprite,
+        movement speed, gravity, inertia, and a collision
+        category defining what collisions sprites of this
+        template are involved in. There can be multiple Sprite
+        Definitions associated with each Sprite Template.</dd>
+</dl>
+
+<p>In summary, a sprite template defines a type of sprite
+(Player, Platform, Slime Monster, Bouncy Ball); a sprite
+definition defines a place for a sprite based on a template (a
+platform that travels to the store, a Slime Monster that attacks
+the player at the entrance to this cave, a Bouncy Ball that
+follows these stairs); a sprite is a single runtime instance
+based on a definition (the first of two platforms that travel to
+the store, the Slime Monster that was created at the entrance to
+the cave after the first one was destroyed, the Bouncy Ball that
+happens to currently bouncing off the player).</p>
+
+<p>As far as the user interface is concerned, the three objects
+are separated like this: Sprite Templates are defined in the
+lower half of this dialog, Sprite Definitions are defined in the
+upper half of this dialog, and Sprites are created only at
+runtime and can only be accessed or affected through script, <a
+href="MapEdit5.htm">special functions</a> or <a
+href="CollDef.htm">collision definitions</a>.</p>
+
+<p>The process of creating a sprite generally follows these
+steps:</p>
+
+<ul>
+    <li>Select a path on which you wish to define a new sprite.</li>
+    <li>Type a name for the new sprite definition into the
+        &quot;Name&quot; field.</li>
+    <li>Select an existing template from the Template dropdown
+        list, or define a template in the lower half of the
+        dialog, and type a name for the new template into the
+        &quot;Template&quot; field.</li>
+    <li>Check the &quot;Initial Instance&quot; checkbox if you
+        want an instance of this sprite to automatically exist
+        when the map starts up.</li>
+    <li>Click the &quot;Create Sprite&quot; button. If the
+        template does not already exist in the current map, it
+        will be created, otherwise it will be updated with the
+        current template parameters. Then the Sprite Definition
+        will be created and added to the map, and the Sprite
+        Definition will reference the selected Sprite Template
+        and Path.</li>
+</ul>
+
+<p>Clicking &quot;Update Sprite&quot; will update the sprite
+definition selected in the &quot;Sprite definitions&quot; list
+and update the Sprite Template selected in the
+&quot;Template&quot; field, and associate the selected sprite
+with the selected template and path.</p>
+
+<p>Delete sprite deletes the selected sprite definition from the
+map in which it resides. The other delete buttons are a bit more
+complicated. The &quot;Delete Template&quot; button will only
+delete the template if it's not being referenced by any sprite
+definitions. Likewise, the &quot;Delete Path&quot; button will
+only delete the path if it's not being referenced by any sprite
+definitions. These commands will display an error message if you
+attempt to delete something that's in use, and the selected item
+will not be deleted.</p>
+
+<p>The &quot;Offset Path&quot; button is handy if you have
+defined your path with the center of the sprite in mind instead
+of the top left corner. If your sprite images are 32 pixels by 32
+pixels, you can simply enter the value &quot;-16&quot; into the
+boxes next to &quot;by:&quot; and click the &quot;Offset
+Path&quot; button. This will move all the points in the path left
+16 pixels and up 16 pixels. This could also be useful if the path
+was created with a different sized sprite in mind.</p>
+
+<p>The &quot;Delete Point&quot; button can be used to delete
+individual points from the path. The list of points is directly
+under the list of paths and displays the points for the currently
+selected path. When &quot;Delete Point&quot; is clicked, the
+selected point will be deleted from the path. Do not attempt to
+use a path without any points, such a path should be deleted and
+re-created in the <a href="MapEdit3.htm">Map Editor</a> with at
+least one point.</p>
+
+<p>The &quot;Load Sprite&quot; button will select the sprite's
+path in the &quot;Path&quot; list, select the template referenced
+by the sprite in the &quot;Template&quot; field, and load all the
+other sprite and template parameters into the appropriate fields
+in both the top and bottom half of the dialog. The sprite and/or
+template can then be updated (with the update button) or copied
+(with the Create Sprite button). Whether a new template is
+created or simply updated is based solely on the name, not the
+button pressed. If the name of the template matches an existing
+template in the list, the existing template will <strong>always </strong>be
+updated; If the name of the template does not match any existing
+template in the list, a new template will <strong>always</strong>
+be created and the sprite will be associated with this new
+template. The old template will never be implicitly deleted (use
+&quot;Delete Template&quot; to delete an unused template) because
+it is always possible to create a new sprite that might want to
+reference that template.</p>
+</body>
+</html>

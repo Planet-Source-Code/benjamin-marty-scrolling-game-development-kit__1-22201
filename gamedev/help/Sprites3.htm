@@ -1,0 +1,208 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>Defining Sprite Motion</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap><a
+        href="Sprites1.htm"><font color="#FFFFFF" size="2"
+        face="Arial"><strong>Up to Sprites and Paths</strong></font></a></td>
+    </tr>
+</table>
+
+<h2>Defining Sprite Motion</h2>
+
+<p>This is part of a series of pages describing the <a
+href="Sprites1.htm">Sprites and Paths</a> dialog. This page
+describes the Motion tab.</p>
+
+<p>This tab defines what controls a sprite's motions. The first
+field defines which tiles on the sprite's layer the sprite sees
+as solid. This affects the sprite's motion in that the sprite is
+prevented from moving through solid objects. To define this, you
+must have a &quot;Solidity Definition&quot; which can be created
+on the <a href="GrpTile.htm">Tile Categories</a> dialog. A
+Solidity Definition categorizes tiles within a tileset into
+categories representing various shapes, such as
+&quot;solid&quot;, &quot;uphill&quot;, &quot;downhill&quot; etc.</p>
+
+<p>In order for the &quot;Solid tiles&quot; list to be populated,
+a path must be selected in the &quot;Paths&quot; list. This is
+because the path is the only reference a sprite has to the layer
+in which it resides, and therefore the only reference to the
+tileset which that layer uses. In order for the dialog to know
+which solidity definitions are applicable, it must know on which
+tileset the sprites using this template will be travelling. It is
+the responsibility of the game developer to ensure that any
+sprite created with a particular template resides on a layer
+where that template's Solidity Definiton is valid. GameDev does
+not prevent you from creating a sprite on a layer whose tileset
+is not related to the template's Solidity Definition.</p>
+
+<p>The &quot;Up requires solid&quot; checkbox determines whether
+this sprite can go up when there's nothing solid underneath it.
+For a sprite that is supposed to be walking on the ground (with a
+side view, gravity going downwards) it doesn't make sense for the
+sprite to go up whenever it wants. Checking this box ensures that
+&quot;Up&quot; will only work when the sprite is in contact with
+solid ground. And when this is the case, instead of slowly
+accelerating upward, the motion acts more like a jump,
+immediately skipping to the highest velocity upwards that the
+sprite can handle (based on the movement speed setting). If the
+sprites gravity goes upwards, everything is reversed and &quot;Up
+requires solid&quot; effectively becomes &quot;Down requires
+solid&quot;. <strong>Note:</strong> This setting does not apply
+to 360°/10° sprites! I can't make sense of this setting for
+this type of sprite and it's therefore not implemented.</p>
+
+<p>The &quot;Controlled by&quot; setting is the most interesting.
+This determines who's responsible for the sprite's movement. The
+possible values are:</p>
+
+<ul>
+    <li>Follow approximate path - Try to follow the path
+        designated by the path setting, but don't stick to it
+        with inhuman accuracy. This sometimes results in the
+        sprite having to turn around to go back and try to hit
+        the point on the path that it missed.</li>
+    <li>Follow path exactly - Ensures that the sprite follows the
+        path as cleanly as possible. Only a solid wall can stop
+        it from being exactly on its path.</li>
+    <li>Input device - The sprite responds to keyboard or joy
+        stick input (determined by the <a href="CtrlCnfg.htm">controller
+        settings</a> dialog). This should be selected for the
+        player sprite - at least most of the time. Setting a
+        sprite as the player does not correlate automatically to
+        being controlled by the keyboard, rather it just
+        determines which sprite the map should scroll around and
+        which sprite can pick up inventory.</li>
+    <li>Toward nearest sprite - This sprite always moves toward
+        the sprite nearest to it.</li>
+    <li>Toward player sprite - This sprite always moves toward
+        the player sprite.</li>
+    <li>Follow flat floor - The sprite will move stright left or
+        straight right as long as there's nothing in its way and
+        as long as there's solid ground below it. When it
+        encounters ground that isn't flat, a hole or an obstacle,
+        it turns around and starts moving theother direction.</li>
+    <li>Follow floor and slopes - The sprite will move left or
+        right regardless of the shape of any ground that may be
+        below it.  It continues in that direction until it can no
+        longer move in that direction at which point it turns around
+        and continues as before.</li>
+    <li>Follow flat wall - If the sprite is adjacent to a vertical
+        surface it will start following it up and down.  When it
+        gets to the top or bottom (there's an empty space or a slope
+        or an obstacle) it turns the opposite direction and follows
+        the wall back in the same pattern as before.  It will <b>not
+        </b> turn around if a wall on one side of the sprite ends
+        while an adjacent wall on the other side continues; as long
+        as the sprite can continue to move straight up or down with
+        a flat vertical wall touching it, it will continue to move in
+        that direction.  If the sprite is not adjacent to a vertical
+        surface, it will look for one within 3 sprite widths and move
+        toward it.  If it does not find one, it simply assumes a bias
+        of going to the right and continues in this direction until it
+        finds a wall.  A motionless sprite along the vertical center
+        of a wall has a downward bias.</li>
+    <li>Follow left wall - Your standard "follow the left wall" path.
+        Actually a good deal more complicated that one might think
+        considering all the sprite has to go on is whatever solid
+        pixels it can find in the vicinity and its current velocity.
+        The exact details of the algorithm won't be laid out here, but
+        these sprites can follow horizontal, vertical and diagonal
+        walls.  They never leave a solid wall once they find one (at
+        least they're not designed to, and I haven't seen one do so
+        yet, unless a wall disappears while its being followed).
+        They never turn back to go the direction they came
+        except for the case where the passage they've entered is a dead
+        end just wide enough to fit them, but they will be "attached"
+        to the opposite wall on the way out.  This type of sprite will
+        traverse every wall in the type of maze generated by the maze
+        generator in the map editor.  In the absence of walls, this
+        type of sprite has a leftward bias.</li>
+    <li>Follow right wall - Similar to follow the left wall.  This
+        sprite sticks to the wall at its right and has a rightward
+        bias in the absence of walls.  Another "maze solving"
+        sprite.</li>
+    <li>Follow sloped floor; jump at gaps - This is like "Follow floor
+        and slopes" except the sprite attempts to jump if it encounters
+        what looks like a "cliff" which it would not be able to climb
+        back up if it fell off.  This may not work very well if the
+        sprite is going downhill.  (A similar difficulty exists even
+        when the sprite is controlled by the input device, you can't
+        always jumps while going downhill because you're not always
+        touching the ground.) A short ledge before a gap can help.</li>
+    <li>Inert - Just like any other sprite except no forces act on this
+        sprite other than gravity and other sprites (and possibly script
+        code).  It will continue in its current heading if it has velocity
+        (after being bounced by another sprite or set in motion by script)
+        and its velocity will decay according to the inertia setting.</li>
+    <li>Simple - After discovering that all the coding behind sprites tends
+        to get pretty slow after about 30 sprites on the map at once, I
+        decided there needed to be a type of sprite that could squeeze in
+        every bit of performance and squeeze out every bit of unnecessary
+        code that I could for those sprites that really didn't need any
+        help from the code and were perhaps scripted.  This type of sprite
+        does not respond to solidity on the map or collisions with other
+        objects.  The data is all there (in case you want to access it
+        through scripting) but is not observed by the engine.  All "simple"
+        type sprites are appended to the end of the sprites array while all
+        other sprites are inserted before the first simple sprite (after
+        the last non-simple sprite).  Whenever GameDev encounters a simple
+        type sprite, it exits the processing loop it's in and does no
+        processing for simple sprites.  When performing the "advance" loop
+        (where all the sprites are moved) GameDev will stop at the start
+        of the simple sprites section and finish with a tight loop that
+        performs 3 simple actions on the simple sprites: 1) Move the
+        sprite according to its velocity (no gravity, intertia or speed
+        considered); 2) Animate the sprite according to its current state.
+        Normally a sprite animates according to its velocity.  A simple
+        sprite animates as if it were moving 1 pixel all the time; 3)
+        eliminate the sprite if it's off the edge of the map (which can
+        be common if there's no solidity stopping the sprite). The only
+        way to change the state of a simple sprite is through script.  It
+        will not automatically take on a state consistent with its current
+        direction of travel.  This resulted in an (eyeballed) 50% - 100%
+        performance gain.  Not as much as hoped, but worth keeping.</li>
+</ul>
+
+<p>The movement speed setting determines how fast the sprite can
+move (maximum speed). The maximum value is 10 pixels per frame
+and the minimum value is 1 pixel per frame. For sprites
+controlled by anything other than the input device, the movement
+speed determines how fast the sprites usually go since
+automatically controlled sprites are almost always in motion.</p>
+
+<p>The gravity power setting determines what kind of gravity this
+sprite experiences. Each sprite template can have its own gravity
+setting -- there is no overall map or project gravity setting.
+The maximum value in either direction is 1 pixel per frame per
+frame. Since the acceleration speed is also hard coded at 1 pixel
+per frame per frame, setting gravity at the most extreme values
+exactly counteracts acceleration. For a 360° sprite, this means
+that gravity can barely be counteracted when pointing straight
+up, but cannot be overcome. For another type of sprite with
+&quot;Up requires solid&quot; checked, since acceleration for
+this type of sprite is instantaneous to maximum velocity, maximum
+gravity can be temporarily overcome.</p>
+
+<p>Finally, the inertia setting determines how much of the
+sprites velocity is retained after each frame. The right end of
+the scale corresponds to perfect inertia in which an object in
+motion remains in motion (unless it hits something). Setting the
+slider to the left end of the scale will cause the sprite to stop
+moving immediately when the thrust ceases, unless there is
+gravity.</p>
+</body>
+</html>

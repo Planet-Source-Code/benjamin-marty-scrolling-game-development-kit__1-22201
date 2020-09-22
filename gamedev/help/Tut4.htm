@@ -1,0 +1,155 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>GameDev Tutorial Step 4 - Defining Tile Categories and Solidity</title>
+</head>
+
+<body bgcolor="#D3DFFA">
+
+<h2><font face="Verdana">GameDev Tutorial - Creating a Simple
+Game</font></h2>
+
+<table border="0" cellpadding="0" cellspacing="6">
+    <tr>
+        <td><img src="Images/Wall.GIF" width="188" height="188"></td>
+        <td valign="top"><h3><font face="Verdana">Step 4 -
+        Defining Tile Categories and Solidity</font></h3>
+        <p><font face="Verdana">Tiles are categorized for two
+        purposes. Mainly, these categories can be used to create
+        a solidity definition. A solidity definition determines
+        which tiles are solid and what shape they are so that
+        sprites can react to solid areas of the map properly.
+        Secondly, categories are used in </font><a
+        href="Tut6.htm"><font face="Verdana">defining
+        inventory/map interactions</font></a><font face="Verdana">
+        for the player. For instance, if the player could
+        eliminate any &quot;boulder&quot; tiles from the map when
+        in posession of a &quot;pickaxe&quot; item, all images of
+        boulders would be categorized together as tiles affected
+        by the pickaxe. This step of the tutorial will lead you
+        through creating both types of categories.</font></p>
+        </td>
+    </tr>
+</table>
+
+<p><font face="Verdana">To access the Tile Categories dialog,
+select &quot;Tile Categories&quot; from the View Menu in the main
+project window.</font></p>
+
+<p><img src="Images/TileCat.GIF" align="left" hspace="6"
+width="359" height="448"><font face="Verdana">This dialog allows
+you to categorize the tiles of a tileset into named categories.
+Each tileset has its own distinct index of category names. That
+is to say, you can define a category called &quot;Solid&quot; for
+the &quot;Tutorial&quot; tileset, and define another category
+called &quot;Solid&quot; for another tileset.</font></p>
+
+<p><font face="Verdana">Of course this tutorial only deals with a
+single tileset so all the categories will apply to that tileset.
+Start by selecting the tileset in the &quot;Tileset&quot; box.
+Type the name &quot;Solid&quot; in the &quot;Current
+Category&quot; box. The category will automatically be created
+once you drag a tile from the &quot;Tiles available&quot; box to
+the &quot;Tiles in this category&quot; box.</font></p>
+
+<p><font face="Verdana">In the &quot;Tiles available&quot; box,
+locate all the tiles that were included in the Tilematch
+definition from step 2. Of these tiles, drag all the tiles
+without any black pixels into the &quot;Tiles in this
+category&quot; box. This category will define tiles that are
+solid squares.</font></p>
+
+<p><font face="Verdana">To create another category, type the name
+of the category in &quot;Current Category&quot;. As you start
+dragging you will see the &quot;Tiles in this category&quot; box
+go blank indicating a new category. The list below indicates more
+categories you should create, and which tiles belong in them.</font></p>
+
+<ul>
+    <li><font color="#000000" face="Verdana">Category
+        &quot;Uphill&quot;: <img src="Images/Uphill.GIF"
+        width="32" height="32"></font></li>
+    <li><font color="#000000" face="Verdana">Category
+        &quot;Downhill&quot;: <img src="Images/Downhill.GIF"
+        width="32" height="32"></font></li>
+    <li><font color="#000000" face="Verdana">Category
+        &quot;Upceil&quot;: <img src="Images/UpCeil.GIF"
+        width="32" height="32"></font></li>
+    <li><font color="#000000" face="Verdana">Category
+        &quot;Downceil&quot;: <img src="Images/DownCeil.GIF"
+        width="32" height="32"></font></li>
+</ul>
+
+<p><font color="#000000" face="Verdana">These are all the
+categories required to make one complete &quot;Solidity
+Definition&quot;. Enter the name &quot;TutorialSolid&quot; into
+the &quot;Solidity Definition Name&quot; box. Then select
+&quot;Solid&quot; in the &quot;Solid tile category&quot; box,
+select &quot;Uphill&quot; in the &quot;Uphill tile category&quot;
+box and so on until each box has a tile category specified. Save
+the solidity definition by clicking the &quot;Save&quot; button.</font></p>
+
+<p><font color="#000000" face="Verdana">This completes the
+solidity definition, now let's add a few categories to use with
+the player's inventory and map interaction.</font></p>
+
+<p><font color="#000000" face="Verdana">First we'll categorize
+the two items in their own categories. Sometimes it may be useful
+to categorize multiple tiles as a single item (if multiple
+pictures can represent the same inventory item) but this is not
+the case here.</font></p>
+
+<p><font color="#000000" face="Verdana">Type the name
+&quot;Staff&quot; in the &quot;Current Category&quot; field and
+drag the tile representing the staff into the &quot;Tiles in this
+category&quot; box. Then type the name &quot;Scraper&quot; in the
+&quot;Current Category&quot; field and drag the scraper tile into
+the category. There should now be a total of 7 categories.</font></p>
+
+<p><font color="#000000" face="Verdana">To make things
+interesting, the scraper item should probably not break through
+all walls, just exterior walls. To make this easy, we'll add all
+the exterior wall tiles to a category. Type the name
+&quot;Exterior&quot; into the &quot;Current Category&quot; field.
+Drag all tiles, that are part of the Tilematch definition
+(defined in step 2) and that also contain white (edge) pixels
+into the category.</font></p>
+
+<p><font face="Verdana">Those are all the categories we'll be
+using in this tutorial. Some other points to note about
+categories:</font></p>
+
+<ul>
+    <li><font face="Verdana">Categories cannot be renamed through
+        this user interface since typing a new name creates a new
+        category.</font></li>
+    <li><font face="Verdana">Like a Category, a Solidity
+        Definition applies to a specific Tileset. Each Tileset
+        may have its own definition of &quot;TutorialSolid&quot;
+        or &quot;PlayerObstacles&quot; for insance.</font></li>
+    <li><font face="Verdana">Dragging tiles into a category
+        affects the project instantly while a Solidity Definition
+        is not saved until the &quot;Save&quot; button is
+        clicked.</font></li>
+    <li><font face="Verdana">To remove a tile from a category,
+        drag it from the &quot;Tiles in this category&quot; box
+        back into the &quot;Tiles available&quot; box.</font></li>
+</ul>
+
+<p><font face="Verdana">Now is a good time to save the project
+again. All the tile categories and solidity definitions are
+stored in the .GDP project file.</font></p>
+
+<p><font face="Verdana">This concludes Step 4 of the GameDev
+tutorial - Defining Tile Categories and Solidity.</font></p>
+
+<p><a href="Tutorial.htm"><font face="Verdana">Return to the main
+tutorial page.</font></a></p>
+
+<p><a href="Tut5.htm"><font face="Verdana">Jump to the next step
+in the tutorial.</font></a></p>
+</body>
+</html>

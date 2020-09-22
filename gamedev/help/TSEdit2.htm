@@ -1,0 +1,666 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type"
+content="text/html; charset=iso-8859-1">
+<meta name="GENERATOR" content="Microsoft FrontPage Express 2.0">
+<title>The Full Screen Tileset Editor</title>
+</head>
+
+<body bgcolor="#FFFFFF" topmargin="1">
+
+<table border="0" cellpadding="3" cellspacing="0" width="100%">
+    <tr>
+        <td bgcolor="#000000" nowrap><a href="Intro.htm#contents"><font
+        color="#FFFFFF" size="2" face="Arial"><strong>Scrolling
+        Game Development Kit UI Help</strong></font></a></td>
+        <td align="right" width="100%" bgcolor="#000000" nowrap><a
+        href="TSEdit1.htm"><font color="#FFFFFF" size="2"
+        face="Arial"><strong>Up to Edit Tilesets Dialog</strong></font></a></td>
+    </tr>
+</table>
+
+<h2>The Full Screen Tileset Editor</h2>
+
+<p align="center"><!--webbot bot="ImageMap" startspan
+rectangle=" (0,0) (258, 258)  #grid"
+rectangle=" (264,0) (297, 33)  #tile"
+rectangle=" (300,0) (328, 25)  #rotate"
+rectangle=" (262,44) (299, 97)  #clip"
+rectangle=" (269,174) (313, 194)  #xflip"
+rectangle=" (269,199) (313, 219)  #yflip"
+rectangle=" (0,258) (102, 275)  #gridcoord"
+rectangle=" (0,279) (29, 299)  #first"
+rectangle=" (29,279) (48, 299)  #previous"
+rectangle=" (49,279) (68, 299)  #next"
+rectangle=" (69,279) (98, 299)  #last"
+rectangle=" (104,279) (136, 299)  #get"
+rectangle=" (139,279) (181, 299)  #store"
+rectangle=" (189,279) (224, 299)  #togglegrid"
+rectangle=" (0,331) (28, 352)  #redminustwenty"
+rectangle=" (31,331) (60, 351)  #greenminustwenty"
+rectangle=" (64,331) (91, 351)  #blueminustwenty"
+rectangle=" (0,356) (24, 376)  #redminus"
+rectangle=" (31,356) (56, 376)  #greenminus"
+rectangle=" (63,356) (87, 376)  #blueminus"
+rectangle=" (0,381) (27, 401)  #redplus"
+rectangle=" (31,381) (59, 401)  #greenplus"
+rectangle=" (63,381) (90, 401)  #blueplus"
+rectangle=" (0,406) (33, 426)  #redplustwenty"
+rectangle=" (32,406) (65, 426)  #greenplustwenty"
+rectangle=" (64,406) (97, 426)  #blueplustwenty"
+rectangle=" (0,431) (59, 451)  #gradient"
+rectangle=" (69,431) (114, 451)  #reset"
+rectangle=" (139,431) (218, 451)  #sixteenbit"
+rectangle=" (99,331) (237, 360)  #primarycolor"
+rectangle=" (99,361) (237, 390)  #secondarycolor"
+rectangle=" (0,456) (303, 480)  #palette"
+rectangle=" (329,99) (386, 119)  #leftfifteen"
+rectangle=" (329,124) (379, 144)  #leftone"
+rectangle=" (329,149) (387, 169)  #rightone"
+rectangle=" (329,174) (394, 194)  #rightfifteen"
+rectangle=" (329,199) (437, 219)  #translucency"
+rectangle=" (329,224) (407, 244)  #antialias"
+rectangle=" (329,249) (427, 269)  #makethreesixty"
+rectangle=" (399,0) (441, 19)  #undo"
+rectangle=" (399,24) (441, 44)  #redo"
+rectangle=" (399,49) (440, 69)  #clear"
+rectangle=" (399,74) (452, 94)  #lshift"
+rectangle=" (399,99) (454, 119)  #rshift"
+rectangle=" (399,124) (454, 144)  #ushift"
+rectangle=" (399,149) (454, 169)  #dshift"
+rectangle=" (307,277) (494, 379)  #tilewindow"
+rectangle=" (499,0) (538, 19)  #pixel"
+rectangle=" (499,24) (546, 44)  #pencil"
+rectangle=" (499,49) (535, 69)  #line"
+rectangle=" (499,74) (606, 94)  #vgradient"
+rectangle=" (499,99) (620, 119)  #hgradient"
+rectangle=" (499,124) (607, 144)  #emptyrect"
+rectangle=" (499,149) (601, 169)  #solidrect"
+rectangle=" (499,174) (562, 194)  #floodfill"
+rectangle=" (499,199) (590, 219)  #hollowellipse"
+rectangle=" (499,224) (580, 244)  #solidellipse"
+rectangle=" (499,249) (569, 269)  #colorpick"
+rectangle=" (499,274) (629, 294)  #rbuttonpick"
+rectangle=" (499,299) (539, 319)  #copy"
+rectangle=" (499,324) (543, 344)  #paste"
+rectangle=" (499,349) (554, 369)  #pasteplus"
+rectangle=" (499,374) (553, 394)  #smooth"
+rectangle=" (499,399) (587, 419)  #colorchange"
+rectangle=" (499,439) (542, 459)  #close"
+src="Images/TileEdit.GIF" border="0" width="640" height="480" --><MAP NAME="FrontPageMap0"><AREA SHAPE="RECT" COORDS="0, 0, 258, 258" HREF="#grid"><AREA SHAPE="RECT" COORDS="264, 0, 297, 33" HREF="#tile"><AREA SHAPE="RECT" COORDS="300, 0, 328, 25" HREF="#rotate"><AREA SHAPE="RECT" COORDS="262, 44, 299, 97" HREF="#clip"><AREA SHAPE="RECT" COORDS="269, 174, 313, 194" HREF="#xflip"><AREA SHAPE="RECT" COORDS="269, 199, 313, 219" HREF="#yflip"><AREA SHAPE="RECT" COORDS="0, 258, 102, 275" HREF="#gridcoord"><AREA SHAPE="RECT" COORDS="0, 279, 29, 299" HREF="#first"><AREA SHAPE="RECT" COORDS="29, 279, 48, 299" HREF="#previous"><AREA SHAPE="RECT" COORDS="49, 279, 68, 299" HREF="#next"><AREA SHAPE="RECT" COORDS="69, 279, 98, 299" HREF="#last"><AREA SHAPE="RECT" COORDS="104, 279, 136, 299" HREF="#get"><AREA SHAPE="RECT" COORDS="139, 279, 181, 299" HREF="#store"><AREA SHAPE="RECT" COORDS="189, 279, 224, 299" HREF="#togglegrid"><AREA SHAPE="RECT" COORDS="0, 331, 28, 352" HREF="#redminustwenty"><AREA SHAPE="RECT" COORDS="31, 331, 60, 351" HREF="#greenminustwenty"><AREA SHAPE="RECT" COORDS="64, 331, 91, 351" HREF="#blueminustwenty"><AREA SHAPE="RECT" COORDS="0, 356, 24, 376" HREF="#redminus"><AREA SHAPE="RECT" COORDS="31, 356, 56, 376" HREF="#greenminus"><AREA SHAPE="RECT" COORDS="63, 356, 87, 376" HREF="#blueminus"><AREA SHAPE="RECT" COORDS="0, 381, 27, 401" HREF="#redplus"><AREA SHAPE="RECT" COORDS="31, 381, 59, 401" HREF="#greenplus"><AREA SHAPE="RECT" COORDS="63, 381, 90, 401" HREF="#blueplus"><AREA SHAPE="RECT" COORDS="0, 406, 33, 426" HREF="#redplustwenty"><AREA SHAPE="RECT" COORDS="32, 406, 65, 426" HREF="#greenplustwenty"><AREA SHAPE="RECT" COORDS="64, 406, 97, 426" HREF="#blueplustwenty"><AREA SHAPE="RECT" COORDS="0, 431, 59, 451" HREF="#gradient"><AREA SHAPE="RECT" COORDS="69, 431, 114, 451" HREF="#reset"><AREA SHAPE="RECT" COORDS="139, 431, 218, 451" HREF="#sixteenbit"><AREA SHAPE="RECT" COORDS="99, 331, 237, 360" HREF="#primarycolor"><AREA SHAPE="RECT" COORDS="99, 361, 237, 390" HREF="#secondarycolor"><AREA SHAPE="RECT" COORDS="0, 456, 303, 480" HREF="#palette"><AREA SHAPE="RECT" COORDS="329, 99, 386, 119" HREF="#leftfifteen"><AREA SHAPE="RECT" COORDS="329, 124, 379, 144" HREF="#leftone"><AREA SHAPE="RECT" COORDS="329, 149, 387, 169" HREF="#rightone"><AREA SHAPE="RECT" COORDS="329, 174, 394, 194" HREF="#rightfifteen"><AREA SHAPE="RECT" COORDS="329, 199, 437, 219" HREF="#translucency"><AREA SHAPE="RECT" COORDS="329, 224, 407, 244" HREF="#antialias"><AREA SHAPE="RECT" COORDS="329, 249, 427, 269" HREF="#makethreesixty"><AREA SHAPE="RECT" COORDS="399, 0, 441, 19" HREF="#undo"><AREA SHAPE="RECT" COORDS="399, 24, 441, 44" HREF="#redo"><AREA SHAPE="RECT" COORDS="399, 49, 440, 69" HREF="#clear"><AREA SHAPE="RECT" COORDS="399, 74, 452, 94" HREF="#lshift"><AREA SHAPE="RECT" COORDS="399, 99, 454, 119" HREF="#rshift"><AREA SHAPE="RECT" COORDS="399, 124, 454, 144" HREF="#ushift"><AREA SHAPE="RECT" COORDS="399, 149, 454, 169" HREF="#dshift"><AREA SHAPE="RECT" COORDS="307, 277, 494, 379" HREF="#tilewindow"><AREA SHAPE="RECT" COORDS="499, 0, 538, 19" HREF="#pixel"><AREA SHAPE="RECT" COORDS="499, 24, 546, 44" HREF="#pencil"><AREA SHAPE="RECT" COORDS="499, 49, 535, 69" HREF="#line"><AREA SHAPE="RECT" COORDS="499, 74, 606, 94" HREF="#vgradient"><AREA SHAPE="RECT" COORDS="499, 99, 620, 119" HREF="#hgradient"><AREA SHAPE="RECT" COORDS="499, 124, 607, 144" HREF="#emptyrect"><AREA SHAPE="RECT" COORDS="499, 149, 601, 169" HREF="#solidrect"><AREA SHAPE="RECT" COORDS="499, 174, 562, 194" HREF="#floodfill"><AREA SHAPE="RECT" COORDS="499, 199, 590, 219" HREF="#hollowellipse"><AREA SHAPE="RECT" COORDS="499, 224, 580, 244" HREF="#solidellipse"><AREA SHAPE="RECT" COORDS="499, 249, 569, 269" HREF="#colorpick"><AREA SHAPE="RECT" COORDS="499, 274, 629, 294" HREF="#rbuttonpick"><AREA SHAPE="RECT" COORDS="499, 299, 539, 319" HREF="#copy"><AREA SHAPE="RECT" COORDS="499, 324, 543, 344" HREF="#paste"><AREA SHAPE="RECT" COORDS="499, 349, 554, 369" HREF="#pasteplus"><AREA SHAPE="RECT" COORDS="499, 374, 553, 394" HREF="#smooth"><AREA SHAPE="RECT" COORDS="499, 399, 587, 419" HREF="#colorchange"><AREA SHAPE="RECT" COORDS="499, 439, 542, 459" HREF="#close"></MAP><img src="Images/TileEdit.GIF" border="0" width="640" height="480" usemap="#FrontPageMap0"><!--webbot
+bot="ImageMap" i-checksum="5571" endspan --> </p>
+
+<p>The general sequence for editing a tileset is:</p>
+
+<ul>
+    <li>Click on a tile you want to edit in the <a
+        href="#tilewindow">tileset window</a> and click the <a
+        href="#get">Get</a> button, <strong>OR</strong> click the
+        <a href="#clear">Clear</a> button to clear out the <a
+        href="#tile">tile</a>/<a href="#grid">grid</a> in
+        preparation for creating a new tile. (The grid is simply
+        a magnified view of the tile.)</li>
+    <li>Click on a <a href="#tools">tool</a> button in the right
+        column to select a tool.</li>
+    <li>Click on a color in the <a href="#palette">palette</a>
+        that you want to use with the tool, if the tool requires
+        a color.</li>
+    <li>Click and/or drag in the grid area to use the tool to
+        create the tile graphics (select different tools and
+        colors in the process)</li>
+    <li>Select a new &quot;slot&quot; in the tileset window if
+        you don't want to overwrite the tile in the currently
+        selected slot.</li>
+    <li>Click the <a href="#store">Store</a> button to save the
+        tile into the current slot.</li>
+    <li>When you're done editing/creating tiles, exit with the <a
+        href="#close">Close</a> button.</li>
+</ul>
+
+<p>Listed below are each of the components on the tile editor
+screen described in detail. Click on the image above to jump to
+the help for a particular item.</p>
+
+<h4><a name="grid">Tile Grid</a></h4>
+
+<p>This displays a magnified view of the tile currently being
+edited. Clicking or dragging on this area or the smaller version
+(the <a href="#tile">tile</a> at the right) has the same effect.
+It activates the currently selected tool at the position under
+the mouse pointer.</p>
+
+<h4><a name="tile">Currently Loaded Tile Preview</a></h4>
+
+<p>This is the unmagnified view of the graphic currently being
+edited. It is not automatically linked to any slot in the tileset
+(you must use <a href="#store">Store</a> to save it into the
+tileset and <a href="#get">Get</a> to load from the tileset)</p>
+
+<h4><a name="rotate">Rotation Indicator</a></h4>
+
+<p>Clicking on the rotation buttons changes this value. The value
+displayed indicates the number of degrees of rotation that will
+be used when pasting the <a href="#clip">clip</a> using the <a
+href="#pasteplus">Paste+</a> tool. A positive value is leftward
+rotation while a negative value is rightward.</p>
+
+<h4><a name="clip">Copied Clip</a></h4>
+
+<p>This displays the current contents of the tile editor
+&quot;Clipboard&quot;. This is not the system clipboard and the
+contents of this clip are lost when the tileset editor is closed.
+This image is set when the <a href="#copy">Copy</a> tool is used,
+and used by the <a href="#paste">Paste</a> and <a
+href="#pasteplus">Paste+</a> tools.</p>
+
+<h4><a name="xflip">X Flip</a></h4>
+
+<p>Flip the <a href="#clip">copied clip</a> horizontally. It can
+only operate on the copied clip, not directly on the tile
+currently being edited.</p>
+
+<h4><a name="yflip">Y Flip</a></h4>
+
+<p>Flip the <a href="#clip">copied clip</a> vertically. It can
+only operate on the copied clip, not directly on the tile
+currently being edited.</p>
+
+<h4><a name="gridcoord">Grid Coordinate Display</a></h4>
+
+<p>This displays the current pixel coordinates under the mouse
+(if the mouse is over the <a href="#grid">grid</a> or the <a
+href="#tile">tile</a>). The coordinate represents and x,y offset
+from the top left corner of the tile being edited. The top left
+corner is 0,0.</p>
+
+<h4><a name="first">Select First Tile</a></h4>
+
+<p>Changes the currently selected tile (in the <a
+href="#tilewindow">tileset window</a>) to the first tile in the
+tileset. It is only selected, not loaded.</p>
+
+<h4><a name="previous">Select Previous Tile</a></h4>
+
+<p>Changes the currently selected tile (in the <a
+href="#tilewindow">tileset window</a>) to the previous tile. It
+is only selected, not loaded.</p>
+
+<h4><a name="next">Select Next Tile</a></h4>
+
+<p>Changes the currently selected tile (in the <a
+href="#tilewindow">tileset window</a>) to the next tile. It is
+only selected, not loaded.</p>
+
+<h4><a name="last">Select Last Tile</a></h4>
+
+<p>Changes the currently selected tile (in the <a
+href="#tilewindow">tileset window</a>) to the last tile in the
+tileset. It is only selected, not loaded.</p>
+
+<h4><a name="get">Get Selected Tile</a></h4>
+
+<p>Loads the currently selected tile in the <a href="#tilewindow">tileset
+window</a> into the editor as the <a href="#tile">tile</a>
+currently being edited. The <a href="#grid">grid</a> displays a
+magnified view of the tile.</p>
+
+<h4><a name="store">Store To Selected Tile</a></h4>
+
+<p>Stores the tile from the <a href="#tile">tile</a> currently
+being edited into the current slot in the <a href="#tilewindow">tileset</a>.</p>
+
+<h4><a name="togglegrid">Toggle Grid Lines</a></h4>
+
+<p>Turn on or off the white lines separating the magnified pixels
+in the <a href="#grid">grid</a>.</p>
+
+<h4><a name="redminustwenty">R--</a></h4>
+
+<p>Subtract twenty from the red value of the currently selected <a
+href="#primarycolor">primary color</a> in the <a href="#palette">color
+palette</a>.</p>
+
+<h4><a name="greenminustwenty">G--</a></h4>
+
+<p>Subtract twenty from the green value of the currently selected
+<a href="#primarycolor">primary color</a> in the <a
+href="#palette">color palette</a>.</p>
+
+<h4><a name="blueminustwenty">B--</a></h4>
+
+<p>Subtract twenty from the blue value of the currently selected <a
+href="#primarycolor">primary color</a> in the <a href="#palette">color
+palette</a>.</p>
+
+<h4><a name="redminus">R-</a></h4>
+
+<p>Subtract one from the red value of the currently selected <a
+href="#primarycolor">primary color</a> in the <a href="#palette">color
+palette</a>.</p>
+
+<h4><a name="greenminus">G-</a></h4>
+
+<p>Subtract one from the green value of the currently selected <a
+href="#primarycolor">primary color</a> in the <a href="#palette">color
+palette</a>.</p>
+
+<h4><a name="blueminus">B-</a></h4>
+
+<p>Subtract one from the blue value of the currently selected <a
+href="#primarycolor">primary color</a> in the <a href="#palette">color
+palette</a>.</p>
+
+<h4><a name="redplus">R+</a></h4>
+
+<p>Add one to the red value of the currently selected <a
+href="#primarycolor">primary color</a> in the <a href="#palette">color
+palette</a>.</p>
+
+<h4><a name="greenplus">G+</a></h4>
+
+<p>Add one to the green value of the currently selected <a
+href="#primarycolor">primary color</a> in the <a href="#palette">color
+palette</a>.</p>
+
+<h4><a name="blueplus">B+</a></h4>
+
+<p>Add one to the blue value of the currently selected <a
+href="#primarycolor">primary color</a> in the <a href="#palette">color
+palette</a>.</p>
+
+<h4><a name="redplustwenty">R++</a></h4>
+
+<p>Add twenty to the red value of the currently selected <a
+href="#primarycolor">primary color</a> in the <a href="#palette">color
+palette</a>.</p>
+
+<h4><a name="greenplustwenty">G++</a></h4>
+
+<p>Add twenty to the green value of the currently selected <a
+href="#primarycolor">primary color</a> in the <a href="#palette">color
+palette</a>.</p>
+
+<h4><a name="blueplustwenty">B++</a></h4>
+
+<p>Add twenty to the blue value of the currently selected <a
+href="#primarycolor">primary color</a> in the <a href="#palette">color
+palette</a>.</p>
+
+<h4><a name="gradient">Gradient</a></h4>
+
+<p>Creates a smooth gradient of colors in the color palette. The
+gradient extends from the selected <a href="#primarycolor">primary
+color</a> to the selected <a href="#secondarycolor">secondary
+color</a> using the current colors in those slots as endpoints
+for the gradient. (If using a 16-bit display, you should probably
+click &quot;<a href="#sixteenbit">Make 16-bit</a>&quot; again
+after doing this.)</p>
+
+<h4><a name="reset">Reset</a></h4>
+
+<p>Resets the palette to the initial set of colors. (If using a
+16-bit display, you may want to click &quot;<a href="#sixteenbit">Make
+16-bit</a>&quot; again after doing this.)</p>
+
+<h4><a name="sixteenbit">Make 16-bit</a></h4>
+
+<p>If the video mode (color depth) chosen for the full screen
+display (on the <a href="TSEdit1.htm">Edit Tilesets</a> dialog)
+was 16-bit, you should probably click this button before drawing
+graphics for tiles. In 16-bit color mode, if a particular palette
+entry (each of which are defined with 24-bit precision) does not
+exactly match a 16-bit color, a drawing operation may cause
+dithered colors to be drawn into the tile to approximate the
+selected 24-bit color. This makes the <a href="#floodfill">Flood
+Fill</a> tool ineffective. So in order to prevent dithering, this
+&quot;Make 16-bit&quot; button is provided to force all the
+colors in the palette to 16-bit colors so that they are not
+dithered when used on a 16-bit-color display. If you realized you
+had a problem too late, you may be interested in the <a
+href="#colorchange">Color Change</a> tool.</p>
+
+<h4><a name="primarycolor">Primary Color</a></h4>
+
+<p>This displays the RGB (red, green, blue) components for the
+currently selected &quot;Primary Color&quot; in the color
+palette. The &quot;Primary Color&quot; is selected by
+left-clicking on a color in the <a href="#palette">palette</a>.
+The currently selected primary color is indicated by a white
+outline around that color. Only the currently selected primary
+color can be altered using the <a href="#redminustwenty">R--</a>,
+<a href="#greenminustwenty">G--</a>, <a href="#blueminustwenty">B--</a>
+(etc.) buttons.</p>
+
+<h4><a name="secondarycolor">Secondary Color</a></h4>
+
+<p>This displays the RGB (red, green, blue) components for the
+currently selected &quot;Secondary Color&quot; in the color
+palette. The &quot;Secondary Color&quot; is selected by
+right-clicking on a color in the <a href="#palette">palette</a>.
+The currently selected secondary color is indicated by a gray
+outline around that color.</p>
+
+<h4><a name="palette">Color Palette</a></h4>
+
+<p>This is where you can select a <a href="#primarycolor">primary
+color</a> and <a href="#secondarycolor">secondary color</a> as
+the current color to use for the various tools. The primary color
+is generally used by activating the tool with the left mouse
+button on the <a href="#grid">grid</a> while the secondary color
+is used by activating the tool with the right mouse button. Some
+tools (such as <a href="#hgradient">horizontal gradient</a>) make
+use of both colors.</p>
+
+<h4><a name="leftfifteen">Left 15 Degrees</a></h4>
+
+<p>This alters the <a href="#rotate">current rotation</a> setting
+by adding 15 degrees.</p>
+
+<h4>L<a name="leftone">eft 1 Degree</a></h4>
+
+<p>This alters the <a href="#rotate">current rotation</a> setting
+by adding 1 degree.</p>
+
+<h4><a name="rightone">Right 1 Degree</a></h4>
+
+<p>This alters the <a href="#rotate">current rotation</a> setting
+by subtracting 1 degree.</p>
+
+<h4><a name="rightfifteen">Right 15 Degrees</a></h4>
+
+<p>This alters the <a href="#rotate">current rotation</a> setting
+by subtracting 15 degrees.</p>
+
+<h4><a name="translucency">Translucency</a></h4>
+
+<p>Click this to cycle through 10 transparency levels. A zero
+percent translucency setting will cause <a href="#pasteplus">Paste+</a>
+to overlay the graphic opaquely (except for the
+background/transparent color if applicable). A one hundred
+percent translucency setting will cause Paste+ to overlay the
+graphic invisibly. A 50 percent translucency setting will cause
+pixels that would normally be opaque (non-background) to be
+averaged with pixels already in the image as they are overlaid.
+The translucency setting does not apply to the normal <a
+href="#paste">Paste</a> tool.</p>
+
+<h4><a name="antialias">Toggle Anti-Aliasing</a></h4>
+
+<p>This applies only to the <a href="#pasteplus">Paste+</a> tool
+when pasting a rotated image. If anti-aliasing is on (the button
+reads &quot;Turn AA Off&quot;) the rotated image will result from
+extra processing to better approximate colors based on how close
+the rotated pixels are to the actual pixels on the screen
+(rotation often results in pixels ending up at non-integral
+positions). The end result is something smoother than it would be
+if AA were turned off, but it can also be a bit more blurry.</p>
+
+<h4><a name="makethreesixty">Make 360°/10° Sprite</a></h4>
+
+<p>This is used to get around the tedium of creating the
+individual state frames for a 360-degree sprite. It automatically
+rotates the current image to 36 positions and stores them in the
+tileset consecutively. It effectively performs these steps
+automatically:</p>
+
+<ul>
+    <li><a href="#copy">Copy</a> the entire <a href="#tile">tile</a>.</li>
+    <li><a href="#store">Store</a> the tile into the current slot
+        in the <a href="#tilewindow">tileset</a>.</li>
+    <li>Repeat from R=10 degrees to R=350 degrees in 10-degree
+        steps (from TileIndex=+1 to TileIndex=+35):<ul>
+            <li><a href="#clear">Clear</a> the tile.</li>
+            <li><a href="#pasteplus">Paste+</a> the copied <a
+                href="#clip">clip</a> at R degrees of rotation in
+                the center of the tile.</li>
+            <li>Store the tile in the next slot (current slot +
+                TileIndex) in the tileset, wrapping to the first
+                tile if there's no more room at the end.</li>
+        </ul>
+    </li>
+</ul>
+
+<p>The <a href="#antialias">Anti-Aliasing</a> and <a
+href="#translucency">Translucency</a> settings affect the Paste+
+step.</p>
+
+<h4><a name="undo">Undo</a></h4>
+
+<p>Most actions with a tool in the <a href="#grid">grid</a> (or <a
+href="#tile">tile</a>) can be un-done by clicking this button.
+Five states (total) are stored so you should be able to click
+undo four times to go back four steps. If you click undo a fifth
+time, the undo buffer wraps around to the latest state.</p>
+
+<h4><a name="redo">Redo</a></h4>
+
+<p>If you click undo and decide you wanted to keep that last
+action instead of undo it, click redo. (Actually this button
+simply goes through the undo buffer in the other direction.) If
+you click redo without clicking undo, it will wrap around the end
+of the undo buffer to the oldest stored state.</p>
+
+<h4><a name="clear">Clear</a></h4>
+
+<p>Clear the <a href="#tile">tile</a> and <a href="#grid">grid</a>
+to black.</p>
+
+<h4><a name="lshift">Left Shift</a></h4>
+
+<p>Shift the graphic being edited one pixel to the left. Pixels
+in the rightmost column are not erased or replaced with anything;
+they continue to reflect the rightmost column of pixels that was
+there before.</p>
+
+<h4><a name="rshift">Right Shift</a></h4>
+
+<p>Shift the graphic being edited one pixel to the right. Pixels
+in the leftmost column are not erased or replaced with anything;
+they continue to reflect the leftmost column of pixels that was
+there before.</p>
+
+<h4><a name="ushift">Upward Shift</a></h4>
+
+<p>Shift the graphic being edited one pixel up. Pixels in the
+bottommost row are not erased or replaced with anything; they
+continue to reflect the bottommost row of pixels that was there
+before.</p>
+
+<h4><a name="dshift">Downward Shift</a></h4>
+
+<p>Shift the graphic being edited one pixel down. Pixels in the
+topmost row are not erased or replaced with anything; they
+continue to reflect the topmost row of pixels that was there
+before.</p>
+
+<h4><a name="tilewindow">Tileset Window</a></h4>
+
+<p>This window displays a portion of the tileset currently being
+edited. The currently selected tile is outlined with a dotted
+line and centered in the window. The currently selected tile is
+not directly linked to the <a href="#grid">grid</a> or the <a
+href="#tile">tile</a> currently being edited. What the currently
+selected tile <strong>does</strong> indicate is the slot into
+which the tile will be stored if you click the <a href="#store">Store</a>
+button. It also indicates which tile to load when you click the <a
+href="#get">Get</a> button. To change which tile is currently
+selected, you can use the <a href="#first">First</a>
+(&quot;|&lt;&lt;&quot;), <a href="#previous">Previous</a>
+(&quot;&lt;&quot;), <a href="#next">Next</a> (&quot;&gt;&quot;)
+or <a href="#last">Last</a> (&quot;&gt;&gt;|&quot;) buttons, or
+you can simply click on the tile you want to select in the
+tileset window.</p>
+
+<p>&nbsp;</p>
+
+<h3><a name="tools">Tools</a></h3>
+
+<p>To use a tool (listed below), click the button associated with
+that tool if it's not already selected, then click or hold the
+mouse button (as appropriate for the tool) on the <a href="#grid">grid</a>
+(or the <a href="#tile">tile</a>) to activate it. Clicking the
+left mouse button generally activates the tool with the currently
+selected <a href="#primarycolor">primary color</a>, while
+clicking the right mouse button generally activates the tool with
+the currently selected <a href="#secondarycolor">secondary color</a>.</p>
+
+<h4><a name="pixel">Pixel</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Click the mouse button to draw a
+single pixel; drag to draw many pixels.</p>
+
+<h4>P<a name="pencil">encil</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Drag the mouse to draw a
+continuous &quot;scribble&quot;.</p>
+
+<h4>L<a name="line">ine</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Drag from a starting point to an
+ending point to draw a straight line between the two.</p>
+
+<h4><a name="vgradient">Vertical Gradient</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Drag out a rectangle. The
+rectangle will be filled with horizontal lines forming a smooth
+vertical color gradient from the top of the rectangle to the
+bottom of the rectangle. Starting the drag using the left mouse
+button uses the <a href="#primarycolor">primary color</a> at the
+corner where the drag started and the <a href="#secondarycolor">secondary
+color</a> at the corner where the drag ends. Starting the drag
+using the right mouse button uses the secondary color at the
+corner where the drag starts and the primary color at the corner
+where the drag ends.</p>
+
+<h4><a name="hgradient">Horizontal Gradient</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Drag out a rectangle. The
+rectangle will be filled with vertical lines forming a smooth
+horizontal color gradient from the left side of the rectangle to
+the right side of the rectangle. Starting the drag using the left
+mouse button uses the <a href="#primarycolor">primary color</a>
+at the corner where the drag started and the <a
+href="#secondarycolor">secondary color</a> at the corner where
+the drag ends. Starting the drag using the right mouse button
+uses the secondary color at the corner where the drag starts and
+the primary color at the corner where the drag ends.</p>
+
+<h4><a name="emptyrect">Empty Rectangle</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Drag from a starting point to an
+ending point to form a rectangle. The rectangle will be drawn
+without replacing anything inside it.</p>
+
+<h4><a name="solidrect">Solid Rectangle</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Drag from a starting point to an
+ending point to form a rectangle. The rectangle will be one solid
+color.</p>
+
+<h4><a name="floodfill">Flood Fill</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Click the mouse at any point to
+perform a standard flood fill starting at the point. The fill
+stops at any color that does not exactly match the starting
+point. If the fill does not go as far as expected, see help on <a
+href="#sixteenbit">Make 16-bit</a> and <a href="#colorchange">Color
+Change</a>.</p>
+
+<h4><a name="hollowellipse">Hollow Ellipse</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Click and drag out the boundaries
+for an ellipse. The ellipse will be drawn such that each edge of
+the rectangle formed by the drag limits the edge of the ellipse.
+Only the pixels on the edge of the ellipse are drawn.</p>
+
+<h4><a name="solidellipse">Solid Ellipse</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Click and drag out the boundaries
+for an ellipse. The ellipse will be drawn such that each edge of
+the rectangle formed by the drag limits the edge of the ellipse.
+The ellipse will be one solid color, leaving only pixels outside
+the elliptical shape unchanged.</p>
+
+<h4><a name="colorpick">Color Pick</a></h4>
+
+<p>(<a href="#tools">Tool</a>) This tool copies colors from the
+tile into the palette. Left clicking on a pixel copies the color
+into the currently selected <a href="#primarycolor">primary color</a>
+and right clicking copies the pixels color into the currently
+selected <a href="#secondarycolor">secondary color</a>.</p>
+
+<h4><a name="rbuttonpick">Toggle Right Button Pick</a></h4>
+
+<p>This option alters the functionality of the right mouse
+button. Instead of activating the current tool with the <a
+href="#secondarycolor">secondary color</a>, it copies the color
+of the pixel under the mouse pointer into the currently selected <a
+href="#primarycolor">primary color</a> in the palette.</p>
+
+<h4><a name="copy">Copy</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Drag out a rectangle to copy the
+contents into the <a href="#clip">clip</a>. (Some operations and
+tools operate only on the clip and not directly on the tile.)</p>
+
+<h4><a name="paste">Paste</a></h4>
+
+<p>(<a href="#tools">Tool</a>) As you move the mouse over the <a
+href="#grid">grid</a> the <a href="#clip">clip</a> appears with
+the top left corner under the mouse pointer. This tool performs a
+simple paste with no features (and is very fast). When you click,
+the clip will be copied into the tile exactly as is. Use <a
+href="#pasteplus">Paste+</a> to paste with transparency,
+translucency and other features.</p>
+
+<h4><a name="pasteplus">Paste+</a></h4>
+
+<p>(<a href="#tools">Tool</a>) This tool is required to take
+advantage of many of the features offered in the tileset editor.
+As you move the mouse over the <a href="#grid">grid</a>, the <a
+href="#clip">clip</a> is drawn onto the grid under the mouse
+pointer with many manipulations according to various settings.
+When you click, the clip is permanently overlaid onto the tile as
+it is currently displayed. The clip is centered around the mouse
+pointer. If the pixels at each of the 4 corners of the clip are
+exactly the same color, this color will be used as the
+background/transparent color during the paste operation.
+Transparent pixels are not drawn. The clip is drawn using the
+current <a href="#rotate">rotation</a>, <a href="#translucency">translucency</a>
+and <a href="#antialias">anti-aliasing</a> settings.</p>
+
+<h4><a name="smooth">Smooth</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Drag out a rectangle. The pixels
+inside this rectangle are blended with the surrounding pixels to
+get a professional-looking smoothed/anti-aliased appearance. Do
+this multiple times to smooth further. Pixels are only blended
+with their immediate neighbors. Pixels around the edge of the
+rectangle are not blended with pixels outside the rectangle (they
+are blended with fewer neighbors). Multiple applications of this
+tool will allow the color of one pixel to affect the color of a
+pixel two or more pixels away. The first application affects its
+neighbor. The second application causes the affected neighbor to
+affect its neighbors, passing on some of that color.</p>
+
+<h4><a name="colorchange">Color Change</a></h4>
+
+<p>(<a href="#tools">Tool</a>) Click once on any pixel. All
+pixels in the <a href="#tile">tile</a> that are exactly the same
+color will be changed to the active color (<a
+href="#primarycolor">primary color</a> or <a
+href="#secondarycolor">secondary color</a>). This can be handy if
+you tried to <a href="#floodfill">flood fill</a> and realized you
+should have clicked the <a href="#sixteenbit">Make 16-bit</a>
+button. Since dithering generally occurs only with a few
+(slightly) different colors, a few clicks with the color change
+tool should be able to change all the similar pixels to exactly
+the same color.</p>
+
+<h4><a name="close">Close</a></h4>
+
+<p>When you're done editing tiles (and storing them into the
+tileset) click this button to close the full screen editor.</p>
+</body>
+</html>
